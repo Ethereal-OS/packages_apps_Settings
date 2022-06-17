@@ -25,4 +25,8 @@
     <!-- Wi-Fi Icon Standard -->
     <string name="show_wifi_standard_icon_title">Show Wi-Fi type icon</string>
     <string name="show_wifi_standard_icon_summary">Show Wi-Fi type in Wi-Fi signal indicator</string>
+
+    <!-- Ignore window secure -->
+    <string name="ignore_window_secure_title">Ignore secure window flag</string>
+    <string name="ignore_window_secure_summary">Remove screenshot and screenrecord limits for all apps. This can be convenient in some cases but may lead to privacy leaks.</string>
 </resources>
