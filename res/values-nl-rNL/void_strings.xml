@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+     Copyright (C) 2022-2023 VoidUI
+     SPDX-License-Identifier: Apache-2.0
+-->
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <!-- About device screen, VoidUI Release Version -->
+    <string name="voidui_release_version">VoidUI Release Versie</string>
+    <!-- VoidUI Maintainer -->
+    <string name="VoidUI_maintainer">Apparaat onderhouder</string>
+    <!-- Immersive Navigation -->
+    <string name="gesture_navbar_category_title">Navigatiebalk</string>
+    <string name="immersive_navigation_title">Immersieve navigatie</string>
+    <string name="immersive_navigation_summary">Verberg de gebarenpil en de opvulling van de navigatiebalk.</string>
+    <!-- App details: open play store link if app is user installed -->
+    <string name="app_play_store">Google Play</string>
+    <!-- General -->
+    <string name="copied_to_clipboard">Gekopieerd naar klembord</string>
+    <string name="longpress_to_clipboard">Lang indrukken om te kopiëren</string>
+    <!-- Wi-Fi Icon Standard -->
+    <string name="show_wifi_standard_icon_title">Toon Wi-Fi-type pictogram</string>
+    <string name="show_wifi_standard_icon_summary">Toon Wi-Fi-type in Wi-Fi-signaalindicator</string>
+    <!-- Ignore window secure -->
+    <string name="ignore_window_secure_title">Vlag voor beveiligd venster negeren</string>
+    <string name="ignore_window_secure_summary">Schermopname- en schermopnamelimieten verwijderen voor alle apps. Dit kan in sommige gevallen handig zijn, maar kan leiden tot privacylekken.</string>
+    <!-- Vibration patterns -->
+    <string name="vibration_pattern_title">Beltoon trilpatroon</string>
+    <string name="pattern_dzzz_dzzz">dzzz-dzzz</string>
+    <string name="pattern_dzzz_da">dzzz-da</string>
+    <string name="pattern_mm_mm_mm">mm-mm-mm</string>
+    <string name="pattern_da_da_dzzz">da-da-dzzz</string>
+    <string name="pattern_da_dzzz_da">da-dzzz-da</string>
+    <string name="pattern_custom">Aangepaste</string>
+    <string name="custom_vibration_pattern_title">Aangepast patroon</string>
+    <string name="custom_vibration_pattern_summary">Een aangepast trillingspatroon instellen</string>
+    <!-- Notch: Full screen apps -->
+    <string name="display_cutout_force_fullscreen_title">Volledig scherm apps</string>
+    <string name="display_cutout_force_fullscreen_summary">Dwing apps om notch ruimte te negeren</string>
+    <string name="search">Zoek</string>
+    <string name="search_apps">Zoek apps</string>
+    <!-- Per-app volume control -->
+    <string name="app_volume">App volume</string>
+    <string name="app_volume_title">Volumeregeling per applicatie</string>
+    <string name="app_volume_summary">Instellen van verschillende volumeniveaus voor elke app</string>
+    <!-- Game Space -->
+    <string name="game_space_title">Game Modus</string>
+    <string name="game_space_summary">Verbeter je spelbeleving</string>
+    <!-- reTicker -->
+    <string name="reticker_title">reTicker</string>
+    <string name="reticker_summary">Vervang heads-up notificatie met kleinere en minder invasieve versie van herontworpen ticker</string>
+    <string name="reticker_colored_title">Gebruik de gekleurde achtergrond van de app</string>
+    <string name="reticker_colored_summary">Herticker achtergrondkleur vervangen door hoofdkleur van app notificatie</string>
+    <!-- Volume Steps Fragment -->
+    <string name="volume_steps_fragment_title">Volumeniveaus</string>
+    <string name="volume_steps_summary">Volumeniveaus aanpassen</string>
+    <string name="volume_steps_alarm_title">Volumeniveaus: Alarm</string>
+    <string name="volume_steps_dtmf_title">Volumeniveaus: DTMF</string>
+    <string name="volume_steps_music_title">Volumeniveaus: Media</string>
+    <string name="volume_steps_notification_title">Volumeniveaus: Meldingen</string>
+    <string name="volume_steps_ring_title">Volumeniveaus: Beltoon</string>
+    <string name="volume_steps_system_title">Volumeniveaus: Systeem</string>
+    <string name="volume_steps_voice_call_title">Volumeniveaus: Spraakoproep</string>
+    <string name="volume_steps_reset">Resetten</string>
+    <!-- Black theme for dark mode -->
+    <string name="black_bg_title">Puur zwart</string>
+    <string name="black_bg_summary">Puur zwarte achtergrond voor donker thema</string>
+    <!-- Monet settings -->
+    <string name="monet_settings_title">Thema-instellingen</string>
+    <string name="monet_settings_sammary">Een paar extra instellingen om de monet-engine aan te passen</string>
+    <string name="theme_style_title">Thema stijl</string>
+    <string name="theme_style_tonal_spot">Toonvlek (standaard)</string>
+    <string name="theme_style_vibrant">Levendig</string>
+    <string name="theme_style_expressive">Expressief</string>
+    <string name="theme_style_spritz">Sproeien</string>
+    <string name="theme_style_rainbow">Regenboog</string>
+    <string name="theme_style_fruit_salad">Fruit salade</string>
+    <string name="theme_style_muted">Gedempt</string>
+    <string name="theme_style_content">Inhoud</string>
+    <string name="color_source_title">Kleur bron</string>
+    <string name="color_source_both">Beide (standaard)</string>
+    <string name="color_source_home">Thuis behang</string>
+    <string name="color_source_lock">Slot behang</string>
+    <string name="color_source_preset">Vooraf ingesteld</string>
+    <string name="accent_color_title">Accent kleur</string>
+    <string name="accent_color_summary">Negeer de standaard accentkleur</string>
+    <string name="accent_background_title">Accentachtergrond</string>
+    <string name="accent_background_summary">Kies een verschillende accentkleur voor achtergrond</string>
+    <string name="bg_color_title">Achtergrond kleur</string>
+    <string name="bg_color_summary">Negeer de standaard achtergrondaccentkleur</string>
+    <string name="luminance_factor_title">Luminantie</string>
+    <string name="luminance_factor_summary">Hogere waarden produceren helderdere kleuren</string>
+    <string name="chroma_factor_title">Chroma</string>
+    <string name="chroma_factor_summary">Hogere waarden produceren sterkere kleuren</string>
+    <string name="tint_background_title">Tint Achtergrond</string>
+    <string name="tint_background_summary">Laat Luminantie en Chroma-selectie ook van invloed zijn op achtergrondkleuren</string>
+    <!-- AOD Schedule -->
+    <string name="always_on_display_schedule_title">Altijd op display schema</string>
+    <string name="always_on_display_schedule_sunset">Zonsondergang</string>
+    <string name="always_on_display_schedule_sunrise">zonsopkomst</string>
+    <string name="always_on_display_schedule_mixed_sunset">Gaat aan van zonsondergang tot een tijd</string>
+    <string name="always_on_display_schedule_mixed_sunrise">Gaat aan van een tijd tot zonsopgang</string>
+    <!-- Force LTE_CA -->
+    <string name="force_lte_ca">Kracht LTE CA</string>
+    <string name="force_lte_ca_summary">Dwing LTE-draaggolfaggregatie om te werken</string>
+    <!-- Swap buttons in 3 buttons gestures -->
+    <string name="navbar_invert_layout_title">Lay-out van de navigatiebalk omkeren</string>
+    <string name="navbar_invert_info">Verwissel de knoppen \"Terug\" en \"Recents\" op de navigatiebalk</string>
+    <!-- 60hz Battery Saver Toggle -->
+    <string name="battery_saver_refresh_rate_title">Vernieuwingsfrequentie verlagen</string>
+    <string name="battery_saver_refresh_rate_summary">Gebruik 60 Hz schermverversing om energie te besparen wanneer Battery Saver is ingeschakeld.</string>
+    <!-- Data usage info in QS footer -->
+    <string name="qs_footer_datausage_title">Dagelijks gegevensgebruik in snelle instellingen</string>
+    <string name="qs_footer_datausage_summary">Toon een overzicht van het dagelijks gegevensgebruik in de voettekst van de snelle instellingen</string>
+    <!-- Screen resolution -->
+    <string name="custom_screen_resolution_title">Aangepaste schermresolutie</string>
+</resources>

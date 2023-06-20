@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+     Copyright (C) 2022-2023 VoidUI
+     SPDX-License-Identifier: Apache-2.0
+-->
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <!-- About device screen, VoidUI Release Version -->
+    <string name="voidui_release_version">Verze verze VoidUI</string>
+    <!-- VoidUI Maintainer -->
+    <string name="VoidUI_maintainer">Správce zařízení</string>
+    <!-- Immersive Navigation -->
+    <string name="gesture_navbar_category_title">Navigační panel</string>
+    <string name="immersive_navigation_title">Pohlcující navigace</string>
+    <string name="immersive_navigation_summary">Skrýt pilulku a odsazení navigačního panelu.</string>
+    <!-- App details: open play store link if app is user installed -->
+    <string name="app_play_store">Google Play</string>
+    <!-- General -->
+    <string name="copied_to_clipboard">Zkopírováno do schránky</string>
+    <string name="longpress_to_clipboard">Dlouhým stisknutím tlačítka zkopírujete</string>
+    <!-- Wi-Fi Icon Standard -->
+    <string name="show_wifi_standard_icon_title">Zobrazit ikonu typu Wi-Fi</string>
+    <string name="show_wifi_standard_icon_summary">Zobrazení typu Wi-Fi v indikátoru signálu Wi-Fi</string>
+    <!-- Ignore window secure -->
+    <string name="ignore_window_secure_title">Ignorování příznaku zabezpečeného okna</string>
+    <string name="ignore_window_secure_summary">Odstranění omezení pro pořizování snímků obrazovky a záznamů obrazovky pro všechny aplikace. To může být v některých případech výhodné, ale může to vést k úniku citlivých dat.</string>
+    <!-- Vibration patterns -->
+    <string name="vibration_pattern_title">Vzor vibrací vyzvánění</string>
+    <string name="pattern_dzzz_dzzz">dzzz-dzzz</string>
+    <string name="pattern_dzzz_da">dzzz-da</string>
+    <string name="pattern_mm_mm_mm">mm-mm-mm</string>
+    <string name="pattern_da_da_dzzz">da-da-dzzz</string>
+    <string name="pattern_da_dzzz_da">da-dzzz-da</string>
+    <string name="pattern_custom">Vlastní</string>
+    <string name="custom_vibration_pattern_title">Vlastní vzor</string>
+    <string name="custom_vibration_pattern_summary">Nastavení vlastního vibračního vzoru</string>
+    <!-- Notch: Full screen apps -->
+    <string name="display_cutout_force_fullscreen_title">Aplikace na celou obrazovku</string>
+    <string name="display_cutout_force_fullscreen_summary">Vynucení ignorování výřezu aplikacemi</string>
+    <string name="search">Hledat</string>
+    <string name="search_apps">Vyhledávací aplikací</string>
+    <!-- Per-app volume control -->
+    <string name="app_volume">Objem aplikace</string>
+    <string name="app_volume_title">Ovládání hlasitosti v jednotlivých aplikacích</string>
+    <string name="app_volume_summary">Umožňuje nastavit různé úrovně hlasitosti pro každou aplikaci</string>
+    <!-- Game Space -->
+    <string name="game_space_title">Herní prostor</string>
+    <string name="game_space_summary">Vylepšete si herní zážitek</string>
+    <!-- reTicker -->
+    <string name="reticker_title">reTicker</string>
+    <string name="reticker_summary">Nahraďte upozornění na upozornění tenkou a méně invazivní verzí přepracovaného tickeru</string>
+    <string name="reticker_colored_title">Použijte barevné pozadí aplikace</string>
+    <string name="reticker_colored_summary">Nahraďte barvu pozadí reTicker pomocí hlavní barvy oznamovací aplikace</string>
+    <!-- Volume Steps Fragment -->
+    <string name="volume_steps_fragment_title">Kroky hlasitosti</string>
+    <string name="volume_steps_summary">Přizpůsobte kroky hlasitosti</string>
+    <string name="volume_steps_alarm_title">Kroky hlasitosti: Alarm</string>
+    <string name="volume_steps_dtmf_title">Kroky hlasitosti: DTMF</string>
+    <string name="volume_steps_music_title">Kroky hlasitosti: Média</string>
+    <string name="volume_steps_notification_title">Kroky hlasitosti: Upozornění</string>
+    <string name="volume_steps_ring_title">Kroky hlasitosti: Vyzvánění</string>
+    <string name="volume_steps_system_title">Kroky hlasitosti: Systém</string>
+    <string name="volume_steps_voice_call_title">Kroky hlasitosti: Hlasový hovor</string>
+    <string name="volume_steps_reset">Resetovat</string>
+    <!-- Black theme for dark mode -->
+    <string name="black_bg_title">Čistě černá</string>
+    <string name="black_bg_summary">Čistě černé pozadí pro tmavé téma</string>
+    <!-- Monet settings -->
+    <string name="monet_settings_title">Nastavení motivu</string>
+    <string name="monet_settings_sammary">Několik dalších nastavení pro přizpůsobení monet engine</string>
+    <string name="theme_style_title">Styl motivu</string>
+    <string name="theme_style_tonal_spot">Tonální bod (výchozí)</string>
+    <string name="theme_style_vibrant">Vibrující</string>
+    <string name="theme_style_expressive">Expresivní</string>
+    <string name="theme_style_spritz">Spritz</string>
+    <string name="theme_style_rainbow">Duha</string>
+    <string name="theme_style_fruit_salad">Ovocný salát</string>
+    <string name="theme_style_muted">Ztlumeno</string>
+    <string name="theme_style_content">Obsah</string>
+    <string name="color_source_title">Zdroj barvy</string>
+    <string name="color_source_both">Oba (výchozí)</string>
+    <string name="color_source_home">Domácí tapety</string>
+    <string name="color_source_lock">Zamknout tapetu</string>
+    <string name="color_source_preset">Přednastavení</string>
+    <string name="accent_color_title">Barva zvýraznění</string>
+    <string name="accent_color_summary">Přepsat výchozí barvu zvýraznění</string>
+    <string name="accent_background_title">Akcent pozadí</string>
+    <string name="accent_background_summary">Vyberte jinou akcentní barvu pozadí</string>
+    <string name="bg_color_title">Barva pozadí</string>
+    <string name="bg_color_summary">Přepsat výchozí barvu zvýraznění pozadí</string>
+    <string name="luminance_factor_title">Jas</string>
+    <string name="luminance_factor_summary">Vyšší hodnoty vytvářejí jasnější barvy</string>
+    <string name="chroma_factor_title">Chroma</string>
+    <string name="chroma_factor_summary">Vyšší hodnoty vytvářejí silnější barvy</string>
+    <string name="tint_background_title">Odstín pozadí</string>
+    <string name="tint_background_summary">Výběr Luminance a Chroma ovlivní také barvy pozadí</string>
+    <!-- AOD Schedule -->
+    <string name="always_on_display_schedule_title">Vždy na displeji plánu</string>
+    <string name="always_on_display_schedule_sunset">Západ slunce</string>
+    <string name="always_on_display_schedule_sunrise">svítání</string>
+    <string name="always_on_display_schedule_mixed_sunset">Zapne se od západu slunce do času</string>
+    <string name="always_on_display_schedule_mixed_sunrise">Zapíná se od času do východu slunce</string>
+    <!-- Force LTE_CA -->
+    <string name="force_lte_ca">Force LTE CA</string>
+    <string name="force_lte_ca_summary">Vynucení agregace operátorů LTE</string>
+    <!-- Swap buttons in 3 buttons gestures -->
+    <string name="navbar_invert_layout_title">Invertování rozvržení navigačního panelu</string>
+    <string name="navbar_invert_info">Výměna tlačítek \"Zpět\" a \"Poslední\" na navigačním panelu</string>
+    <!-- 60hz Battery Saver Toggle -->
+    <string name="battery_saver_refresh_rate_title">Snížení obnovovací frekvence</string>
+    <string name="battery_saver_refresh_rate_summary">Použití obnovovací frekvence obrazovky 60 Hz pro úsporu energie při zapnutém spořiči baterie</string>
+    <!-- Data usage info in QS footer -->
+    <string name="qs_footer_datausage_title">Denní využití dat v zápatí QS</string>
+    <string name="qs_footer_datausage_summary">Zobrazte denní souhrn využití dat v zápatí rychlého nastavení</string>
+    <!-- Screen resolution -->
+    <string name="custom_screen_resolution_title">Vlastní rozlišení obrazovky</string>
+</resources>

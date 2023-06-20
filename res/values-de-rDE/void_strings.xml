@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+     Copyright (C) 2022-2023 VoidUI
+     SPDX-License-Identifier: Apache-2.0
+-->
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <!-- About device screen, VoidUI Release Version -->
+    <string name="voidui_release_version">VoidUI Release Version</string>
+    <!-- VoidUI Maintainer -->
+    <string name="VoidUI_maintainer">Gerätebetreuer</string>
+    <!-- Immersive Navigation -->
+    <string name="gesture_navbar_category_title">Navigationsleiste</string>
+    <string name="immersive_navigation_title">Immersive Navigation</string>
+    <string name="immersive_navigation_summary">Gestenpille und Navigationsleiste ausblenden.</string>
+    <!-- App details: open play store link if app is user installed -->
+    <string name="app_play_store">Google Play</string>
+    <!-- General -->
+    <string name="copied_to_clipboard">In die Zwischenablage kopiert</string>
+    <string name="longpress_to_clipboard">Zum Kopieren lang drücken</string>
+    <!-- Wi-Fi Icon Standard -->
+    <string name="show_wifi_standard_icon_title">Wi-Fi-Symbol anzeigen</string>
+    <string name="show_wifi_standard_icon_summary">Wi-Fi-Typ in der Wi-Fi-Signalanzeige anzeigen</string>
+    <!-- Ignore window secure -->
+    <string name="ignore_window_secure_title">Flagge für sicheres Fenster ignorieren</string>
+    <string name="ignore_window_secure_summary">Entfernen Sie die Beschränkungen für Screenshots und Bildschirmaufzeichnungen für alle Anwendungen. Dies kann in manchen Fällen praktisch sein, kann aber zu Lecks in der Privatsphäre führen.</string>
+    <!-- Vibration patterns -->
+    <string name="vibration_pattern_title">Rufton-Vibrationsmuster</string>
+    <string name="pattern_dzzz_dzzz">dzzz-dzzz</string>
+    <string name="pattern_dzzz_da">dzzz-da</string>
+    <string name="pattern_mm_mm_mm">mm-mm-mm</string>
+    <string name="pattern_da_da_dzzz">da-da-dzzz</string>
+    <string name="pattern_da_dzzz_da">da-dzzz-da</string>
+    <string name="pattern_custom">Benutzerdefiniert</string>
+    <string name="custom_vibration_pattern_title">Benutzerdefiniertes Muster</string>
+    <string name="custom_vibration_pattern_summary">Festlegen eines benutzerdefinierten Vibrationsmusters</string>
+    <!-- Notch: Full screen apps -->
+    <string name="display_cutout_force_fullscreen_title">Vollbild Apps</string>
+    <string name="display_cutout_force_fullscreen_summary">Apps zwingen, die Notch zu ignorieren</string>
+    <string name="search">Suchen</string>
+    <string name="search_apps">Apps durchsuchen</string>
+    <!-- Per-app volume control -->
+    <string name="app_volume">App-Volumen</string>
+    <string name="app_volume_title">Pro-App-Lautstärkeregelung</string>
+    <string name="app_volume_summary">Einstellen unterschiedlicher Lautstärken für jede Anwendung möglich</string>
+    <!-- Game Space -->
+    <string name="game_space_title">Spielmodus</string>
+    <string name="game_space_summary">Spielerlebnis verbessern</string>
+    <!-- reTicker -->
+    <string name="reticker_title">reTicker</string>
+    <string name="reticker_summary">Heads-up-Benachrichtigung durch schlanke und weniger invasive Version des neu gestalteten Tickers ersetzen</string>
+    <string name="reticker_colored_title">Farbigen Hintergrund der App verwenden</string>
+    <string name="reticker_colored_summary">Ersetzt die „reTicker“-Hintergrundfarbe durch die primäre Farbe der benachrichtigenden App</string>
+    <!-- Volume Steps Fragment -->
+    <string name="volume_steps_fragment_title">Lautstärkestufen</string>
+    <string name="volume_steps_summary">Lautstärkestufen anpassen</string>
+    <string name="volume_steps_alarm_title">Lautstärkestufen: Wecker</string>
+    <string name="volume_steps_dtmf_title">Lautstärkestufen: DTMF</string>
+    <string name="volume_steps_music_title">Lautstärkestufen: Medien</string>
+    <string name="volume_steps_notification_title">Lautstärkestufen: Benachrichtigungen</string>
+    <string name="volume_steps_ring_title">Lautstärkestufen: Klingelton</string>
+    <string name="volume_steps_system_title">Lautstärkestufen: System</string>
+    <string name="volume_steps_voice_call_title">Lautstärkestufen: Sprachanruf</string>
+    <string name="volume_steps_reset">Zurücksetzen</string>
+    <!-- Black theme for dark mode -->
+    <string name="black_bg_title">Pures Schwarz</string>
+    <string name="black_bg_summary">Reiner schwarzer Hintergrund für dunkles Thema</string>
+    <!-- Monet settings -->
+    <string name="monet_settings_title">Themeneinstellungen</string>
+    <string name="monet_settings_sammary">Ein paar zusätzliche Einstellungen zum Anpassen der Monet-Engine</string>
+    <string name="theme_style_title">Themenstil</string>
+    <string name="theme_style_tonal_spot">Tonpunkt (Standard)</string>
+    <string name="theme_style_vibrant">Beschwingt</string>
+    <string name="theme_style_expressive">Ausdrucksstark</string>
+    <string name="theme_style_spritz">Spritz</string>
+    <string name="theme_style_rainbow">Regenbogen</string>
+    <string name="theme_style_fruit_salad">Fruchtsalat</string>
+    <string name="theme_style_muted">Stummgeschaltet</string>
+    <string name="theme_style_content">Inhalt</string>
+    <string name="color_source_title">Farbquelle</string>
+    <string name="color_source_both">Beide (Standard)</string>
+    <string name="color_source_home">Startseite Tapete</string>
+    <string name="color_source_lock">Hintergrund unzugänglich machen</string>
+    <string name="color_source_preset">Voreinstellung</string>
+    <string name="accent_color_title">Akzentfarbe</string>
+    <string name="accent_color_summary">Überschreiben Sie die standardmäßige Akzentfarbe</string>
+    <string name="accent_background_title">Akzent-Hintergrund</string>
+    <string name="accent_background_summary">Wählen Sie eine andere Akzentfarbe für den Hintergrund</string>
+    <string name="bg_color_title">Hintergrundfarbe</string>
+    <string name="bg_color_summary">Überschreiben Sie die standardmäßige Hintergrundakzentfarbe</string>
+    <string name="luminance_factor_title">Leuchtdichte</string>
+    <string name="luminance_factor_summary">Höhere Werte erzeugen hellere Farben</string>
+    <string name="chroma_factor_title">Chroma</string>
+    <string name="chroma_factor_summary">Höhere Werte erzeugen kräftigere Farben</string>
+    <string name="tint_background_title">Hintergrund färben</string>
+    <string name="tint_background_summary">Lassen Sie die Luminanz- und Chroma-Auswahl auch die Hintergrundfarben beeinflussen</string>
+    <!-- AOD Schedule -->
+    <string name="always_on_display_schedule_title">Immer auf Anzeigeplan</string>
+    <string name="always_on_display_schedule_sunset">Sonnenuntergang</string>
+    <string name="always_on_display_schedule_sunrise">Sonnenaufgang</string>
+    <string name="always_on_display_schedule_mixed_sunset">Schaltet sich von Sonnenuntergang bis zu einer bestimmten Zeit ein</string>
+    <string name="always_on_display_schedule_mixed_sunrise">Schaltet sich von einer Zeit bis zum Sonnenaufgang ein</string>
+    <!-- Force LTE_CA -->
+    <string name="force_lte_ca">LTE CA erzwingen</string>
+    <string name="force_lte_ca_summary">Erzwingen der LTE-Trägeraggregation</string>
+    <!-- Swap buttons in 3 buttons gestures -->
+    <string name="navbar_invert_layout_title">Umkehrung des Layouts der Navigationsleiste</string>
+    <string name="navbar_invert_info">Vertauschen Sie die Schaltflächen \"Zurück\" und \"Favoriten\" in der Navigationsleiste</string>
+    <!-- 60hz Battery Saver Toggle -->
+    <string name="battery_saver_refresh_rate_title">Aktualisierungsrate verringern</string>
+    <string name="battery_saver_refresh_rate_summary">Verwenden Sie eine Bildwiederholfrequenz von 60 Hz, um Strom zu sparen, wenn der Batterieschutz aktiviert ist.</string>
+    <!-- Data usage info in QS footer -->
+    <string name="qs_footer_datausage_title">Tägliche Datennutzung in QS-Fußzeile</string>
+    <string name="qs_footer_datausage_summary">Zusammenfassung der täglichen Datennutzung in der Fußzeile der Schnelleinstellungen anzeigen</string>
+    <!-- Screen resolution -->
+    <string name="custom_screen_resolution_title">Benutzerdefinierte Bildschirmauflösung</string>
+</resources>

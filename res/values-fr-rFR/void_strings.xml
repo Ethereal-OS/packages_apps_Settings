@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+     Copyright (C) 2022-2023 VoidUI
+     SPDX-License-Identifier: Apache-2.0
+-->
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <!-- About device screen, VoidUI Release Version -->
+    <string name="voidui_release_version">Version de VoidUI</string>
+    <!-- VoidUI Maintainer -->
+    <string name="VoidUI_maintainer">Mainteneurs des appareils</string>
+    <!-- Immersive Navigation -->
+    <string name="gesture_navbar_category_title">Barre de navigation</string>
+    <string name="immersive_navigation_title">Navigation immersive</string>
+    <string name="immersive_navigation_summary">Masquer la pilule des gestes et le remplissage de la barre de navigation.</string>
+    <!-- App details: open play store link if app is user installed -->
+    <string name="app_play_store">Google Play</string>
+    <!-- General -->
+    <string name="copied_to_clipboard">Copié dans le presse-papiers</string>
+    <string name="longpress_to_clipboard">Appuyez longuement pour copier</string>
+    <!-- Wi-Fi Icon Standard -->
+    <string name="show_wifi_standard_icon_title">Afficher l\'icône du type de Wi-Fi</string>
+    <string name="show_wifi_standard_icon_summary">Afficher le type de Wi-Fi dans l\'indicateur de signal Wi-Fi</string>
+    <!-- Ignore window secure -->
+    <string name="ignore_window_secure_title">Ignorer le drapeau de la fenêtre sécurisée</string>
+    <string name="ignore_window_secure_summary">Supprimez les limites de capture et d\'enregistrement d\'écran pour toutes les applications. Cela peut être pratique dans certains cas, mais peut entraîner des fuites dans la vie privée.</string>
+    <!-- Vibration patterns -->
+    <string name="vibration_pattern_title">Modèle de vibration de la sonnerie</string>
+    <string name="pattern_dzzz_dzzz">dzzz-dzzz</string>
+    <string name="pattern_dzzz_da">dzzz-da</string>
+    <string name="pattern_mm_mm_mm">mm-mm-mm</string>
+    <string name="pattern_da_da_dzzz">da-da-dzzz</string>
+    <string name="pattern_da_dzzz_da">da-dzzz-da</string>
+    <string name="pattern_custom">Personnalisé</string>
+    <string name="custom_vibration_pattern_title">Modèle personnalisé</string>
+    <string name="custom_vibration_pattern_summary">Définir un modèle de vibration personnalisé</string>
+    <!-- Notch: Full screen apps -->
+    <string name="display_cutout_force_fullscreen_title">Applications en plein écran</string>
+    <string name="display_cutout_force_fullscreen_summary">Forcer les applications à ignorer l\'espace d\'encoche</string>
+    <string name="search">Rechercher</string>
+    <string name="search_apps">Rechercher des applications</string>
+    <!-- Per-app volume control -->
+    <string name="app_volume">Volume de l\'application</string>
+    <string name="app_volume_title">Contrôle du volume par application</string>
+    <string name="app_volume_summary">Possibilité de définir des niveaux de volume différents pour chaque application</string>
+    <!-- Game Space -->
+    <string name="game_space_title">Espace de jeu</string>
+    <string name="game_space_summary">Améliore votre expérience de jeu</string>
+    <!-- reTicker -->
+    <string name="reticker_title">reTicker</string>
+    <string name="reticker_summary">Remplacer les notifications flottantes par une version mince et moins invasive du ticker redessiné</string>
+    <string name="reticker_colored_title">Utiliser l\'arrière-plan coloré de l\'application</string>
+    <string name="reticker_colored_summary">Remplacer la couleur d\'arrière-plan de reTicker par la couleur principale de l\'application de notification</string>
+    <!-- Volume Steps Fragment -->
+    <string name="volume_steps_fragment_title">Niveaux du volume</string>
+    <string name="volume_steps_summary">Personnaliser les niveaux de volume</string>
+    <string name="volume_steps_alarm_title">Niveaux du volume : Alarme</string>
+    <string name="volume_steps_dtmf_title">Niveau du volume : DTMF</string>
+    <string name="volume_steps_music_title">Niveau du volume : Médias</string>
+    <string name="volume_steps_notification_title">Niveaux du volume : Notification</string>
+    <string name="volume_steps_ring_title">Niveaux du volume : Sonnerie</string>
+    <string name="volume_steps_system_title">Niveaux du volume : Système</string>
+    <string name="volume_steps_voice_call_title">Niveaux du volume : Appel Vocal</string>
+    <string name="volume_steps_reset">Réinitialiser</string>
+    <!-- Black theme for dark mode -->
+    <string name="black_bg_title">Noir pur</string>
+    <string name="black_bg_summary">Fond noir pur pour un thème sombre</string>
+    <!-- Monet settings -->
+    <string name="monet_settings_title">Paramètres de thème</string>
+    <string name="monet_settings_sammary">Quelques paramètres supplémentaires pour personnaliser le moteur de monet</string>
+    <string name="theme_style_title">Style de thème</string>
+    <string name="theme_style_tonal_spot">Tache tonale (par défaut)</string>
+    <string name="theme_style_vibrant">Vibrant</string>
+    <string name="theme_style_expressive">Expressif</string>
+    <string name="theme_style_spritz">Spritz</string>
+    <string name="theme_style_rainbow">Arc-en-ciel</string>
+    <string name="theme_style_fruit_salad">Macédoine</string>
+    <string name="theme_style_muted">En sourdine</string>
+    <string name="theme_style_content">Contenu</string>
+    <string name="color_source_title">Source de couleur</string>
+    <string name="color_source_both">Les deux (par défaut)</string>
+    <string name="color_source_home">Fond d\'écran de la maison</string>
+    <string name="color_source_lock">Fond d\'écran de verrouillage</string>
+    <string name="color_source_preset">Préréglé</string>
+    <string name="accent_color_title">Couleur d\'accentuation</string>
+    <string name="accent_color_summary">Remplacer la couleur d\'accentuation par défaut</string>
+    <string name="accent_background_title">Arrière-plan accentué</string>
+    <string name="accent_background_summary">Choisissez une couleur d\'accentuation différente pour l\'arrière-plan</string>
+    <string name="bg_color_title">Couleur de l\'arrière plan</string>
+    <string name="bg_color_summary">Remplacer la couleur d\'accent d\'arrière-plan par défaut</string>
+    <string name="luminance_factor_title">Luminance</string>
+    <string name="luminance_factor_summary">Des valeurs plus élevées produisent des couleurs plus vives</string>
+    <string name="chroma_factor_title">Chroma</string>
+    <string name="chroma_factor_summary">Des valeurs plus élevées produisent des couleurs plus fortes</string>
+    <string name="tint_background_title">Teinte de fond</string>
+    <string name="tint_background_summary">Faire en sorte que la sélection de luminance et de chrominance affecte également les couleurs d\'arrière-plan</string>
+    <!-- AOD Schedule -->
+    <string name="always_on_display_schedule_title">Toujours sur le calendrier d\'affichage</string>
+    <string name="always_on_display_schedule_sunset">Coucher de soleil</string>
+    <string name="always_on_display_schedule_sunrise">Lever du soleil</string>
+    <string name="always_on_display_schedule_mixed_sunset">S\'allume du coucher du soleil jusqu\'à une heure</string>
+    <string name="always_on_display_schedule_mixed_sunrise">S\'allume à partir d\'une heure jusqu\'au lever du soleil</string>
+    <!-- Force LTE_CA -->
+    <string name="force_lte_ca">Force LTE CA</string>
+    <string name="force_lte_ca_summary">Forcer l\'agrégation de porteuses LTE à fonctionner</string>
+    <!-- Swap buttons in 3 buttons gestures -->
+    <string name="navbar_invert_layout_title">Inverser la disposition de la barre de navigation</string>
+    <string name="navbar_invert_info">Intervertir les boutons \"Back\" et \"Recents\" de la barre de navigation</string>
+    <!-- 60hz Battery Saver Toggle -->
+    <string name="battery_saver_refresh_rate_title">Réduire le taux de rafraîchissement</string>
+    <string name="battery_saver_refresh_rate_summary">Utiliser un taux de rafraîchissement de l\'écran de 60 Hz pour économiser de l\'énergie lorsque l\'économiseur de batterie est activé</string>
+    <!-- Data usage info in QS footer -->
+    <string name="qs_footer_datausage_title">Utilisation quotidienne des données dans le pied de page QS</string>
+    <string name="qs_footer_datausage_summary">Afficher le résumé de l\'utilisation quotidienne des données dans le pied de page des paramètres rapides</string>
+    <!-- Screen resolution -->
+    <string name="custom_screen_resolution_title">Résolution d\'écran personnalisée</string>
+</resources>

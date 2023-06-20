@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+     Copyright (C) 2022-2023 VoidUI
+     SPDX-License-Identifier: Apache-2.0
+-->
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <!-- About device screen, VoidUI Release Version -->
+    <string name="voidui_release_version">إصدار نسخة VoidUI</string>
+    <!-- VoidUI Maintainer -->
+    <string name="VoidUI_maintainer">مشرف الجهاز</string>
+    <!-- Immersive Navigation -->
+    <string name="gesture_navbar_category_title">شريط التنقل</string>
+    <string name="immersive_navigation_title">إخفاء عناصر التنقل</string>
+    <string name="immersive_navigation_summary">إخفاء حبة الإيماءات وحواجز شريط التنقل.</string>
+    <!-- App details: open play store link if app is user installed -->
+    <string name="app_play_store">متجر جوجل بلاي</string>
+    <!-- General -->
+    <string name="copied_to_clipboard">نسخ إلى الحافظة</string>
+    <string name="longpress_to_clipboard">اضغط مطولاً للنسخ</string>
+    <!-- Wi-Fi Icon Standard -->
+    <string name="show_wifi_standard_icon_title">إظهار رمز نوع Wi-Fi</string>
+    <string name="show_wifi_standard_icon_summary">إظهار نوع Wi-Fi في مؤشر إشارة Wi-Fi</string>
+    <!-- Ignore window secure -->
+    <string name="ignore_window_secure_title">تجاهل علم النافذة الآمنة</string>
+    <string name="ignore_window_secure_summary">إزالة لقطة الشاشة وحدود تسجيل الشاشة لجميع التطبيقات. يمكن أن يكون هذا مناسبًا في بعض الحالات ولكن قد يؤدي إلى تسرب الخصوصية.</string>
+    <!-- Vibration patterns -->
+    <string name="vibration_pattern_title">نمط اهتزاز نغمة الرنين</string>
+    <string name="pattern_dzzz_dzzz">دززز-دززز</string>
+    <string name="pattern_dzzz_da">دززز-دا</string>
+    <string name="pattern_mm_mm_mm">مم-مم-مم</string>
+    <string name="pattern_da_da_dzzz">دا-دا-دززز</string>
+    <string name="pattern_da_dzzz_da">دا-دززز-دا</string>
+    <string name="pattern_custom">مخصص</string>
+    <string name="custom_vibration_pattern_title">نمط مخصص</string>
+    <string name="custom_vibration_pattern_summary">تعيين نمط اهتزاز مخصص</string>
+    <!-- Notch: Full screen apps -->
+    <string name="display_cutout_force_fullscreen_title">ملء الشاشة</string>
+    <string name="display_cutout_force_fullscreen_summary">تجاهل ثقب الكاميرا</string>
+    <string name="search">البحث</string>
+    <string name="search_apps">البحث عن التطبيقات</string>
+    <!-- Per-app volume control -->
+    <string name="app_volume">حجم التطبيق</string>
+    <string name="app_volume_title">التحكم في الصوت لكل تطبيق</string>
+    <string name="app_volume_summary">السماح بتعيين مستويات صوت مختلفة لكل تطبيق</string>
+    <!-- Game Space -->
+    <string name="game_space_title">مساحة الألعاب</string>
+    <string name="game_space_summary">عزز تجرِبة اللعب الخاصة بك</string>
+    <!-- reTicker -->
+    <string name="reticker_title">الإشعارات الوجيزة</string>
+    <string name="reticker_summary">استبدال الإشعارات العلوية المنبثقة بنسخه أصغر واقل تداخلا</string>
+    <string name="reticker_colored_title">استخدام خلفية ملونة وفقا للتطبيق</string>
+    <string name="reticker_colored_summary">استبدال لون خلفية الإشعارات الوجيزة بلون إشعار التطبيق الأصلي</string>
+    <!-- Volume Steps Fragment -->
+    <string name="volume_steps_fragment_title">درجات الصوت</string>
+    <string name="volume_steps_summary">تعديل درجات الصوت</string>
+    <string name="volume_steps_alarm_title">درجات الصوت: المنبه</string>
+    <string name="volume_steps_dtmf_title">درجات الصوت: DTMF</string>
+    <string name="volume_steps_music_title">درجات الصوت: الوسائط</string>
+    <string name="volume_steps_notification_title">درجات الصوت: الإشعارات</string>
+    <string name="volume_steps_ring_title">درجات الصوت: الرنين</string>
+    <string name="volume_steps_system_title">درجات الصوت: النظام</string>
+    <string name="volume_steps_voice_call_title">درجات الصوت: المكالمات</string>
+    <string name="volume_steps_reset">إعادة تعيين</string>
+    <!-- Black theme for dark mode -->
+    <string name="black_bg_title">اسود نقي</string>
+    <string name="black_bg_summary">خلفية سوداء نقية للسمة المظلمة</string>
+    <!-- Monet settings -->
+    <string name="monet_settings_title">إعدادات السمات</string>
+    <string name="monet_settings_sammary">بعض الإعدادات الإضافية لتخصيص محرك الألوان</string>
+    <string name="theme_style_title">نوع السمة</string>
+    <string name="theme_style_tonal_spot">بقعة لونية (افتراضي)</string>
+    <string name="theme_style_vibrant">نابض بالحياة</string>
+    <string name="theme_style_expressive">معبر</string>
+    <string name="theme_style_spritz">رش</string>
+    <string name="theme_style_rainbow">قوس المطر</string>
+    <string name="theme_style_fruit_salad">سلطة فواكه</string>
+    <string name="theme_style_muted">مكتوم</string>
+    <string name="theme_style_content">محتوى</string>
+    <string name="color_source_title">مصدر اللون</string>
+    <string name="color_source_both">كلاهما (افتراضي)</string>
+    <string name="color_source_home">خلفية الشاشة الرئيسية</string>
+    <string name="color_source_lock">خلفية شاشة القفل</string>
+    <string name="color_source_preset">المعد مسبقا</string>
+    <string name="accent_color_title">لون التفاصيل</string>
+    <string name="accent_color_summary">تجاوز لون التفاصيل الافتراضي</string>
+    <string name="accent_background_title">تمييز الخلفية</string>
+    <string name="accent_background_summary">اختر لون تفاصيل مختلف للخلفية</string>
+    <string name="bg_color_title">لون الخلفية</string>
+    <string name="bg_color_summary">تجاوز لون التفاصيل الخلفية الافتراضي</string>
+    <string name="luminance_factor_title">الانارة</string>
+    <string name="luminance_factor_summary">القيم الأعلى تنتج ألوانًا أكثر إشراقًا</string>
+    <string name="chroma_factor_title">كروما</string>
+    <string name="chroma_factor_summary">القيم الأعلى تنتج ألوانًا أقوى</string>
+    <string name="tint_background_title">لون الخلفية</string>
+    <string name="tint_background_summary">اجعل تحديد Luminance و Chroma يؤثر على ألوان الخلفية أيضًا</string>
+    <!-- AOD Schedule -->
+    <string name="always_on_display_schedule_title">دائما على جدول العرض</string>
+    <string name="always_on_display_schedule_sunset">غروب</string>
+    <string name="always_on_display_schedule_sunrise">شروق الشمس</string>
+    <string name="always_on_display_schedule_mixed_sunset">يتحول من غروب الشمس حتى وقت</string>
+    <string name="always_on_display_schedule_mixed_sunrise">يعمل من وقت حتى شروق الشمس</string>
+    <!-- Force LTE_CA -->
+    <string name="force_lte_ca">فرض LTE CA</string>
+    <string name="force_lte_ca_summary">إجبار تجميع الناقل LTE على العمل</string>
+    <!-- Swap buttons in 3 buttons gestures -->
+    <string name="navbar_invert_layout_title">عكس تخطيط شريط التنقل</string>
+    <string name="navbar_invert_info">مبادلة أزرار \"الرجوع\" و \"التطبيقات الحديثة\" على شريط التنقل</string>
+    <!-- 60hz Battery Saver Toggle -->
+    <string name="battery_saver_refresh_rate_title">تقليل معدل التحديث</string>
+    <string name="battery_saver_refresh_rate_summary">استخدم معدل تحديث الشاشة 60 هرتز لتوفير الطاقة عند تشغيل \"توفير شحن البطارية\"</string>
+    <!-- Data usage info in QS footer -->
+    <string name="qs_footer_datausage_title">أستخدام البيانات اليومي في القائمة المنسدلة</string>
+    <string name="qs_footer_datausage_summary">إظهار كَمية البيانات المستخدمة في القائمة المنسدلة</string>
+    <!-- Screen resolution -->
+    <string name="custom_screen_resolution_title">دقة الشاشة المخصصة</string>
+</resources>

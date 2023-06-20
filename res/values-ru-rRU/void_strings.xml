@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+     Copyright (C) 2022-2023 VoidUI
+     SPDX-License-Identifier: Apache-2.0
+-->
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <!-- About device screen, VoidUI Release Version -->
+    <string name="voidui_release_version">Версия Релиза VoidUI</string>
+    <!-- VoidUI Maintainer -->
+    <string name="VoidUI_maintainer">Мейнтейнер устройства</string>
+    <!-- Immersive Navigation -->
+    <string name="gesture_navbar_category_title">Панель навигации</string>
+    <string name="immersive_navigation_title">Полноэкранная навигация</string>
+    <string name="immersive_navigation_summary">Скрыть полоску жестов и отступ панели навигации.</string>
+    <!-- App details: open play store link if app is user installed -->
+    <string name="app_play_store">Google Play</string>
+    <!-- General -->
+    <string name="copied_to_clipboard">Скопировано в буфер обмена</string>
+    <string name="longpress_to_clipboard">Удерживайте для копирования</string>
+    <!-- Wi-Fi Icon Standard -->
+    <string name="show_wifi_standard_icon_title">Показывать значок стандарта Wi-Fi</string>
+    <string name="show_wifi_standard_icon_summary">Отображение стандарта Wi-Fi в индикаторе сигнала Wi-Fi</string>
+    <!-- Ignore window secure -->
+    <string name="ignore_window_secure_title">Игнорировать флаг безопасности окон</string>
+    <string name="ignore_window_secure_summary">Снимите ограничения на снимки экрана и запись экрана для всех приложений. Это может быть удобно в некоторых случаях, но может привести к утечке конфиденциальной информации.</string>
+    <!-- Vibration patterns -->
+    <string name="vibration_pattern_title">Вибрация мелодии звонка</string>
+    <string name="pattern_dzzz_dzzz">дззз-дззз</string>
+    <string name="pattern_dzzz_da">дззз-да</string>
+    <string name="pattern_mm_mm_mm">мм-мм-мм</string>
+    <string name="pattern_da_da_dzzz">да-да-дззз</string>
+    <string name="pattern_da_dzzz_da">да-дззз-да</string>
+    <string name="pattern_custom">Настраиваемый</string>
+    <string name="custom_vibration_pattern_title">Свой шаблон</string>
+    <string name="custom_vibration_pattern_summary">Установить свой шаблон вибрации</string>
+    <!-- Notch: Full screen apps -->
+    <string name="display_cutout_force_fullscreen_title">Полноэкранные приложения</string>
+    <string name="display_cutout_force_fullscreen_summary">Принудительное игнорирование выреза экрана</string>
+    <string name="search">Поиск</string>
+    <string name="search_apps">Поиск приложений</string>
+    <!-- Per-app volume control -->
+    <string name="app_volume">Громкость приложений</string>
+    <string name="app_volume_title">Регулировка громкости для каждого приложения</string>
+    <string name="app_volume_summary">Позволяет устанавливать разные уровни громкости для каждого приложения</string>
+    <!-- Game Space -->
+    <string name="game_space_title">Игровое пространство</string>
+    <string name="game_space_summary">Улучшите свой игровой опыт</string>
+    <!-- reTicker -->
+    <string name="reticker_title">Новый стиль уведомлений</string>
+    <string name="reticker_summary">Замените всплывающие уведомления на переработанную, более тонкую и менее агрессивную версию</string>
+    <string name="reticker_colored_title">Использовать цвет приложений для фона</string>
+    <string name="reticker_colored_summary">Цвет фона уведомления будет заменён основным цветом приложения</string>
+    <!-- Volume Steps Fragment -->
+    <string name="volume_steps_fragment_title">Уровни громкости</string>
+    <string name="volume_steps_summary">Настройка количества шагов в панели громкости</string>
+    <string name="volume_steps_alarm_title">Будильник</string>
+    <string name="volume_steps_dtmf_title">Набор номера</string>
+    <string name="volume_steps_music_title">Мультимедиа</string>
+    <string name="volume_steps_notification_title">Уведомления</string>
+    <string name="volume_steps_ring_title">Звонок</string>
+    <string name="volume_steps_system_title">Система</string>
+    <string name="volume_steps_voice_call_title">Голосовой вызов</string>
+    <string name="volume_steps_reset">Сброс</string>
+    <!-- Black theme for dark mode -->
+    <string name="black_bg_title">Совершенно чёрный</string>
+    <string name="black_bg_summary">Чистый черный фон для темной темы</string>
+    <!-- Monet settings -->
+    <string name="monet_settings_title">Настройки темы</string>
+    <string name="monet_settings_sammary">Несколько дополнительных настроек для настройки движка Monet</string>
+    <string name="theme_style_title">Стиль темы</string>
+    <string name="theme_style_tonal_spot">Тональное пятно (по умолчанию)</string>
+    <string name="theme_style_vibrant">Яркий</string>
+    <string name="theme_style_expressive">Выразительный</string>
+    <string name="theme_style_spritz">Брызги</string>
+    <string name="theme_style_rainbow">Радуга</string>
+    <string name="theme_style_fruit_salad">Фруктовый салат</string>
+    <string name="theme_style_muted">Приглушенная</string>
+    <string name="theme_style_content">Контент</string>
+    <string name="color_source_title">Источник цвета</string>
+    <string name="color_source_both">Оба (по умолчанию)</string>
+    <string name="color_source_home">Обои рабочего стола</string>
+    <string name="color_source_lock">Обои экрана блокировки</string>
+    <string name="color_source_preset">Ручная настройка</string>
+    <string name="accent_color_title">Цвет акцента</string>
+    <string name="accent_color_summary">Изменить цвет акцента по умолчанию</string>
+    <string name="accent_background_title">Фоновый акцент</string>
+    <string name="accent_background_summary">Выберите другой акцентный цвет для фона</string>
+    <string name="bg_color_title">Цвет фона</string>
+    <string name="bg_color_summary">Переопределить цвет акцента фона по умолчанию</string>
+    <string name="luminance_factor_title">Яркость</string>
+    <string name="luminance_factor_summary">Более высокие значения дают более яркие цвета</string>
+    <string name="chroma_factor_title">Коэффициент цветности</string>
+    <string name="chroma_factor_summary">Более высокие значения дают более насыщенные цвета</string>
+    <string name="tint_background_title">Оттенок фона</string>
+    <string name="tint_background_summary">Выбор яркости и цветности, позволяет также влиять на цвета фона</string>
+    <!-- AOD Schedule -->
+    <string name="always_on_display_schedule_title">Расписание работы Всегда включённого экрана</string>
+    <string name="always_on_display_schedule_sunset">Закат</string>
+    <string name="always_on_display_schedule_sunrise">Восход</string>
+    <string name="always_on_display_schedule_mixed_sunset">Включается от заката до определенного времени</string>
+    <string name="always_on_display_schedule_mixed_sunrise">Включается от заданного времени до рассвета</string>
+    <!-- Force LTE_CA -->
+    <string name="force_lte_ca">Принудительный LTE CA</string>
+    <string name="force_lte_ca_summary">Принудительное включение LTE агрегации</string>
+    <!-- Swap buttons in 3 buttons gestures -->
+    <string name="navbar_invert_layout_title">Инвертировать раскладку панели навигации</string>
+    <string name="navbar_invert_info">Поменять местами кнопки \"Назад\" и \"Недавние\" на панели навигации</string>
+    <!-- 60hz Battery Saver Toggle -->
+    <string name="battery_saver_refresh_rate_title">Уменьшить частоту обновления экрана</string>
+    <string name="battery_saver_refresh_rate_summary">Использовать частоту обновления экрана 60 Гц в режиме экономии заряда батареи</string>
+    <!-- Data usage info in QS footer -->
+    <string name="qs_footer_datausage_title">Ежедневный трафик в нижнем колонтитуле QS</string>
+    <string name="qs_footer_datausage_summary">Показывать статистику о ежедневном трафике в нижнем колонтитуле быстрых настроек</string>
+    <!-- Screen resolution -->
+    <string name="custom_screen_resolution_title">Пользовательское разрешение экрана</string>
+</resources>

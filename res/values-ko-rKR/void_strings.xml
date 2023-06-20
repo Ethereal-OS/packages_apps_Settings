@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+     Copyright (C) 2022-2023 VoidUI
+     SPDX-License-Identifier: Apache-2.0
+-->
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <!-- About device screen, VoidUI Release Version -->
+    <string name="voidui_release_version">VoidUI 릴리스 버전</string>
+    <!-- VoidUI Maintainer -->
+    <string name="VoidUI_maintainer">장치 유지관리자</string>
+    <!-- Immersive Navigation -->
+    <string name="gesture_navbar_category_title">탐색 메뉴</string>
+    <string name="immersive_navigation_title">몰입형 내비게이션</string>
+    <string name="immersive_navigation_summary">제스처 알약과 내비게이션 바 패딩을 숨깁니다.</string>
+    <!-- App details: open play store link if app is user installed -->
+    <string name="app_play_store">구글 플레이</string>
+    <!-- General -->
+    <string name="copied_to_clipboard">클립보드에 복사됨</string>
+    <string name="longpress_to_clipboard">복사하려면 길게 누르세요.</string>
+    <!-- Wi-Fi Icon Standard -->
+    <string name="show_wifi_standard_icon_title">Wi-Fi 유형 아이콘 표시</string>
+    <string name="show_wifi_standard_icon_summary">Wi-Fi 신호 표시기에 Wi-Fi 유형 표시</string>
+    <!-- Ignore window secure -->
+    <string name="ignore_window_secure_title">보안 창 플래그 무시</string>
+    <string name="ignore_window_secure_summary">모든 앱에 대한 스크린샷 및 스크린샷 제한을 제거합니다. 이것은 경우에 따라 편리할 수 있지만 개인 정보 유출로 이어질 수 있습니다.</string>
+    <!-- Vibration patterns -->
+    <string name="vibration_pattern_title">벨소리 진동 패턴</string>
+    <string name="pattern_dzzz_dzzz">dzzz-dzzz</string>
+    <string name="pattern_dzzz_da">dzzz-da</string>
+    <string name="pattern_mm_mm_mm">mm-mm-mm</string>
+    <string name="pattern_da_da_dzzz">da-da-dzzz</string>
+    <string name="pattern_da_dzzz_da">da-dzzz-da</string>
+    <string name="pattern_custom">관습</string>
+    <string name="custom_vibration_pattern_title">커스텀 패턴</string>
+    <string name="custom_vibration_pattern_summary">사용자 지정 진동 패턴 설정</string>
+    <!-- Notch: Full screen apps -->
+    <string name="display_cutout_force_fullscreen_title">전체 화면 앱</string>
+    <string name="display_cutout_force_fullscreen_summary">앱에서 노치 공간을 무시하도록 강제합니다</string>
+    <string name="search">서치</string>
+    <string name="search_apps">앱 검색</string>
+    <!-- Per-app volume control -->
+    <string name="app_volume">앱 볼륨</string>
+    <string name="app_volume_title">앱별 볼륨 조절</string>
+    <string name="app_volume_summary">각 앱에 대해 다른 볼륨 수준을 설정하도록 허용</string>
+    <!-- Game Space -->
+    <string name="game_space_title">게임 공간</string>
+    <string name="game_space_summary">게임 환경 개선</string>
+    <!-- reTicker -->
+    <string name="reticker_title">reTicker</string>
+    <string name="reticker_summary">재설계된 티커의 슬림하고 덜 침습적인 버전으로 헤드업 알림 대체</string>
+    <string name="reticker_colored_title">앱 색상 배경 사용</string>
+    <string name="reticker_colored_summary">알림 앱 기본 색상을 사용하여 reTicker 배경색 바꾸기</string>
+    <!-- Volume Steps Fragment -->
+    <string name="volume_steps_fragment_title">볼륨 단계</string>
+    <string name="volume_steps_summary">볼륨 단계 사용자 지정</string>
+    <string name="volume_steps_alarm_title">볼륨 단계: 알람</string>
+    <string name="volume_steps_dtmf_title">볼륨 단계: DTMF</string>
+    <string name="volume_steps_music_title">볼륨 단계: 미디어</string>
+    <string name="volume_steps_notification_title">볼륨 단계: 알림</string>
+    <string name="volume_steps_ring_title">볼륨 단계: 링거</string>
+    <string name="volume_steps_system_title">볼륨 단계: 시스템</string>
+    <string name="volume_steps_voice_call_title">볼륨 단계: 음성 통화</string>
+    <string name="volume_steps_reset">다시 맞추다</string>
+    <!-- Black theme for dark mode -->
+    <string name="black_bg_title">퓨어 블랙</string>
+    <string name="black_bg_summary">어두운 테마를 위한 순수한 검정색 배경</string>
+    <!-- Monet settings -->
+    <string name="monet_settings_title">테마 설정</string>
+    <string name="monet_settings_sammary">모네 엔진을 사용자 지정하기 위한 몇 가지 추가 설정</string>
+    <string name="theme_style_title">테마 스타일</string>
+    <string name="theme_style_tonal_spot">톤 스팟(기본값)</string>
+    <string name="theme_style_vibrant">떠는</string>
+    <string name="theme_style_expressive">표현력</string>
+    <string name="theme_style_spritz">분출</string>
+    <string name="theme_style_rainbow">무지개</string>
+    <string name="theme_style_fruit_salad">과일 샐러드</string>
+    <string name="theme_style_muted">음소거됨</string>
+    <string name="theme_style_content">콘텐츠</string>
+    <string name="color_source_title">색상 소스</string>
+    <string name="color_source_both">모두(기본값)</string>
+    <string name="color_source_home">홈 벽지</string>
+    <string name="color_source_lock">배경화면 잠금</string>
+    <string name="color_source_preset">프리셋</string>
+    <string name="accent_color_title">악센트 색상</string>
+    <string name="accent_color_summary">기본 강조 색상 재정의</string>
+    <string name="accent_background_title">악센트 배경</string>
+    <string name="accent_background_summary">배경에 대해 다른 강조 색상을 선택하십시오.</string>
+    <string name="bg_color_title">배경색</string>
+    <string name="bg_color_summary">기본 배경 강조 색상 재정의</string>
+    <string name="luminance_factor_title">휘도</string>
+    <string name="luminance_factor_summary">값이 높을수록 더 밝은 색상이 생성됩니다.</string>
+    <string name="chroma_factor_title">크로마</string>
+    <string name="chroma_factor_summary">값이 높을수록 색상이 강해집니다.</string>
+    <string name="tint_background_title">색조 배경</string>
+    <string name="tint_background_summary">휘도 및 채도 선택이 배경색에도 영향을 미치도록 합니다.</string>
+    <!-- AOD Schedule -->
+    <string name="always_on_display_schedule_title">항상 표시 일정</string>
+    <string name="always_on_display_schedule_sunset">일몰</string>
+    <string name="always_on_display_schedule_sunrise">해돋이</string>
+    <string name="always_on_display_schedule_mixed_sunset">일몰부터 일정 시간까지 켜짐</string>
+    <string name="always_on_display_schedule_mixed_sunrise">일출까지의 시간부터 점등</string>
+    <!-- Force LTE_CA -->
+    <string name="force_lte_ca">강제 LTE CA</string>
+    <string name="force_lte_ca_summary">LTE 통신사 집계 강제 작동</string>
+    <!-- Swap buttons in 3 buttons gestures -->
+    <string name="navbar_invert_layout_title">탐색 모음 레이아웃 반전</string>
+    <string name="navbar_invert_info">탐색 표시줄의 \'뒤로\' 및 \'최근\' 버튼을 바꿉니다.</string>
+    <!-- 60hz Battery Saver Toggle -->
+    <string name="battery_saver_refresh_rate_title">새로 고침 빈도 줄이기</string>
+    <string name="battery_saver_refresh_rate_summary">배터리 세이버가 켜져 있을 때 60Hz 화면 재생률을 사용하여 전원을 절약하세요.</string>
+    <!-- Data usage info in QS footer -->
+    <string name="qs_footer_datausage_title">일별 데이터 사용량 QS 바닥글</string>
+    <string name="qs_footer_datausage_summary">빠른 설정 바닥글에 일별 데이터 사용량 요약 표시</string>
+    <!-- Screen resolution -->
+    <string name="custom_screen_resolution_title">사용자 지정 화면 해상도</string>
+</resources>

@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+     Copyright (C) 2022-2023 VoidUI
+     SPDX-License-Identifier: Apache-2.0
+-->
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <!-- About device screen, VoidUI Release Version -->
+    <string name="voidui_release_version">VoidUI Sürümü</string>
+    <!-- VoidUI Maintainer -->
+    <string name="VoidUI_maintainer">Cihaz Sorumlusu</string>
+    <!-- Immersive Navigation -->
+    <string name="gesture_navbar_category_title">Gezinti çubuğu</string>
+    <string name="immersive_navigation_title">Tam Ekran Gezinme</string>
+    <string name="immersive_navigation_summary">Gezinme çubuğu ve boşluğunu gizle.</string>
+    <!-- App details: open play store link if app is user installed -->
+    <string name="app_play_store">Google Play</string>
+    <!-- General -->
+    <string name="copied_to_clipboard">Panoya kopyalandı</string>
+    <string name="longpress_to_clipboard">Kopyalamak için basılı tutun</string>
+    <!-- Wi-Fi Icon Standard -->
+    <string name="show_wifi_standard_icon_title">Wi-Fi türü simgesini göster</string>
+    <string name="show_wifi_standard_icon_summary">Wi-Fi sinyali göstergesinde Wi-Fi türünü göster</string>
+    <!-- Ignore window secure -->
+    <string name="ignore_window_secure_title">Güvenli pencere bayrağını yoksay</string>
+    <string name="ignore_window_secure_summary">Tüm uygulamalar için ekran görüntüsü ve ekran kaydı sınırlarını kaldırın. Bu bazı durumlarda kullanışlı olabilir ancak gizlilik sızıntılarına yol açabilir.</string>
+    <!-- Vibration patterns -->
+    <string name="vibration_pattern_title">Zil sesi titreşim modeli</string>
+    <string name="pattern_dzzz_dzzz">dzzz-dzzz</string>
+    <string name="pattern_dzzz_da">dzzz-da</string>
+    <string name="pattern_mm_mm_mm">mm-mm-mm</string>
+    <string name="pattern_da_da_dzzz">da-da-dzzz</string>
+    <string name="pattern_da_dzzz_da">da-dzzz-da</string>
+    <string name="pattern_custom">Özel</string>
+    <string name="custom_vibration_pattern_title">Özel titreşim modeli</string>
+    <string name="custom_vibration_pattern_summary">Özel bir titreşim modeli ayarlayın</string>
+    <!-- Notch: Full screen apps -->
+    <string name="display_cutout_force_fullscreen_title">Tam ekran uygulamaları</string>
+    <string name="display_cutout_force_fullscreen_summary">Uygulamaları çentik alanını yoksaymaya zorla</string>
+    <string name="search">Ara</string>
+    <string name="search_apps">Uygulama ara</string>
+    <!-- Per-app volume control -->
+    <string name="app_volume">Uygulama ses düzeyi</string>
+    <string name="app_volume_title">Uygulamaya özel ses ayarı</string>
+    <string name="app_volume_summary">Her bir uygulama için farklı ses seviyesi ayarlamaya izin ver</string>
+    <!-- Game Space -->
+    <string name="game_space_title">Oyun Alanı</string>
+    <string name="game_space_summary">Oyun deneyiminizi iyileştirin</string>
+    <!-- reTicker -->
+    <string name="reticker_title">reTicker</string>
+    <string name="reticker_summary">Bildirim pencerelerini, bildirim çubuğu yazılarının ince ve daha az göze batan haliyle değiştirin</string>
+    <string name="reticker_colored_title">Uygulama rengine göre arkaplan</string>
+    <string name="reticker_colored_summary">Bildirim uygulaması ana rengini kullanarak reTicker arka plan rengini değiştir</string>
+    <!-- Volume Steps Fragment -->
+    <string name="volume_steps_fragment_title">Ses seviyeleri</string>
+    <string name="volume_steps_summary">Ses seviyelerini özelleştir</string>
+    <string name="volume_steps_alarm_title">Ses seviyeleri: Alarm</string>
+    <string name="volume_steps_dtmf_title">Ses seviyeleri: DMTF</string>
+    <string name="volume_steps_music_title">Ses seviyeleri: Medya</string>
+    <string name="volume_steps_notification_title">Ses seviyeleri: Bildirimler</string>
+    <string name="volume_steps_ring_title">Ses seviyeleri: Zil sesi</string>
+    <string name="volume_steps_system_title">Ses seviyeleri: Sistem</string>
+    <string name="volume_steps_voice_call_title">Ses seviyeleri: Sesli Arama</string>
+    <string name="volume_steps_reset">Sıfırla</string>
+    <!-- Black theme for dark mode -->
+    <string name="black_bg_title">Saf siyah</string>
+    <string name="black_bg_summary">Koyu tema için saf siyah arka plan</string>
+    <!-- Monet settings -->
+    <string name="monet_settings_title">Tema ayarları</string>
+    <string name="monet_settings_sammary">Monet motorunu özelleştirmek için birkaç ekstra ayar</string>
+    <string name="theme_style_title">Tema stili</string>
+    <string name="theme_style_tonal_spot">Ton Noktası (Varsayılan)</string>
+    <string name="theme_style_vibrant">canlı</string>
+    <string name="theme_style_expressive">Etkileyici</string>
+    <string name="theme_style_spritz">Spritz</string>
+    <string name="theme_style_rainbow">Gökkuşağı</string>
+    <string name="theme_style_fruit_salad">Meyve salatası</string>
+    <string name="theme_style_muted">sessize alındı</string>
+    <string name="theme_style_content">İçerik</string>
+    <string name="color_source_title">Renk kaynağı</string>
+    <string name="color_source_both">Her ikisi (Varsayılan)</string>
+    <string name="color_source_home">Ev duvar kağıdı</string>
+    <string name="color_source_lock">Duvar kağıdını kilitle</string>
+    <string name="color_source_preset">ön ayar</string>
+    <string name="accent_color_title">Vurgu Rengi</string>
+    <string name="accent_color_summary">Varsayılan vurgu rengini geçersiz kıl</string>
+    <string name="accent_background_title">Vurgu arka planı</string>
+    <string name="accent_background_summary">Arka plan için farklı bir vurgu rengi seçin</string>
+    <string name="bg_color_title">Arka plan rengi</string>
+    <string name="bg_color_summary">Varsayılan arka plan vurgu rengini geçersiz kıl</string>
+    <string name="luminance_factor_title">parlaklık</string>
+    <string name="luminance_factor_summary">Daha yüksek değerler daha parlak renkler üretir</string>
+    <string name="chroma_factor_title">renk</string>
+    <string name="chroma_factor_summary">Daha yüksek değerler daha güçlü renkler üretir</string>
+    <string name="tint_background_title">Arka Planı Renklendir</string>
+    <string name="tint_background_summary">Parlaklık ve Kroma seçiminin arka plan renklerini de etkilemesini sağlayın</string>
+    <!-- AOD Schedule -->
+    <string name="always_on_display_schedule_title">Her zaman ekran programında</string>
+    <string name="always_on_display_schedule_sunset">Gün batımı</string>
+    <string name="always_on_display_schedule_sunrise">gündoğumu</string>
+    <string name="always_on_display_schedule_mixed_sunset">Gün batımından bir zamana kadar açılır</string>
+    <string name="always_on_display_schedule_mixed_sunrise">Bir zamandan gün doğumuna kadar açılır</string>
+    <!-- Force LTE_CA -->
+    <string name="force_lte_ca">LTE CA\'yı Zorla</string>
+    <string name="force_lte_ca_summary">LTE taşıyıcı toplamayı çalışmaya zorlayın</string>
+    <!-- Swap buttons in 3 buttons gestures -->
+    <string name="navbar_invert_layout_title">Gezinti çubuğu düzenini ters çevirme</string>
+    <string name="navbar_invert_info">Gezinme çubuğundaki \"Geri\" ve \"Son Kullanılanlar\" düğmelerini değiştirin</string>
+    <!-- 60hz Battery Saver Toggle -->
+    <string name="battery_saver_refresh_rate_title">Yenileme hızını azaltın</string>
+    <string name="battery_saver_refresh_rate_summary">Pil Tasarrufu açıkken güç tasarrufu için 60 Hz ekran yenileme hızını kullanın</string>
+    <!-- Data usage info in QS footer -->
+    <string name="qs_footer_datausage_title">QS alt bilgisinde günlük veri kullanımı</string>
+    <string name="qs_footer_datausage_summary">Hızlı ayarlar alt bilgisinde günlük veri kullanım özetini görüntüle</string>
+    <!-- Screen resolution -->
+    <string name="custom_screen_resolution_title">Özel ekran çözünürlüğü</string>
+</resources>

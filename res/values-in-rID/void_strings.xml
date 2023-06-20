@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+     Copyright (C) 2022-2023 VoidUI
+     SPDX-License-Identifier: Apache-2.0
+-->
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <!-- About device screen, VoidUI Release Version -->
+    <string name="voidui_release_version">Versi Rilis VoidUI</string>
+    <!-- VoidUI Maintainer -->
+    <string name="VoidUI_maintainer">Pengelola Perangkat</string>
+    <!-- Immersive Navigation -->
+    <string name="gesture_navbar_category_title">Bilah navigasi</string>
+    <string name="immersive_navigation_title">Navigasi Immersive</string>
+    <string name="immersive_navigation_summary">Sembunyikan pil gestur dan lapisan bilah navigasi.</string>
+    <!-- App details: open play store link if app is user installed -->
+    <string name="app_play_store">Google Play</string>
+    <!-- General -->
+    <string name="copied_to_clipboard">Disalin ke papan klip</string>
+    <string name="longpress_to_clipboard">Tekan lama untuk menyalin</string>
+    <!-- Wi-Fi Icon Standard -->
+    <string name="show_wifi_standard_icon_title">Tampilkan ikon jenis Wi-Fi</string>
+    <string name="show_wifi_standard_icon_summary">Tampilkan jenis Wi-Fi dalam indikator sinyal Wi-Fi</string>
+    <!-- Ignore window secure -->
+    <string name="ignore_window_secure_title">Abaikan bendera jendela aman</string>
+    <string name="ignore_window_secure_summary">Hapus batas tangkapan layar dan rekaman layar untuk semua aplikasi. Hal ini bisa memudahkan dalam beberapa kasus, tetapi bisa menyebabkan kebocoran privasi.</string>
+    <!-- Vibration patterns -->
+    <string name="vibration_pattern_title">Pola getaran nada dering</string>
+    <string name="pattern_dzzz_dzzz">dzzz-dzzz</string>
+    <string name="pattern_dzzz_da">dzzz-da</string>
+    <string name="pattern_mm_mm_mm">mm-mm-mm</string>
+    <string name="pattern_da_da_dzzz">da-da-dzzz</string>
+    <string name="pattern_da_dzzz_da">da-dzzz-da</string>
+    <string name="pattern_custom">Kustom</string>
+    <string name="custom_vibration_pattern_title">Pola khusus</string>
+    <string name="custom_vibration_pattern_summary">Mengatur pola getaran khusus</string>
+    <!-- Notch: Full screen apps -->
+    <string name="display_cutout_force_fullscreen_title">Aplikasi layar penuh</string>
+    <string name="display_cutout_force_fullscreen_summary">Paksa aplikasi untuk mengabaikan ruang takik</string>
+    <string name="search">Cari</string>
+    <string name="search_apps">Cari aplikasi</string>
+    <!-- Per-app volume control -->
+    <string name="app_volume">Volume aplikasi</string>
+    <string name="app_volume_title">Kontrol volume per aplikasi</string>
+    <string name="app_volume_summary">Memungkinkan untuk mengatur tingkat volume yang berbeda untuk setiap aplikasi</string>
+    <!-- Game Space -->
+    <string name="game_space_title">Ruang Game</string>
+    <string name="game_space_summary">Tingkatkan pengalaman bermain game Anda</string>
+    <!-- reTicker -->
+    <string name="reticker_title">reTicker</string>
+    <string name="reticker_summary">Ganti notifikasi mengambang dengan versi ticker yang didesain ulang yang ramping dan tidak terlalu invasif</string>
+    <string name="reticker_colored_title">Gunakan latar belakang berwarna sesuai aplikasi</string>
+    <string name="reticker_colored_summary">Ganti warna latar belakang reTicker menggunakan warna utama notifikasi aplikasi</string>
+    <!-- Volume Steps Fragment -->
+    <string name="volume_steps_fragment_title">Langkah volume</string>
+    <string name="volume_steps_summary">Sesuaikan langkah volume</string>
+    <string name="volume_steps_alarm_title">Langkah volume: Alarm</string>
+    <string name="volume_steps_dtmf_title">Langkah volume: DTMF</string>
+    <string name="volume_steps_music_title">Langkah volume: Media</string>
+    <string name="volume_steps_notification_title">Langkah volume: Pemberitahuan</string>
+    <string name="volume_steps_ring_title">Langkah volume: Dering</string>
+    <string name="volume_steps_system_title">Langkah volume: Sistem</string>
+    <string name="volume_steps_voice_call_title">Langkah volume: Panggilan Suara</string>
+    <string name="volume_steps_reset">Atur ulang</string>
+    <!-- Black theme for dark mode -->
+    <string name="black_bg_title">Hitam murni</string>
+    <string name="black_bg_summary">Latar belakang hitam murni untuk tema gelap</string>
+    <!-- Monet settings -->
+    <string name="monet_settings_title">Pengaturan tema</string>
+    <string name="monet_settings_sammary">Beberapa pengaturan tambahan untuk menyesuaikan mesin monet</string>
+    <string name="theme_style_title">Gaya tema</string>
+    <string name="theme_style_tonal_spot">Bintik Nada (Bawaan)</string>
+    <string name="theme_style_vibrant">Bersemangat</string>
+    <string name="theme_style_expressive">Ekspresif</string>
+    <string name="theme_style_spritz">Semprotkan</string>
+    <string name="theme_style_rainbow">Pelangi</string>
+    <string name="theme_style_fruit_salad">Salad buah</string>
+    <string name="theme_style_muted">Meredam</string>
+    <string name="theme_style_content">Isi</string>
+    <string name="color_source_title">Sumber warna</string>
+    <string name="color_source_both">Keduanya (Bawaan)</string>
+    <string name="color_source_home">Wallpaper rumah</string>
+    <string name="color_source_lock">Kunci kertas dinding</string>
+    <string name="color_source_preset">Prasetel</string>
+    <string name="accent_color_title">Aksen warna</string>
+    <string name="accent_color_summary">Ganti warna aksen default</string>
+    <string name="accent_background_title">Latar belakang aksen</string>
+    <string name="accent_background_summary">Pilih warna aksen yang berbeda untuk latar belakang</string>
+    <string name="bg_color_title">Warna latar belakang</string>
+    <string name="bg_color_summary">Ganti warna aksen latar belakang default</string>
+    <string name="luminance_factor_title">Pencahayaan</string>
+    <string name="luminance_factor_summary">Nilai yang lebih tinggi menghasilkan warna yang lebih cerah</string>
+    <string name="chroma_factor_title">Chroma</string>
+    <string name="chroma_factor_summary">Nilai yang lebih tinggi menghasilkan warna yang lebih kuat</string>
+    <string name="tint_background_title">Latar Belakang Warna</string>
+    <string name="tint_background_summary">Jadikan pemilihan Luminance dan Chroma juga memengaruhi warna latar belakang</string>
+    <!-- AOD Schedule -->
+    <string name="always_on_display_schedule_title">Selalu pada jadwal tampilan</string>
+    <string name="always_on_display_schedule_sunset">Matahari terbenam</string>
+    <string name="always_on_display_schedule_sunrise">Matahari terbit</string>
+    <string name="always_on_display_schedule_mixed_sunset">Menyala dari matahari terbenam hingga waktu tertentu</string>
+    <string name="always_on_display_schedule_mixed_sunrise">Menyala dari waktu hingga matahari terbit</string>
+    <!-- Force LTE_CA -->
+    <string name="force_lte_ca">Paksa LTE CA</string>
+    <string name="force_lte_ca_summary">Memaksakan agregasi operator LTE untuk bekerja</string>
+    <!-- Swap buttons in 3 buttons gestures -->
+    <string name="navbar_invert_layout_title">Membalikkan tata letak bilah navigasi</string>
+    <string name="navbar_invert_info">Menukar tombol \"Back\" dan \"Recents\" pada bilah navigasi</string>
+    <!-- 60hz Battery Saver Toggle -->
+    <string name="battery_saver_refresh_rate_title">Mengurangi kecepatan refresh</string>
+    <string name="battery_saver_refresh_rate_summary">Gunakan kecepatan refresh layar 60 Hz untuk menghemat daya saat Penghemat Baterai aktif</string>
+    <!-- Data usage info in QS footer -->
+    <string name="qs_footer_datausage_title">Penggunaan data harian di setelan cepat bagian bawah</string>
+    <string name="qs_footer_datausage_summary">Tampilkan ringkasan penggunaan data harian di setelan cepat bagian bawah</string>
+    <!-- Screen resolution -->
+    <string name="custom_screen_resolution_title">Resolusi layar khusus</string>
+</resources>
