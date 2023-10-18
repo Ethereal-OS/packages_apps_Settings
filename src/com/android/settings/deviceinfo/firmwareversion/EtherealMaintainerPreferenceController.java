@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2022 VoidUI Project
+ * Copyright (C) 2023 Ethereal Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -25,12 +25,12 @@ import androidx.preference.Preference;
 import com.android.settings.R;
 import com.android.settings.core.BasePreferenceController;
 
-public class VoidUIMaintainerPreferenceController extends BasePreferenceController {
+public class EtherealMaintainerPreferenceController extends BasePreferenceController {
 
-    private static final String TAG = "VoidUIMaintainerPreferenceController";
-    private static final String ROM_PROPERTY = "ro.voidui.maintainer";
+    private static final String TAG = "EtherealMaintainerPreferenceController";
+    private static final String ROM_PROPERTY = "ro.ethereal.maintainer";
 
-    public VoidUIMaintainerPreferenceController(Context context, String key) {
+    public EtherealMaintainerPreferenceController(Context context, String key) {
         super(context, key);
     }
 

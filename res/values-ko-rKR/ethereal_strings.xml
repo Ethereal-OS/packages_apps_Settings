@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--
-     Copyright (C) 2022-2023 VoidUI
+     Copyright (C) 2023 Ethereal
      SPDX-License-Identifier: Apache-2.0
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-    <!-- About device screen, VoidUI Release Version -->
-    <string name="voidui_release_version">VoidUI 릴리스 버전</string>
-    <!-- VoidUI Maintainer -->
-    <string name="VoidUI_maintainer">장치 유지관리자</string>
+    <!-- About device screen, Ethereal Release Version -->
+    <string name="ethereal_release_version">Ethereal 릴리스 버전</string>
+    <!-- Ethereal Maintainer -->
+    <string name="ethereal_maintainer">장치 유지관리자</string>
     <!-- Immersive Navigation -->
     <string name="gesture_navbar_category_title">탐색 메뉴</string>
     <string name="immersive_navigation_title">몰입형 내비게이션</string>

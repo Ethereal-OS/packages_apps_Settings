@@ -1,6 +1,6 @@
 /*
  * Copyright (C) 2019 The LineageOS Project
- *               2022 VoidUI Project
+ *               2023 Ethereal Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -37,17 +37,17 @@ import com.android.settings.slices.Sliceable;
 import com.android.settingslib.RestrictedLockUtils;
 import com.android.settingslib.RestrictedLockUtilsInternal;
 
-public class VoidUIVersionDetailPreferenceController extends BasePreferenceController {
+public class EtherealVersionDetailPreferenceController extends BasePreferenceController {
 
-    private static final String TAG = "VoidUIVersionDialogCtrl";
+    private static final String TAG = "EtherealVersionDialogCtrl";
     private static final int DELAY_TIMER_MILLIS = 500;
     private static final int ACTIVITY_TRIGGER_COUNT = 3;
 
-    private static final String KEY_VOIDUI_BUILD_VERSION_PROP = "org.voidui.build_version";
-    private static final String KEY_VOIDUI_CODENAME_VERSION_PROP = "org.voidui.codename";
-    private static final String KEY_VOIDUI_DEVICE_PROP = "org.voidui.device";
-    private static final String KEY_VOIDUI_RELEASE_TYPE_PROP = "org.voidui.build_type";
-    private static final String KEY_VOIDUI_RELEASE_VERSION_PROP = "org.voidui.version.display";
+    private static final String KEY_ETHEREAL_BUILD_VERSION_PROP = "org.ethereal.build_version";
+    private static final String KEY_ETHEREAL_CODENAME_VERSION_PROP = "org.ethereal.codename";
+    private static final String KEY_ETHEREAL_DEVICE_PROP = "org.ethereal.device";
+    private static final String KEY_ETHEREAL_RELEASE_TYPE_PROP = "org.ethereal.build_type";
+    private static final String KEY_ETHEREAL_RELEASE_VERSION_PROP = "org.ethereal.version.display";
 
     private static final String PLATLOGO_PACKAGE_NAME = "com.android.egg";
     private static final String PLATLOGO_ACTIVITY_CLASS =
@@ -60,7 +60,7 @@ public class VoidUIVersionDetailPreferenceController extends BasePreferenceContr
     private boolean mFunDisallowedBySystem;
     private boolean fullRomVersion = false;
 
-    public VoidUIVersionDetailPreferenceController(Context context, String key) {
+    public EtherealVersionDetailPreferenceController(Context context, String key) {
         super(context, key);
         mUserManager = (UserManager) mContext.getSystemService(Context.USER_SERVICE);
         initializeAdminPermissions();
@@ -95,7 +95,7 @@ public class VoidUIVersionDetailPreferenceController extends BasePreferenceContr
             preference.setSummary(shortRomVersion());
             fullRomVersion = false;
         } else {
-            preference.setSummary(SystemProperties.get(KEY_VOIDUI_RELEASE_VERSION_PROP,
+            preference.setSummary(SystemProperties.get(KEY_ETHEREAL_RELEASE_VERSION_PROP,
                 mContext.getString(R.string.unknown)));
             fullRomVersion = true;
         }
@@ -126,13 +126,13 @@ public class VoidUIVersionDetailPreferenceController extends BasePreferenceContr
     }
 
     private String shortRomVersion() {
-        String romVersion = SystemProperties.get(KEY_VOIDUI_BUILD_VERSION_PROP,
+        String romVersion = SystemProperties.get(KEY_ETHEREAL_BUILD_VERSION_PROP,
                 this.mContext.getString(R.string.device_info_default));
-        String releaseVersion = SystemProperties.get(KEY_VOIDUI_CODENAME_VERSION_PROP,
+        String releaseVersion = SystemProperties.get(KEY_ETHEREAL_CODENAME_VERSION_PROP,
                 this.mContext.getString(R.string.device_info_default));
-        String deviceCodename = SystemProperties.get(KEY_VOIDUI_DEVICE_PROP,
+        String deviceCodename = SystemProperties.get(KEY_ETHEREAL_DEVICE_PROP,
                 this.mContext.getString(R.string.device_info_default));
-        String romReleasetype = SystemProperties.get(KEY_VOIDUI_RELEASE_TYPE_PROP,
+        String romReleasetype = SystemProperties.get(KEY_ETHEREAL_RELEASE_TYPE_PROP,
                 this.mContext.getString(R.string.device_info_default));
         String shortVersion = releaseVersion + " | " + romVersion + " | " + deviceCodename + " | " + romReleasetype;
         return shortVersion;
