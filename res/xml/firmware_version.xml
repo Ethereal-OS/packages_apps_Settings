@@ -21,20 +21,20 @@
     android:title="@string/about_settings"
     settings:keywords="@string/keywords_android_version">
 
-    <!-- VoidUI logo -->
+    <!-- Ethereal logo -->
     <com.android.settingslib.widget.LayoutPreference
-        android:key="voidui_logo"
-        android:layout="@layout/voidui_logo"
+        android:key="ethereal_logo"
+        android:layout="@layout/ethereal_logo"
         android:selectable="false"/>
 
-    <!-- VoidUI version -->
+    <!-- Ethereal version -->
     <Preference
-        android:key="voidui_release_version"
-        android:title="@string/voidui_release_version"
+        android:key="ethereal_release_version"
+        android:title="@string/ethereal_release_version"
         android:summary="@string/summary_placeholder"
         settings:enableCopying="true"
         settings:searchable="false"
-        settings:controller="com.android.settings.deviceinfo.firmwareversion.VoidUIVersionDetailPreferenceController"/>
+        settings:controller="com.android.settings.deviceinfo.firmwareversion.EtherealVersionDetailPreferenceController"/>
 
     <!-- Android version -->
     <Preference
@@ -45,13 +45,13 @@
         settings:searchable="false"
         settings:controller="com.android.settings.deviceinfo.firmwareversion.FirmwareVersionDetailPreferenceController"/>
 
-    <!-- VoidUI Maintainer  -->
+    <!-- Ethereal Maintainer  -->
     <Preference
-        android:key="VoidUI_maintainer"
-        android:title="@string/VoidUI_maintainer"
+        android:key="Ethereal_maintainer"
+        android:title="@string/Ethereal_maintainer"
         android:summary="@string/summary_placeholder"
         settings:enableCopying="true"
-        settings:controller="com.android.settings.deviceinfo.firmwareversion.VoidUIMaintainerPreferenceController"/>
+        settings:controller="com.android.settings.deviceinfo.firmwareversion.EtherealMaintainerPreferenceController"/>
 
     <!-- Security patch -->
     <Preference
