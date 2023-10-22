@@ -5,7 +5,7 @@
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <!-- About device screen, Ethereal Release Version -->
-    <string name="ethereal_release_version">Ethereal Version</string>
+    <string name="ethereal_release_version">Ethereal Release Version</string>
 
     <!-- Ethereal Maintainer -->
     <string name="Ethereal_maintainer">Ethereal Maintainer</string>

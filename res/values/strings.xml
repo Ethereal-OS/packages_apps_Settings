@@ -3516,14 +3516,14 @@
     <string name="pin_failed">SIM PIN operation failed!</string>
 
     <!-- About phone screen, list item title.  Takes the user to the screen for seeing and installing system updates. [CHAR LIMIT=40] -->
-    <string name="system_update_settings_list_item_title">System updates</string>
+    <string name="system_update_settings_list_item_title">System Updates</string>
     <!-- About phone screen, list item summary.  Takes the user to the screen for seeing and installing system updates. [CHAR LIMIT=40] -->
     <string name="system_update_settings_list_item_summary">""</string>
 
     <!-- About phone screen, status item label  [CHAR LIMIT=40] -->
-    <string name="firmware_version">Android version</string>
+    <string name="firmware_version">Android Version</string>
     <!-- About phone screen, status item label  [CHAR LIMIT=60] -->
-    <string name="security_patch">Android security update</string>
+    <string name="security_patch">Android Security Update</string>
     <!-- About phone screen, status item label  [CHAR LIMIT=40] -->
     <string name="model_info">Model</string>
     <!-- Label for device's hardware revision value [CHAR LIMIT=40] -->
@@ -3531,11 +3531,11 @@
     <!-- About phone screen, fcc equipment id label  [CHAR LIMIT=40] -->
     <string name="fcc_equipment_id">Equipment ID</string>
     <!-- About phone screen,  setting option name  [CHAR LIMIT=40] -->
-    <string name="baseband_version">Baseband version</string>
+    <string name="baseband_version">Baseband Version</string>
     <!-- About phone screen,  setting option name  [CHAR LIMIT=40] -->
-    <string name="kernel_version">Kernel version</string>
+    <string name="kernel_version">Kernel Version</string>
     <!-- About phone screen,  setting option name  [CHAR LIMIT=40] -->
-    <string name="build_number">Build number</string>
+    <string name="build_number">Build Number</string>
     <!-- About phone screen, tapping this button will take user to a seperate UI to check Google Play system update [CHAR LIMIT=60] -->
     <string name="module_version">Google Play system update</string>
 
@@ -4492,13 +4492,13 @@
 
     <!-- About --> <skip />
     <!-- Main settings screen, setting title for the user to go into the About phone screen -->
-    <string name="about_settings" product="tablet">About tablet</string>
+    <string name="about_settings" product="tablet">About Tablet</string>
     <!-- Main settings screen, setting title for the user to go into the About phone screen -->
-    <string name="about_settings" product="default">About phone</string>
+    <string name="about_settings" product="default">About Phone</string>
     <!-- Main settings screen, setting title for the user to go into the About phone screen -->
-    <string name="about_settings" product="device">About device</string>
+    <string name="about_settings" product="device">About Device</string>
     <!-- Main settings screen, setting title for the user to go into the About phone screen -->
-    <string name="about_settings" product="emulator">About emulated device</string>
+    <string name="about_settings" product="emulator">About Emulated Device</string>
     <!-- Main settings screen, setting summary for the user to go into the About phone screen-->
     <string name="about_settings_summary">View legal info, status, software version</string>
     <!-- About phone settings screen, setting option name to go to dialog that shows legal info -->
