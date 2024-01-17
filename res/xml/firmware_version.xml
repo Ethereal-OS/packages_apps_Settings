@@ -22,6 +22,7 @@
     settings:keywords="@string/keywords_android_version">
 
 <!-- Ethereal logo -->
+<PreferenceScreen
     android:key="ethereal_logo"
     android:layout="@layout/ethereal_logo"
     android:selectable="false"/>
@@ -53,8 +54,8 @@
 
     <!-- Ethereal Maintainer -->
     <Preference
-        android:key="Ethereal_maintainer"
-        android:title="@string/Ethereal_maintainer"
+        android:key="ethereal_maintainer"
+        android:title="@string/ethereal_maintainer"
         android:summary="@string/summary_placeholder"
         settings:enableCopying="true"
         settings:controller="com.android.settings.deviceinfo.ethereal.EtherealMaintainerPreferenceController"/>
