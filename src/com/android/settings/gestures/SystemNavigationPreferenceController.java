@@ -27,8 +27,6 @@ import android.content.pm.PackageManager;
 import com.android.settings.R;
 import com.android.settings.core.BasePreferenceController;
 
-import com.android.internal.util.custom.NavbarUtils;
-
 public class SystemNavigationPreferenceController extends BasePreferenceController {
 
     static final String PREF_KEY_SYSTEM_NAVIGATION = "gesture_system_navigation";
@@ -40,26 +38,21 @@ public class SystemNavigationPreferenceController extends BasePreferenceControll
 
     @Override
     public int getAvailabilityStatus() {
-        return isGestureAvailable(mContext) && NavbarUtils.isEnabled(mContext)
-                ? AVAILABLE : UNSUPPORTED_ON_DEVICE;
+        return isGestureAvailable(mContext) ? AVAILABLE : UNSUPPORTED_ON_DEVICE;
     }
 
     @Override
     public CharSequence getSummary() {
-        return getPrefSummary(mContext);
-    }
-
-    public static String getPrefSummary(Context context){
-        if (isGestureNavigationEnabled(context)) {
-            return context.getString(R.string.edge_to_edge_navigation_title);
-        } else if (is2ButtonNavigationEnabled(context)) {
-            return context.getString(R.string.swipe_up_to_switch_apps_title);
+        if (isGestureNavigationEnabled(mContext)) {
+            return mContext.getText(R.string.edge_to_edge_navigation_title);
+        } else if (is2ButtonNavigationEnabled(mContext)) {
+            return mContext.getText(R.string.swipe_up_to_switch_apps_title);
         } else {
-            return context.getString(R.string.legacy_navigation_title);
+            return mContext.getText(R.string.legacy_navigation_title);
         }
     }
 
-    public static boolean isGestureAvailable(Context context) {
+    static boolean isGestureAvailable(Context context) {
         // Skip if the swipe up settings are not available
         if (!context.getResources().getBoolean(
                 com.android.internal.R.bool.config_swipe_up_gesture_setting_available)) {

@@ -16,6 +16,10 @@
 
 package com.android.settings.accessibility;
 
+import static android.app.Activity.RESULT_CANCELED;
+
+import static com.android.settings.accessibility.AccessibilityDialogUtils.DialogEnums.DIALOG_RESET_SETTINGS;
+
 import android.app.settings.SettingsEnums;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
@@ -27,11 +31,9 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.android.settings.R;
 import com.android.settingslib.Utils;
-import com.android.settingslib.widget.LayoutPreference;
 
+import com.google.android.setupcompat.template.FooterBarMixin;
 import com.google.android.setupdesign.GlifPreferenceLayout;
-import com.google.android.setupdesign.util.LayoutStyler;
-
 
 /**
  * A {@link androidx.preference.PreferenceFragmentCompat} that displays the settings page related
@@ -42,23 +44,6 @@ public class TextReadingPreferenceFragmentForSetupWizard extends TextReadingPref
     @Override
     public void onViewCreated(View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-
-        final GlifPreferenceLayout layout = (GlifPreferenceLayout) view;
-        final String title = getContext().getString(
-                R.string.accessibility_text_reading_options_title);
-        final Drawable icon = getContext().getDrawable(R.drawable.ic_accessibility_visibility);
-        icon.setTintList(Utils.getColorAttr(getContext(), android.R.attr.colorPrimary));
-        AccessibilitySetupWizardUtils.updateGlifPreferenceLayout(getContext(), layout, title,
-                /* description= */ null, icon);
-
-        updateResetButtonPadding();
-    }
-
-    @Override
-    public RecyclerView onCreateRecyclerView(LayoutInflater inflater, ViewGroup parent,
-            Bundle savedInstanceState) {
-        final GlifPreferenceLayout layout = (GlifPreferenceLayout) parent;
-        return layout.onCreateRecyclerView(inflater, parent, savedInstanceState);
     }
 
     @Override
@@ -70,15 +55,5 @@ public class TextReadingPreferenceFragmentForSetupWizard extends TextReadingPref
     public int getHelpResource() {
         // Hides help center in action bar and footer bar in SuW
         return 0;
-    }
-
-    /**
-     * Updates the padding of the reset button to meet for SetupWizard style.
-     */
-    private void updateResetButtonPadding() {
-        final LayoutPreference resetPreference = (LayoutPreference) findPreference(RESET_KEY);
-        final ViewGroup parentView =
-                (ViewGroup) resetPreference.findViewById(R.id.reset_button).getParent();
-        LayoutStyler.applyPartnerCustomizationLayoutPaddingStyle(parentView);
     }
 }

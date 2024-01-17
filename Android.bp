@@ -53,10 +53,14 @@ android_library {
         "SettingsLib-search-defaults",
     ],
 
-    srcs: ["src/**/*.java", "src/**/*.kt"],
-    resource_dirs: [
-        "res",
-        "TouchGestures/res"
+    srcs: ["src/**/*.java", "src/**/*.kt",
+           "Etherealhub/src/**/*.java",
+    ],
+
+    aaptflags: ["--extra-packages com.ethereal.hub"],
+
+    resource_dirs: ["res",
+                    "Etherealhub/res"
     ],
 
     static_libs: [
@@ -67,7 +71,10 @@ android_library {
         "androidx.core_core",
         "androidx.appcompat_appcompat",
         "androidx.cardview_cardview",
+        "androidx.fragment_fragment",
+        "androidx.fragment_fragment-ktx",
         "androidx.preference_preference",
+        "androidx.preference_preference-ktx",
         "androidx.recyclerview_recyclerview",
         "androidx.window_window",
         "com.google.android.material_material",
@@ -88,21 +95,27 @@ android_library {
         "android.hardware.dumpstate-V1.0-java",
         "android.hardware.dumpstate-V1.1-java",
         "android.hardware.dumpstate-V1-java",
+        "glide",
         "lottie",
         "WifiTrackerLib",
         "SettingsLibActivityEmbedding",
         "Settings-change-ids",
         "SystemUIUnfoldLib",
-        "custom-preference",
-        "vendor.lineage.fastcharge-V1.0-java",
         "faceunlock_framework",
-        "SettingsGoogle-lib",
+        "kotlin-stdlib",
+        "kotlinx_coroutines_android",
+        "kotlinx_coroutines",
     ],
 
     libs: [
         "telephony-common",
         "ims-common",
     ],
+
+    optimize: {
+        proguard_flags_files: ["proguard.flags"],
+    },
+
 }
 
 platform_compat_config {
@@ -151,4 +164,9 @@ filegroup {
 filegroup {
     name: "Settings_manifest",
     srcs: ["AndroidManifest.xml"],
+}
+
+android_library_import {
+    name: "glide",
+    aars: ["libs/glide-4.15.1.aar"],
 }

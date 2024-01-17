@@ -24,6 +24,9 @@ import com.android.settings.dashboard.DashboardFragment;
 import com.android.settings.display.BrightnessLevelPreferenceController;
 import com.android.settings.display.CameraGesturePreferenceController;
 import com.android.settings.display.LiftToWakePreferenceController;
+import com.android.settings.display.MaxRefreshRatePreferenceController;
+import com.android.settings.display.MinRefreshRatePreferenceController;
+import com.android.settings.display.PocketJudgePreferenceController;
 import com.android.settings.display.ShowOperatorNamePreferenceController;
 import com.android.settings.display.TapToWakePreferenceController;
 import com.android.settings.display.ThemePreferenceController;
@@ -33,17 +36,12 @@ import com.android.settingslib.core.AbstractPreferenceController;
 import com.android.settingslib.core.lifecycle.Lifecycle;
 import com.android.settingslib.search.SearchIndexable;
 
-import com.android.internal.custom.hardware.LineageHardwareManager;
-
 import java.util.ArrayList;
 import java.util.List;
 
 @SearchIndexable(forTarget = SearchIndexable.ALL & ~SearchIndexable.ARC)
 public class DisplaySettings extends DashboardFragment {
     private static final String TAG = "DisplaySettings";
-
-    private static final String KEY_HIGH_TOUCH_POLLING_RATE = "high_touch_polling_rate_enable";
-    private static final String KEY_HIGH_TOUCH_SENSITIVITY = "high_touch_sensitivity_enable";
 
     @Override
     public int getMetricsCategory() {
@@ -80,31 +78,19 @@ public class DisplaySettings extends DashboardFragment {
         final List<AbstractPreferenceController> controllers = new ArrayList<>();
         controllers.add(new CameraGesturePreferenceController(context));
         controllers.add(new LiftToWakePreferenceController(context));
+        controllers.add(new PocketJudgePreferenceController(context));
         controllers.add(new TapToWakePreferenceController(context));
         controllers.add(new VrDisplayPreferenceController(context));
         controllers.add(new ShowOperatorNamePreferenceController(context));
         controllers.add(new ThemePreferenceController(context));
         controllers.add(new BrightnessLevelPreferenceController(context, lifecycle));
+        controllers.add(new MinRefreshRatePreferenceController(context, lifecycle));
+        controllers.add(new MaxRefreshRatePreferenceController(context, lifecycle));
         return controllers;
     }
 
     public static final BaseSearchIndexProvider SEARCH_INDEX_DATA_PROVIDER =
             new BaseSearchIndexProvider(R.xml.display_settings) {
-
-                @Override
-                public List<String> getNonIndexableKeys(Context context) {
-                    List<String> keys = super.getNonIndexableKeys(context);
-                    LineageHardwareManager hardware = LineageHardwareManager.getInstance(context);
-                    if (!hardware.isSupported(
-                            LineageHardwareManager.FEATURE_HIGH_TOUCH_POLLING_RATE)) {
-                        keys.add(KEY_HIGH_TOUCH_POLLING_RATE);
-                    }
-                    if (!hardware.isSupported(
-                            LineageHardwareManager.FEATURE_HIGH_TOUCH_SENSITIVITY)) {
-                        keys.add(KEY_HIGH_TOUCH_SENSITIVITY);
-                    }
-                    return keys;
-                }
 
                 @Override
                 public List<AbstractPreferenceController> createPreferenceControllers(

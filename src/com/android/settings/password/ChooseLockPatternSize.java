@@ -26,6 +26,7 @@ import android.view.ViewGroup;
 import androidx.preference.Preference;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.android.internal.logging.nano.MetricsProto.MetricsEvent;
 import com.android.internal.widget.LockPatternUtils;
 import com.android.internal.widget.LockscreenCredential;
 import com.android.settings.EncryptionInterstitial;
@@ -36,8 +37,6 @@ import com.android.settings.SettingsPreferenceFragment;
 import com.android.settings.utils.SettingsDividerItemDecoration;
 
 import com.google.android.setupdesign.GlifPreferenceLayout;
-
-import com.android.internal.logging.nano.MetricsProto.MetricsEvent;
 
 public class ChooseLockPatternSize extends SettingsActivity {
 
@@ -136,7 +135,7 @@ public class ChooseLockPatternSize extends SettingsActivity {
 
         @Override
         public int getMetricsCategory() {
-            return MetricsEvent.CUSTOM_SETTINGS;
+            return MetricsEvent.ETHEREAL;
         }
     }
 }

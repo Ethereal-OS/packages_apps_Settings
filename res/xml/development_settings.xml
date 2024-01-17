@@ -29,16 +29,16 @@
             android:summary="@string/summary_placeholder"
             android:fragment="com.android.settings.applications.ProcessStatsSummary" />
 
-        <com.android.settings.BugreportPreference
+        <!--<com.android.settings.BugreportPreference
             android:key="bugreport"
             android:title="@*android:string/bugreport_title"
-            android:dialogTitle="@*android:string/bugreport_title" />
+            android:dialogTitle="@*android:string/bugreport_title" />-->
 
-        <Preference
+        <!--<Preference
             android:key="bug_report_handler"
             android:title="@string/bug_report_handler_title"
             android:summary="@string/summary_placeholder"
-            android:fragment="com.android.settings.bugreporthandler.BugReportHandlerPicker" />
+            android:fragment="com.android.settings.bugreporthandler.BugReportHandlerPicker" />-->
 
         <Preference
             android:key="system_server_heap_dump"
@@ -107,10 +107,10 @@
             android:title="@string/color_temperature"
             android:summary="@string/color_temperature_desc" />
 
-        <SwitchPreference
+        <!--SwitchPreference
             android:key="ota_disable_automatic_update"
             android:title="@string/ota_disable_automatic_update"
-            android:summary="@string/ota_disable_automatic_update_summary" />
+            android:summary="@string/ota_disable_automatic_update_summary" /-->
 
         <Preference android:key="dsu_loader"
                     android:title="@string/dsu_loader_title" />
@@ -157,10 +157,10 @@
             android:title="@string/enable_terminal_title"
             android:summary="@string/enable_terminal_summary" />
 
-        <SwitchPreference
+        <!--<SwitchPreference
             android:key="bugreport_in_power"
             android:title="@string/bugreport_in_power"
-            android:summary="@string/bugreport_in_power_summary" />
+            android:summary="@string/bugreport_in_power_summary" />-->
 
         <SwitchPreference
             android:key="enable_verbose_vendor_logging"
@@ -441,19 +441,19 @@
             android:title="@string/force_rtl_layout_all_locales"
             android:summary="@string/force_rtl_layout_all_locales_summary" />
 
-        <ListPreference
+        <com.android.settings.AnimationScalePreference
             android:key="window_animation_scale"
             android:title="@string/window_animation_scale_title"
             android:entries="@array/window_animation_scale_entries"
             android:entryValues="@array/window_animation_scale_values" />
 
-        <ListPreference
+        <com.android.settings.AnimationScalePreference
             android:key="transition_animation_scale"
             android:title="@string/transition_animation_scale_title"
             android:entries="@array/transition_animation_scale_entries"
             android:entryValues="@array/transition_animation_scale_values" />
 
-        <ListPreference
+        <com.android.settings.AnimationScalePreference
             android:key="animator_duration_scale"
             android:title="@string/animator_duration_scale_title"
             android:entries="@array/animator_duration_scale_entries"

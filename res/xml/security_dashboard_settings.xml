@@ -21,12 +21,6 @@
     android:key="security_dashboard_page"
     android:title="@string/security_settings_title">
 
-    <!-- security_settings_status.xml -->
-    <PreferenceCategory
-        android:order="-10"
-        android:key="security_status"
-        android:title="@string/security_status_title" />
-
     <PreferenceCategory
         android:order="1"
         android:key="dashboard_tile_placeholder" />
@@ -55,11 +49,21 @@
             android:summary="@string/summary_placeholder"
             settings:keywords="@string/keywords_face_settings" />
 
+        <Preference
+            android:key="auto_reboot"
+            android:title="@string/auto_reboot_title"
+            settings:controller="com.android.settings.security.AutoRebootPrefController" />
+
         <com.android.settingslib.RestrictedPreference
             android:key="biometric_settings"
             android:title="@string/security_settings_biometric_preference_title"
             android:summary="@string/summary_placeholder"
             settings:keywords="@string/keywords_biometric_settings" />
+
+        <!-- App lock -->
+        <com.android.settingslib.RestrictedPreference
+            android:key="app_lock"
+            android:title="@string/app_lock_title" />
     </PreferenceCategory>
 
     <Preference

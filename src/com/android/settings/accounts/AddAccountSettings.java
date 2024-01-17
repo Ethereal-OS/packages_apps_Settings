@@ -105,7 +105,6 @@ public class AddAccountSettings extends Activity {
                             .addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
                     startActivityForResultAsUser(
                             new Intent(intent), ADD_ACCOUNT_REQUEST, mUserHandle);
-
                 } else {
                     setResult(RESULT_OK);
                     if (mPendingIntent != null) {

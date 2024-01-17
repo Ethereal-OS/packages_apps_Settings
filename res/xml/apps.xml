@@ -63,11 +63,12 @@
     </Preference>
 
     <Preference
-        android:key="game_settings"
-        android:title="@string/game_space_title"
-        android:summary="@string/game_space_summary"
-        android:order="-995"
-        settings:controller="com.android.settings.applications.GameSpaceController">
+        android:key="parallel_space"
+        android:title="@string/laboratory_parallel_space_title"
+        android:summary="@string/laboratory_parallel_space_summary">
+        <intent
+            android:targetPackage="ink.kscope.parallelspace"
+            android:targetClass="ink.kscope.parallelspace.MainActivity" />
     </Preference>
 
     <PreferenceCategory
@@ -102,5 +103,18 @@
         android:title="@string/special_access"
         android:order="20"
         settings:controller="com.android.settings.applications.SpecialAppAccessPreferenceController"/>
+
+    <Preference
+        android:key="sandboxed_google_play"
+        android:title="@string/sandboxed_google_play"
+        android:order="-980"
+        settings:controller="com.android.settings.applications.GmsCompatAppController"/>
+
+    <Preference
+        android:key="sandboxed_google_play_work_profile"
+        android:title="@string/sandboxed_google_play_work_profile"
+        android:order="-979"
+        settings:forWork="true"
+        settings:controller="com.android.settings.applications.GmsCompatAppController"/>
 
 </PreferenceScreen>

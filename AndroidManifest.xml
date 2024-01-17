@@ -1,4 +1,5 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
+          xmlns:tools="http://schemas.android.com/tools"
           package="com.android.settings"
           coreApp="true"
           android:sharedUserId="android.uid.system">
@@ -125,6 +126,9 @@
     <uses-permission android:name="com.android.settings.FACE_UNLOCK"/>
     <permission android:name="com.android.settings.FACE_UNLOCK" android:protectionLevel="signatureOrSystem"/>
 
+    <!-- App lock -->
+    <uses-permission android:name="android.permission.MANAGE_APP_LOCK" />
+
     <!-- LiveDisplay -->
     <uses-permission android:name="lineageos.permission.MANAGE_LIVEDISPLAY" />
 
@@ -141,9 +145,14 @@
             android:defaultToDeviceProtectedStorage="true"
             android:directBootAware="true"
             android:appComponentFactory="androidx.core.app.CoreComponentFactory"
+            tools:replace="android:appComponentFactory">
             android:enableOnBackInvokedCallback="true">
 
         <uses-library android:name="org.apache.http.legacy" />
+
+        <property
+            android:name="android.window.PROPERTY_ACTIVITY_EMBEDDING_SPLITS_ENABLED"
+            android:value="true" />
 
         <!-- Settings -->
         <activity android:name=".homepage.SettingsHomepageActivity"
@@ -306,6 +315,22 @@
             </intent-filter>
             <meta-data android:name="com.android.settings.FRAGMENT_CLASS"
                 android:value="com.android.settings.connecteddevice.ConnectedDeviceDashboardFragment"/>
+            <meta-data android:name="com.android.settings.HIGHLIGHT_MENU_KEY"
+                android:value="@string/menu_key_connected_devices"/>
+            <meta-data android:name="com.android.settings.PRIMARY_PROFILE_CONTROLLED"
+                android:value="true" />
+        </activity>
+
+        <activity
+            android:name=".Settings$PreviouslyConnectedDevicesActivity"
+            android:label="@string/connected_device_saved_title"
+            android:exported="true">
+            <intent-filter android:priority="1">
+                <action android:name="android.settings.SAVED_DEVICES" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+            <meta-data android:name="com.android.settings.FRAGMENT_CLASS"
+                android:value="com.android.settings.connecteddevice.PreviouslyConnectedDeviceDashboardFragment"/>
             <meta-data android:name="com.android.settings.HIGHLIGHT_MENU_KEY"
                 android:value="@string/menu_key_connected_devices"/>
             <meta-data android:name="com.android.settings.PRIMARY_PROFILE_CONTROLLED"
@@ -687,7 +712,8 @@
                 android:label="@string/device_picker"
                 android:configChanges="orientation|keyboardHidden|screenSize"
                 android:exported="true"
-                android:clearTaskOnLaunch="true">
+                android:clearTaskOnLaunch="true"
+                android:theme="@style/Theme.SubSettingsBase">
             <intent-filter>
                 <action android:name="android.bluetooth.devicepicker.action.LAUNCH" />
                 <category android:name="android.intent.category.DEFAULT" />
@@ -1850,6 +1876,7 @@
 
         <activity android:name="SetFullBackupPassword"
                   android:label="@string/local_backup_password_title"
+                  android:parentActivityName="Settings$DevelopmentSettingsDashboardActivity"
                   android:exported="false" />
 
         <activity android:name=".security.CredentialStorage"
@@ -2985,7 +3012,6 @@
         <activity android:name=".FallbackHome"
                   android:excludeFromRecents="true"
                   android:label=""
-                  android:screenOrientation="nosensor"
                   android:taskAffinity="com.android.settings.FallbackHome"
                   android:exported="true"
                   android:theme="@style/FallbackHome"
@@ -3421,7 +3447,7 @@
                   android:label="@string/notification_channel_title"
                   android:theme="@style/Theme.Panel"
                   android:excludeFromRecents="true"
-                  android:configChanges="orientation|keyboardHidden|screenSize"
+                  android:configChanges="keyboardHidden|screenSize"
                   android:exported="true">
             <intent-filter android:priority="1">
                 <action android:name="android.settings.CHANNEL_NOTIFICATION_SETTINGS" />
@@ -4573,6 +4599,18 @@
             </intent-filter>
         </activity>
 
+        <activity android:name=".backup.transport.TransportActivity"
+                  android:label="@string/backup_transport_title"
+                  android:icon="@drawable/ic_settings_backup"
+                  android:exported="false">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <data android:scheme="settings"
+                      android:host="com.android.settings.backup.transport" />
+            </intent-filter>
+        </activity>
+
         <!-- Face unlock -->
         <activity android:name="com.android.settings.custom.biometrics.face.FaceEnrollActivity"
             android:permission="com.android.settings.FACE_UNLOCK"
@@ -4582,6 +4620,74 @@
                 <action android:name="com.android.settings.intent.action.FACE_ENROLL"/>
                 <category android:name="android.intent.category.DEFAULT"/>
             </intent-filter>
+        </activity>
+
+	<!-- Etherealhub -->
+        <activity android:name=".Settings$EtherealhubActivity"
+            android:label="@string/etherealhub_title"
+            android:icon="@drawable/ic_homepage_etherealhub"
+            android:parentActivityName="com.android.settings"
+            android:exported="true">
+            <intent-filter android:priority="69">
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="com.android.settings.SHORTCUT" />
+            </intent-filter>
+            <meta-data android:name="com.android.settings.FRAGMENT_CLASS"
+                android:value="com.ethereal.hub.etherealhub" />
+            <meta-data android:name="com.android.settings.HIGHLIGHT_MENU_KEY"
+                       android:value="@string/menu_key_etherealhub"/>
+        </activity>
+
+        <!-- App lock -->
+        <activity android:name=".security.applock.AppLockCredentialActivity"
+            android:exported="false"
+            android:permission="android.permission.MANAGE_APP_LOCK"
+            android:excludeFromRecents="true"
+            android:stateNotNeeded="true"
+            android:taskAffinity="com.android.settings.applock"
+            android:launchMode="singleInstance"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar">
+            <intent-filter>
+                <action android:name="android.app.action.UNLOCK_APP" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+
+        <activity android:name=".security.applock.AppLockSubSettings"
+            android:exported="false"
+            android:excludeFromRecents="true"
+            android:taskAffinity="com.android.settings.applock"
+            android:launchMode="singleTask" />
+
+        <!-- Sleep Mode -->
+	<receiver android:name="com.android.settings.fuelgauge.sleepmode.SleepModeReceiver"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.SLEEP_MODE_TURN_OFF" />
+            </intent-filter>
+        </receiver>
+        <activity android:name="Settings$SleepModeActivity"
+            android:label="@string/sleep_mode_title"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+            <meta-data android:name="com.android.settings.FRAGMENT_CLASS"
+                android:value="com.android.settings.fuelgauge.sleepmode.SleepMode" />
+        </activity>
+
+        <activity android:name=".Settings$SmartPixelsActivity"
+            android:label="@string/smart_pixels_title"
+            android:taskAffinity="com.android.settings"
+            android:exported="true"
+            android:parentActivityName="Settings">
+            <intent-filter android:priority="1">
+                <action android:name="android.settings.SMART_PIXELS_SETTINGS" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+            <meta-data android:name="com.android.settings.FRAGMENT_CLASS"
+                android:value="com.ethereal.hub.fragments.SmartPixels" />
         </activity>
 
         <!-- This is the longest AndroidManifest.xml ever. -->

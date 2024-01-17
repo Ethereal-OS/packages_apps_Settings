@@ -33,8 +33,8 @@ import com.android.settings.R;
 
 import java.util.List;
 
-import com.android.internal.custom.hardware.HSIC;
-import com.android.internal.custom.hardware.LiveDisplayManager;
+import com.android.internal.lineage.hardware.HSIC;
+import com.android.internal.lineage.hardware.LiveDisplayManager;
 
 /**
  * Special preference type that allows configuration of Color settings
