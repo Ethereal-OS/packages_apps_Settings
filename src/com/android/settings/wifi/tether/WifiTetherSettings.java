@@ -256,8 +256,8 @@ public class WifiTetherSettings extends RestrictedDashboardFragment
                     mPasswordPreferenceController.getPasswordValidated(securityType),
                     securityType);
         }
-        configBuilder.setHiddenSsid(mHiddenSsidPrefController.isHiddenSsidEnabled());
         mMaxCompatibilityPrefController.setupMaximizeCompatibility(configBuilder);
+        configBuilder.setHiddenSsid(mHiddenSsidPrefController.isHiddenSsidEnabled());
         mAutoOffPrefController.updateConfig(configBuilder);
         mClientPrefController.updateConfig(configBuilder);
         return configBuilder.build();

@@ -68,8 +68,11 @@ public class ScreenLockSettings extends DashboardFragment
 
     private static List<AbstractPreferenceController> buildPreferenceControllers(Context context,
             DashboardFragment parent, LockPatternUtils lockPatternUtils) {
+
         final List<AbstractPreferenceController> controllers = new ArrayList<>();
         controllers.add(new PatternVisiblePreferenceController(
+                context, MY_USER_ID, lockPatternUtils));
+        controllers.add(new PinPrivacyPreferenceController(
                 context, MY_USER_ID, lockPatternUtils));
         controllers.add(new PatternErrorVisiblePreferenceController(
                 context, MY_USER_ID, lockPatternUtils));
@@ -80,8 +83,11 @@ public class ScreenLockSettings extends DashboardFragment
         controllers.add(new LockAfterTimeoutPreferenceController(
                 context, MY_USER_ID, lockPatternUtils));
         controllers.add(new OwnerInfoPreferenceController(context, parent));
-        controllers.add(new PinScramblePreferenceController(
+        controllers.add(new ScramblePinPreferenceController(
                 context, MY_USER_ID, lockPatternUtils));
+        controllers.add(new QuickUnlockPreferenceController(
+                context, MY_USER_ID, lockPatternUtils));
+        controllers.add(new FingerprintUnlockPreferenceController(context));
         return controllers;
     }
 

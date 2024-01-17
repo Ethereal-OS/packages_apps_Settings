@@ -18,7 +18,8 @@
 <PreferenceScreen
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:settings="http://schemas.android.com/apk/res-auto"
-    android:key="top_level_settings">
+    android:key="top_level_settings"
+    android:title="Settings">
 
     <com.android.settings.widget.HomepagePreference
         android:fragment="com.android.settings.network.NetworkDashboardFragment"
@@ -67,6 +68,15 @@
         android:title="@string/configure_notification_settings"
         android:summary="@string/notification_dashboard_summary"
         settings:highlightableMenuKey="@string/menu_key_notifications"/>
+
+    <com.android.settings.widget.HomepagePreference
+        android:key="top_level_etherealhub"
+        android:title="@string/etherealhub_title"
+        android:summary="@string/etherealhub_summary"
+        settings:highlightableMenuKey="@string/menu_key_etherealhub"
+        android:icon="@drawable/ic_etherealhub"
+        android:order="-125"
+        android:fragment="com.ethereal.hub.etherealhub"/>
 
     <com.android.settings.widget.HomepagePreference
         android:fragment="com.android.settings.fuelgauge.batteryusage.PowerUsageSummary"
@@ -196,7 +206,7 @@
 
     <com.android.settings.widget.HomepagePreference
         android:fragment="com.android.settings.deviceinfo.aboutphone.MyDeviceInfoFragment"
-        android:icon="@drawable/ic_phone_info"
+        android:icon="@drawable/ic_settings_about_device"
         android:key="top_level_about_device"
         android:order="20"
         android:title="@string/about_settings"

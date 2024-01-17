@@ -16,18 +16,18 @@
  */
 package com.android.settings.livedisplay;
 
-import static com.android.internal.custom.hardware.LiveDisplayManager.FEATURE_ANTI_FLICKER;
-import static com.android.internal.custom.hardware.LiveDisplayManager.FEATURE_CABC;
-import static com.android.internal.custom.hardware.LiveDisplayManager.FEATURE_COLOR_ADJUSTMENT;
-import static com.android.internal.custom.hardware.LiveDisplayManager.FEATURE_COLOR_ENHANCEMENT;
-import static com.android.internal.custom.hardware.LiveDisplayManager.FEATURE_DISPLAY_MODES;
-import static com.android.internal.custom.hardware.LiveDisplayManager.FEATURE_PICTURE_ADJUSTMENT;
-import static com.android.internal.custom.hardware.LiveDisplayManager.FEATURE_READING_ENHANCEMENT;
-import static com.android.internal.custom.hardware.LiveDisplayManager.MODE_AUTO;
-import static com.android.internal.custom.hardware.LiveDisplayManager.MODE_DAY;
-import static com.android.internal.custom.hardware.LiveDisplayManager.MODE_NIGHT;
-import static com.android.internal.custom.hardware.LiveDisplayManager.MODE_OFF;
-import static com.android.internal.custom.hardware.LiveDisplayManager.MODE_OUTDOOR;
+import static com.android.internal.lineage.hardware.LiveDisplayManager.FEATURE_ANTI_FLICKER;
+import static com.android.internal.lineage.hardware.LiveDisplayManager.FEATURE_CABC;
+import static com.android.internal.lineage.hardware.LiveDisplayManager.FEATURE_COLOR_ADJUSTMENT;
+import static com.android.internal.lineage.hardware.LiveDisplayManager.FEATURE_COLOR_ENHANCEMENT;
+import static com.android.internal.lineage.hardware.LiveDisplayManager.FEATURE_DISPLAY_MODES;
+import static com.android.internal.lineage.hardware.LiveDisplayManager.FEATURE_PICTURE_ADJUSTMENT;
+import static com.android.internal.lineage.hardware.LiveDisplayManager.FEATURE_READING_ENHANCEMENT;
+import static com.android.internal.lineage.hardware.LiveDisplayManager.MODE_AUTO;
+import static com.android.internal.lineage.hardware.LiveDisplayManager.MODE_DAY;
+import static com.android.internal.lineage.hardware.LiveDisplayManager.MODE_NIGHT;
+import static com.android.internal.lineage.hardware.LiveDisplayManager.MODE_OFF;
+import static com.android.internal.lineage.hardware.LiveDisplayManager.MODE_OUTDOOR;
 
 import android.content.Context;
 import android.content.res.Resources;
@@ -49,16 +49,16 @@ import androidx.preference.PreferenceScreen;
 import androidx.viewpager.widget.PagerAdapter;
 import androidx.viewpager.widget.ViewPager;
 
-import com.android.internal.custom.hardware.DisplayMode;
-import com.android.internal.custom.hardware.LineageHardwareManager;
-import com.android.internal.custom.hardware.LiveDisplayConfig;
-import com.android.internal.custom.hardware.LiveDisplayManager;
+import com.android.internal.lineage.hardware.DisplayMode;
+import com.android.internal.lineage.hardware.LineageHardwareManager;
+import com.android.internal.lineage.hardware.LiveDisplayConfig;
+import com.android.internal.lineage.hardware.LiveDisplayManager;
 import com.android.internal.logging.nano.MetricsProto.MetricsEvent;
 import com.android.internal.util.ArrayUtils;
 import com.android.settings.R;
 import com.android.settings.SettingsPreferenceFragment;
 import com.android.settings.custom.preference.CustomDialogPreference;
-import com.android.settings.custom.preference.SystemSettingSwitchPreference;
+import com.ethereal.hub.preferences.SystemSettingSwitchPreference;
 import com.android.settings.custom.utils.ResourceUtils;
 import com.android.settings.custom.utils.SettingsHelper;
 import com.android.settings.search.BaseSearchIndexProvider;
@@ -588,7 +588,7 @@ public class LiveDisplaySettings extends SettingsPreferenceFragment implements
 
     @Override
     public int getMetricsCategory() {
-        return MetricsEvent.CUSTOM_SETTINGS;
+        return MetricsEvent.ETHEREAL;
     }
 
     @Override

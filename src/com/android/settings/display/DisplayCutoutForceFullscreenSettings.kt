@@ -42,7 +42,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 
-import com.android.internal.util.custom.cutout.CutoutFullscreenController
+import com.android.internal.util.ethereal.cutout.CutoutFullscreenController
 
 import com.android.settings.R
 

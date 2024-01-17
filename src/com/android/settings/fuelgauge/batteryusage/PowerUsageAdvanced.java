@@ -18,7 +18,9 @@ package com.android.settings.fuelgauge.batteryusage;
 import static com.android.settings.fuelgauge.BatteryBroadcastReceiver.BatteryUpdateType;
 
 import android.app.settings.SettingsEnums;
+import android.app.AlertDialog;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.IntentFilter;
 import android.database.ContentObserver;
@@ -26,10 +28,11 @@ import android.net.Uri;
 import android.os.BatteryManager;
 import android.os.Bundle;
 import android.os.Handler;
-import android.os.UserHandle;
 import android.provider.SearchIndexableResource;
-import android.provider.Settings;
 import android.util.Log;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.VisibleForTesting;
@@ -57,6 +60,9 @@ public class PowerUsageAdvanced extends PowerUsageBase {
     private static final String KEY_REFRESH_TYPE = "refresh_type";
     private static final String KEY_BATTERY_GRAPH = "battery_graph";
     private static final String KEY_APP_LIST = "app_list";
+
+    static final int MENU_STATS_RESET = Menu.FIRST + 1;
+    private boolean mStatsReset = false;
 
     @VisibleForTesting
     BatteryHistoryPreference mHistPref;
@@ -141,6 +147,34 @@ public class PowerUsageAdvanced extends PowerUsageBase {
     }
 
     @Override
+    public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
+        MenuItem reset = menu.add(0, MENU_STATS_RESET, 0, R.string.battery_stats_reset)
+                .setIcon(R.drawable.ic_reset)
+                .setAlphabeticShortcut('r');
+        reset.setShowAsAction(MenuItem.SHOW_AS_ACTION_IF_ROOM);
+
+        super.onCreateOptionsMenu(menu, inflater);
+    }
+
+    private void resetStats() {
+        BatteryManager batteryManager = getContext().getSystemService(BatteryManager.class);
+        AlertDialog dialog = new AlertDialog.Builder(getActivity())
+            .setTitle(R.string.battery_stats_reset)
+            .setMessage(R.string.battery_stats_message)
+            .setPositiveButton(android.R.string.ok, new DialogInterface.OnClickListener() {
+                @Override
+                public void onClick(DialogInterface dialog, int which) {
+                    batteryManager.resetStatistics();
+                    mStatsReset = true;
+                    refreshUi(BatteryUpdateType.MANUAL);
+                }
+            })
+            .setNegativeButton(R.string.cancel, null)
+            .create();
+        dialog.show();
+    }
+
+    @Override
     protected List<AbstractPreferenceController> createPreferenceControllers(Context context) {
         refreshFeatureFlag(context);
         final List<AbstractPreferenceController> controllers = new ArrayList<>();
@@ -166,6 +200,17 @@ public class PowerUsageAdvanced extends PowerUsageBase {
     }
 
     @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case MENU_STATS_RESET:
+                resetStats();
+                return true;
+            default:
+                return super.onOptionsItemSelected(item);
+        }
+    }
+
+    @Override
     protected void refreshUi(@BatteryUpdateType int refreshType) {
         final Context context = getContext();
         if (context == null) {
@@ -179,6 +224,10 @@ public class PowerUsageAdvanced extends PowerUsageBase {
         }
         if (mBatteryChartPreferenceController != null && mBatteryHistoryMap != null) {
             mBatteryChartPreferenceController.setBatteryHistoryMap(mBatteryHistoryMap);
+        }
+        if (mStatsReset) {
+            restartBatteryStatsLoader(refreshType);
+            mStatsReset = false;
         }
     }
 
@@ -212,9 +261,8 @@ public class PowerUsageAdvanced extends PowerUsageBase {
         if (mPowerUsageFeatureProvider == null) {
             mPowerUsageFeatureProvider = FeatureFactory.getFactory(context)
                     .getPowerUsageFeatureProvider(context);
+            mIsChartGraphEnabled = mPowerUsageFeatureProvider.isChartGraphEnabled(context);
         }
-        mIsChartGraphEnabled = Settings.System.getIntForUser(context.getContentResolver(),
-            "battery_24_hrs_stats", 0, UserHandle.USER_CURRENT) != 0;
     }
 
     private void setBatteryChartPreferenceController() {

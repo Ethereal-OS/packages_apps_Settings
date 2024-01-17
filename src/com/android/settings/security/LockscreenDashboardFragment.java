@@ -30,16 +30,14 @@ import android.os.Looper;
 import android.provider.Settings;
 
 import androidx.annotation.VisibleForTesting;
-import androidx.preference.Preference;
 
 import com.android.settings.R;
 import com.android.settings.dashboard.DashboardFragment;
 import com.android.settings.display.AmbientDisplayAlwaysOnPreferenceController;
 import com.android.settings.display.AmbientDisplayNotificationsPreferenceController;
-import com.android.settings.display.AODSchedulePreferenceController;
+import com.android.settings.display.DozeOnChargePreferenceController;
 import com.android.settings.gestures.DoubleTapScreenPreferenceController;
 import com.android.settings.gestures.PickupGesturePreferenceController;
-import com.android.settings.gestures.ScreenOffUdfpsPreferenceController;
 import com.android.settings.notification.LockScreenNotificationPreferenceController;
 import com.android.settings.search.BaseSearchIndexProvider;
 import com.android.settings.security.screenlock.LockScreenPreferenceController;
@@ -56,6 +54,9 @@ import java.util.List;
 @SearchIndexable
 public class LockscreenDashboardFragment extends DashboardFragment
         implements OwnerInfoPreferenceController.OwnerInfoCallback {
+
+    public static final String KEY_AMBIENT_DISPLAY_ALWAYS_ON = "ambient_display_always_on";
+
     private static final String TAG = "LockscreenDashboardFragment";
 
     @VisibleForTesting
@@ -69,6 +70,7 @@ public class LockscreenDashboardFragment extends DashboardFragment
     @VisibleForTesting
     static final String KEY_ADD_USER_FROM_LOCK_SCREEN =
             "security_lockscreen_add_users_when_locked";
+
 
     private AmbientDisplayConfiguration mConfig;
     private OwnerInfoPreferenceController mOwnerInfoPreferenceController;
@@ -109,11 +111,11 @@ public class LockscreenDashboardFragment extends DashboardFragment
     public void onAttach(Context context) {
         super.onAttach(context);
         use(AmbientDisplayAlwaysOnPreferenceController.class).setConfig(getConfig(context));
+        use(DozeOnChargePreferenceController.class).setConfig(getConfig(context));
         use(AmbientDisplayNotificationsPreferenceController.class).setConfig(getConfig(context));
         use(DoubleTapScreenPreferenceController.class).setConfig(getConfig(context));
         use(PickupGesturePreferenceController.class).setConfig(getConfig(context));
-        use(ScreenOffUdfpsPreferenceController.class).setConfig(getConfig(context));
-        use(AODSchedulePreferenceController.class).setConfig(getConfig(context));
+
         mControlsContentObserver = new ContentObserver(
                 new Handler(Looper.getMainLooper())) {
             @Override

@@ -44,7 +44,7 @@ public class SupportPreferenceController extends BasePreferenceController {
 
     @Override
     public int getAvailabilityStatus() {
-        return UNSUPPORTED_ON_DEVICE/*mSupportFeatureProvider == null ? UNSUPPORTED_ON_DEVICE : AVAILABLE*/;
+        return 3; //UNSUPPORTED_ON_DEVICE - from BasePreferenceController.java
     }
 
     @Override

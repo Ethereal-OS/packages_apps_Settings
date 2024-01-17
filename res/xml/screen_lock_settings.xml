@@ -35,6 +35,23 @@
         android:key="visibledots"
         android:title="@string/lockpattern_settings_enable_dots_title"/>
 
+    <!-- available in pin -->
+    <SwitchPreference
+        android:key="enhancedPinPrivacy"
+        android:title="@string/lockpattern_settings_enhanced_pin_privacy_title"
+        android:summary="@string/lockpattern_settings_enhanced_pin_privacy_summary" />
+
+    <SwitchPreference
+        android:key="lockscreen_scramble_pin_layout"
+        android:title="@string/unlock_scramble_pin_layout_title"
+        android:summary="@string/unlock_scramble_pin_layout_summary" />
+
+    <!-- available in pin/password -->
+    <SwitchPreference
+        android:key="lockscreen_quick_unlock_control"
+        android:title="@string/unlock_quick_unlock_control_title"
+        android:summary="@string/unlock_quick_unlock_control_summary" />
+
     <!-- available in pin/pattern/password -->
     <com.android.settings.display.TimeoutListPreference
         android:key="lock_after_timeout"
@@ -48,10 +65,11 @@
         android:key="power_button_instantly_locks"
         android:title="@string/lockpattern_settings_enable_power_button_instantly_locks" />
 
-    <!-- Custom additions, available in pin/pattern/password/slide -->
+    <!-- Fingerprint wake-and-unlock toggle -->
     <SwitchPreference
-        android:key="lockscreen_scramble_pin_layout"
-        android:title="@string/unlock_scramble_pin_layout_title"
-        android:summary="@string/unlock_scramble_pin_layout_summary" />
+        android:key="fingerprint_wake_unlock"
+        android:title="@string/fingerprint_wake_unlock_title"
+        android:summaryOn="@string/fingerprint_wake_unlock_touch"
+        android:summaryOff="@string/fingerprint_wake_unlock_press" />
 
 </PreferenceScreen>

@@ -1231,26 +1231,30 @@ public final class Utils extends com.android.settingslib.Utils {
     }
 
     /**
-     * Checks if a package is available to handle the given action.
+     * Returns if dreams are available to the current user.
      */
-    public static boolean canResolveIntent(Context context, Intent intent) {
-        // check whether the target handler exist in system
-        PackageManager pm = context.getPackageManager();
-        List<ResolveInfo> results = pm.queryIntentActivitiesAsUser(intent,
-                PackageManager.MATCH_SYSTEM_ONLY,
-                UserHandle.myUserId());
-        for (ResolveInfo resolveInfo : results) {
-            // check is it installed in system.img, exclude the application
-            // installed by user
-            if ((resolveInfo.activityInfo.applicationInfo.flags &
-                    ApplicationInfo.FLAG_SYSTEM) != 0) {
-                return true;
-            }
+    public static boolean areDreamsAvailableToCurrentUser(Context context) {
+        if (!context.getResources().getBoolean(
+                com.android.internal.R.bool.config_dreamsSupported)) {
+            return false;
         }
-        return false;
+
+        if (!context.getResources().getBoolean(
+                com.android.internal.R.bool.config_dreamsOnlyEnabledForDockUser)) {
+            return true;
+        }
+
+        final UserManager userManager = context.getSystemService(UserManager.class);
+        return userManager != null && userManager.isSystemUser();
     }
 
-    public static boolean canResolveIntent(Context context, String action) {
-        return canResolveIntent(context, new Intent(action));
+    public static int getPINPasswordLength(LockPatternUtils lockPatternUtils, int userId) {
+        int pinLength = 0;
+        try {
+            pinLength = lockPatternUtils.getLockSettings().getCredentialLength(userId);
+        } catch (Exception e) {
+            Log.d("getPINPasswordLength", "getLong error: " + e.getMessage());
+        }
+        return pinLength;
     }
 }

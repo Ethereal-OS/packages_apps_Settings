@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2018 The Android Open Source Project
+ * Copyright (C) 2023 The PixelDust Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,22 +16,26 @@
 
 package com.android.settings.gestures;
 
-import static android.provider.Settings.System.TORCH_LONG_PRESS_POWER_GESTURE;
+import static android.provider.Settings.Secure.TORCH_DOUBLE_TAP_POWER_GESTURE_ENABLED;
+import static android.provider.Settings.Secure.TORCH_LONG_PRESS_POWER;
 
 import android.content.Context;
 import android.content.pm.PackageManager;
 import android.content.SharedPreferences;
+import android.os.UserHandle;
 import android.provider.Settings;
 import android.text.TextUtils;
 
 import com.android.settings.R;
+import com.android.settings.gestures.GesturePreferenceController;
 
 public class PowerButtonTorchGesturePreferenceController extends GesturePreferenceController {
 
-    private static final int ON = 1;
-    private static final int OFF = 0;
+    private final int ON = 1;
+    private final int OFF = 0;
 
     private final String PREF_KEY_VIDEO = "gesture_quick_torch_video";
+    private final String PREF_KEY_TORCH = "power_button_torch";
 
     public PowerButtonTorchGesturePreferenceController(Context context, String key) {
         super(context, key);
@@ -39,16 +43,14 @@ public class PowerButtonTorchGesturePreferenceController extends GesturePreferen
 
     @Override
     public int getAvailabilityStatus() {
-        boolean supportLongPressPowerWhenNonInteractive = mContext.getResources().getBoolean(
-                com.android.internal.R.bool.config_supportLongPressPowerWhenNonInteractive);
-        return supportLongPressPowerWhenNonInteractive && mContext.getPackageManager()
+        return mContext.getPackageManager()
                 .hasSystemFeature(PackageManager.FEATURE_CAMERA_FLASH) ? AVAILABLE :
                         UNSUPPORTED_ON_DEVICE;
     }
 
     @Override
     public boolean isSliceable() {
-        return TextUtils.equals(getPreferenceKey(), "power_button_torch");
+        return TextUtils.equals(getPreferenceKey(), PREF_KEY_TORCH);
     }
 
     @Override
@@ -57,22 +59,22 @@ public class PowerButtonTorchGesturePreferenceController extends GesturePreferen
     }
 
     @Override
-    public boolean setChecked(boolean isChecked) {
-        return Settings.System.putInt(mContext.getContentResolver(), TORCH_LONG_PRESS_POWER_GESTURE,
-                isChecked ? ON : OFF);
+    public boolean isChecked() {
+        return PowerMenuSettingsUtils.isDoubleTapPowerForTorchEnabled(mContext) ||
+                PowerMenuSettingsUtils.isLongPressPowerForTorchEnabled(mContext);
     }
 
     @Override
-    public boolean isChecked() {
-        return isEnabled(mContext);
-    }
-
-    public static boolean isEnabled(Context context) {
-        return Settings.System.getInt(context.getContentResolver(), TORCH_LONG_PRESS_POWER_GESTURE, OFF) != OFF;
-    }
-
-    public static String getPrefSummary(Context context) {
-        return context.getString(
-                isEnabled(context) ? R.string.gesture_setting_on : R.string.gesture_setting_off);
+    public boolean setChecked(boolean isChecked) {
+        if (isChecked) {
+            return Settings.Secure.putIntForUser(mContext.getContentResolver(), TORCH_LONG_PRESS_POWER,
+                    ON, UserHandle.USER_CURRENT);
+        } else {
+            Settings.Secure.putIntForUser(mContext.getContentResolver(), TORCH_LONG_PRESS_POWER,
+                    OFF, UserHandle.USER_CURRENT);
+            Settings.Secure.putIntForUser(mContext.getContentResolver(), TORCH_DOUBLE_TAP_POWER_GESTURE_ENABLED,
+                    OFF, UserHandle.USER_CURRENT);
+            return true;
+        }
     }
 }

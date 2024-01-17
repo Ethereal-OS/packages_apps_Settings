@@ -89,13 +89,9 @@ public class PeakRefreshRatePreferenceController extends TogglePreferenceControl
         super.displayPreference(screen);
 
         mPreference = screen.findPreference(getPreferenceKey());
-
-        if (!Float.toString(getDefaultPeakRefreshRate()).contains("90")) {
-          String preferenceSummary = mContext.getResources().getString(
-                  R.string.peak_refresh_rate_summary);
-          mPreference.setSummary(preferenceSummary.replace("90",
-                  Integer.toString(Math.round(getDefaultPeakRefreshRate()))));
-        }
+        mPreference.setSummary(
+                screen.getContext().getString(R.string.peak_refresh_rate_summary_dynamic, (int) mPeakRefreshRate)
+        );
     }
 
     @Override
@@ -126,6 +122,7 @@ public class PeakRefreshRatePreferenceController extends TogglePreferenceControl
                 mContext.getContentResolver(), Settings.System.PEAK_REFRESH_RATE, peakRefreshRate);
     }
 
+    @Override
     public int getSliceHighlightMenuRes() {
         return R.string.menu_key_display;
     }

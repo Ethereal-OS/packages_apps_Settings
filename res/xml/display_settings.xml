@@ -31,7 +31,7 @@
             settings:useAdminDisabledSummary="true"
             settings:userRestriction="no_config_brightness"/>
 
-        <com.android.settingslib.PrimarySwitchPreference
+        <com.android.settings.display.AutoBrightnessPreference
             android:key="auto_brightness_entry"
             android:title="@string/auto_brightness_title"
             android:fragment="com.android.settings.display.AutoBrightnessSettings"
@@ -54,6 +54,11 @@
             android:summary="@string/summary_placeholder"
             android:fragment="com.android.settings.display.ScreenTimeoutSettings"
             settings:controller="com.android.settings.display.ScreenTimeoutPreferenceController"/>
+
+        <SwitchPreference
+            android:key="pocket_judge"
+            android:title="@string/proximity_wake_title"
+            android:summary="@string/proximity_wake_summary" />
     </PreferenceCategory>
 
     <PreferenceCategory
@@ -69,17 +74,15 @@
             settings:keywords="@string/keywords_dark_ui_mode"/>
 
         <Preference
-            android:key="monet_settings"
-            android:title="@string/monet_settings_title"
-            android:summary="@string/monet_settings_sammary"
-            android:fragment="com.android.settings.custom.fragments.MonetSettings" />
-
-        <Preference
             android:fragment="com.android.settings.accessibility.TextReadingPreferenceFragment"
             android:key="text_reading_options"
             android:persistent="false"
             android:title="@string/accessibility_text_reading_options_title"
             settings:controller="com.android.settings.accessibility.TextReadingFragmentForDisplaySettingsController"/>
+
+        <com.android.settings.display.DensityPreference
+            android:key="density"
+            android:title="@string/developer_smallest_width" />
     </PreferenceCategory>
 
     <PreferenceCategory
@@ -111,12 +114,27 @@
     <PreferenceCategory
         android:title="@string/category_name_display_controls">
 
+        <!--
+            Standard auto-rotation preference that will be shown when device state based
+            auto-rotation settings are NOT available.
+          -->
         <com.android.settingslib.PrimarySwitchPreference
-            android:fragment="com.android.settings.display.SmartAutoRotatePreferenceFragment"
             android:key="auto_rotate"
             android:title="@string/accelerometer_title"
-            settings:controller="com.android.settings.display.SmartAutoRotatePreferenceController"
-            settings:keywords="@string/keywords_auto_rotate" />
+            android:fragment="com.android.settings.display.SmartAutoRotatePreferenceFragment"
+            settings:keywords="@string/keywords_auto_rotate"
+            settings:controller="com.android.settings.display.SmartAutoRotatePreferenceController"/>
+
+        <!--
+            Auto-rotation preference that will be shown when device state based auto-rotation
+            settings are available.
+          -->
+        <Preference
+            android:key="device_state_auto_rotate"
+            android:title="@string/accelerometer_title"
+            android:fragment="com.android.settings.display.DeviceStateAutoRotateDetailsFragment"
+            settings:keywords="@string/keywords_auto_rotate"
+            settings:controller="com.android.settings.display.DeviceStateAutoRotateOverviewController"/>
 
         <Preference
             android:key="screen_resolution"
@@ -124,12 +142,6 @@
             android:fragment="com.android.settings.display.ScreenResolutionFragment"
             settings:keywords="@string/keywords_screen_resolution"
             settings:controller="com.android.settings.display.ScreenResolutionController"/>
-
-        <ListPreference
-            android:key="custom_screen_resolution"
-            android:title="@string/custom_screen_resolution_title"
-            android:summary="@string/summary_placeholder"
-            settings:controller="com.android.settings.display.CustomScreenResolutionController"/>
 
         <SwitchPreference
             android:key="display_white_balance"
@@ -140,29 +152,18 @@
         <ListPreference
             android:key="min_refresh_rate"
             android:title="@string/min_refresh_rate_title"
-            android:summary="@string/summary_placeholder"
-            settings:controller="com.android.settings.display.MinRefreshRatePreferenceController" />
+            android:summary="@string/summary_placeholder" />
 
         <ListPreference
             android:key="max_refresh_rate"
             android:title="@string/max_refresh_rate_title"
-            android:summary="@string/summary_placeholder"
-            settings:controller="com.android.settings.display.MaxRefreshRatePreferenceController"/>
+            android:summary="@string/summary_placeholder" />
 
         <SwitchPreference
             android:key="peak_refresh_rate"
             android:title="@string/peak_refresh_rate_title"
             android:summary="@string/peak_refresh_rate_summary"
             settings:controller="com.android.settings.display.PeakRefreshRatePreferenceController"/>
-
-        <com.android.settings.custom.preference.SystemSettingListPreference
-            android:key="display_cutout_hidden"
-            android:title="@string/display_cutout_mode_title"
-            android:summary="%s"
-            android:entries="@array/display_cutout_mode_entries"
-            android:entryValues="@array/display_cutout_mode_values"
-            android:defaultValue="0"
-            settings:controller="com.android.settings.display.DisplayCutoutPreferenceController" />
 
         <SwitchPreference
             android:key="show_operator_name"
@@ -181,12 +182,6 @@
             android:title="@string/camera_gesture_title"
             android:summary="@string/camera_gesture_desc"/>
 
-        <com.android.settings.custom.preference.SystemSettingSwitchPreference
-            android:key="qs_footer_data_usage"
-            android:title="@string/qs_footer_datausage_title"
-            android:summary="@string/qs_footer_datausage_summary"
-            android:defaultValue="false" />
-
         <SwitchPreference
             android:key="lift_to_wake"
             android:title="@string/lift_to_wake_title"/>
@@ -196,13 +191,6 @@
             android:title="@string/tap_to_wake"
             android:summary="@string/tap_to_wake_summary"/>
 
-        <!-- Double tap to sleep -->
-        <com.android.settings.custom.preference.SystemSettingSwitchPreference
-            android:key="double_tap_sleep_gesture"
-            android:title="@string/status_bar_double_tap_to_sleep_title"
-            android:summary="@string/status_bar_double_tap_to_sleep_summary"
-            android:defaultValue="false" />
-
         <Preference
             android:key="display_cutout_force_fullscreen_settings"
             android:title="@string/display_cutout_force_fullscreen_title"
@@ -210,25 +198,11 @@
             android:fragment="com.android.settings.display.DisplayCutoutForceFullscreenSettings"
             settings:controller="com.android.settings.display.DisplayCutoutForceFullscreenPreferenceController" />
 
-        <com.android.settings.custom.preference.SystemSettingSwitchPreference
-            android:key="high_touch_polling_rate_enable"
-            android:title="@string/high_touch_polling_rate_title"
-            android:summary="@string/high_touch_polling_rate_summary"
-            android:defaultValue="false"
-            settings:controller="com.android.settings.custom.touch.HighTouchPollingRateSettingsPreferenceController" />
-
-        <com.android.settings.custom.preference.SystemSettingSwitchPreference
-            android:key="high_touch_sensitivity_enable"
-            android:title="@string/high_touch_sensitivity_title"
-            android:summary="@string/high_touch_sensitivity_summary"
-            android:defaultValue="false"
-            settings:controller="com.android.settings.custom.touch.HighTouchSensitivitySettingsPreferenceController" />
-
-        <com.android.settings.custom.preference.GlobalSettingSwitchPreference
+        <com.ethereal.hub.preferences.SystemSettingSwitchPreference
             android:key="wake_when_plugged_or_unplugged"
             android:title="@string/wake_when_plugged_or_unplugged_title"
             android:summary="@string/wake_when_plugged_or_unplugged_summary"
-            android:defaultValue="@*android:bool/config_unplugTurnsOnScreen" />
+            android:defaultValue="true" />
 
         <ListPreference
             android:key="theme"

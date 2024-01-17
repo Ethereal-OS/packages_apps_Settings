@@ -52,7 +52,17 @@
         settings:userRestriction="no_config_mobile_networks"
         settings:isPreferenceVisible="@bool/config_show_sim_info"
         settings:allowDividerAbove="true"
-        settings:useAdminDisabledSummary="true" />
+        settings:useAdminDisabledSummary="true"
+        settings:searchable="@bool/config_show_sim_info"/>
+
+    <com.android.settingslib.RestrictedSwitchPreference
+        android:key="privileged_euicc_management"
+        android:title="@string/privileged_euicc_management_title"
+        android:icon="@drawable/ic_sim_card"
+        android:order="-14"
+        android:summary="@string/privileged_euicc_management_summary"
+        settings:controller="com.android.settings.network.GoogleEuiccLpaController"
+        settings:userRestriction="no_config_mobile_networks"/>
 
     <com.android.settingslib.RestrictedSwitchPreference
         android:key="airplane_mode"
@@ -65,7 +75,7 @@
     <com.android.settingslib.RestrictedPreference
         android:key="manage_mobile_plan"
         android:title="@string/manage_mobile_plan_title"
-        android:icon="@drawable/ic_mobile_plan"
+        android:icon="@drawable/ic_settings_mobile_plan"
         android:persistent="false"
         android:order="19"
         settings:userRestriction="no_config_mobile_networks"
@@ -116,7 +126,7 @@
     <com.android.settings.network.PrivateDnsModeDialogPreference
         android:key="private_dns_settings"
         android:title="@string/select_private_dns_configuration_title"
-        android:icon="@drawable/ic_private_dns_settings"
+        android:icon="@drawable/ic_settings_private_dns"
         android:order="20"
         android:dialogTitle="@string/select_private_dns_configuration_dialog_title"
         android:dialogLayout="@layout/private_dns_mode_dialog"
@@ -127,8 +137,14 @@
         android:fragment="com.android.settings.network.AdaptiveConnectivitySettings"
         android:key="adaptive_connectivity"
         android:title="@string/adaptive_connectivity_title"
+        android:icon="@drawable/ic_settings_adaptive_connective"
         android:summary="@string/summary_placeholder"
-        android:icon="@drawable/ic_adaptive_connectivity"
         android:order="25"
         settings:controller="com.android.settings.network.AdaptiveConnectivityPreferenceController"/>
+    <Preference
+        android:key="connectivity_checks"
+        android:title="@string/conn_checks_title"
+        android:order="30"
+        settings:controller="com.android.settings.network.ConnectivityChecksPrefController"/>
+
 </PreferenceScreen>

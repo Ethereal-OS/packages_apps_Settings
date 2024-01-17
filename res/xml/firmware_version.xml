@@ -21,20 +21,10 @@
     android:title="@string/about_settings"
     settings:keywords="@string/keywords_android_version">
 
-    <!-- Ethereal logo -->
-    <com.android.settingslib.widget.LayoutPreference
-        android:key="ethereal_logo"
-        android:layout="@layout/ethereal_logo"
-        android:selectable="false"/>
-
-    <!-- Ethereal version -->
-    <Preference
-        android:key="ethereal_release_version"
-        android:title="@string/ethereal_release_version"
-        android:summary="@string/summary_placeholder"
-        settings:enableCopying="true"
-        settings:searchable="false"
-        settings:controller="com.android.settings.deviceinfo.firmwareversion.EtherealVersionDetailPreferenceController"/>
+<!-- Ethereal logo -->
+    android:key="ethereal_logo"
+    android:layout="@layout/ethereal_logo"
+    android:selectable="false"/>
 
     <!-- Android version -->
     <Preference
@@ -45,13 +35,29 @@
         settings:searchable="false"
         settings:controller="com.android.settings.deviceinfo.firmwareversion.FirmwareVersionDetailPreferenceController"/>
 
-    <!-- Ethereal Maintainer  -->
+    <!-- Ethereal version -->
+    <Preference
+        android:key="ethereal_release_version"
+        android:title="@string/ethereal_release_version"
+        android:summary="@string/summary_placeholder"
+        settings:enableCopying="true"
+        settings:controller="com.android.settings.deviceinfo.firmwareversion.EtherealVersionDetailPreferenceController"/>
+
+    <!-- Ethereal Device  -->
+    <Preference
+        android:key="about_device_name"
+        android:title="@string/about_device_name"
+        android:summary="@string/summary_placeholder"
+        settings:enableCopying="true"
+        settings:controller="com.android.settings.deviceinfo.firmwareversion.AboutDeviceNamePreferenceController"/>
+
+    <!-- Ethereal Maintainer -->
     <Preference
         android:key="Ethereal_maintainer"
         android:title="@string/Ethereal_maintainer"
         android:summary="@string/summary_placeholder"
         settings:enableCopying="true"
-        settings:controller="com.android.settings.deviceinfo.firmwareversion.EtherealMaintainerPreferenceController"/>
+        settings:controller="com.android.settings.deviceinfo.ethereal.EtherealMaintainerPreferenceController"/>
 
     <!-- Security patch -->
     <Preference
@@ -60,13 +66,13 @@
         settings:enableCopying="true"
         settings:controller="com.android.settings.deviceinfo.firmwareversion.SecurityPatchLevelPreferenceController"/>
 
-    <!-- Mainline module version -->
+    <!-- Kernel -->
     <Preference
-        android:key="module_version"
-        android:title="@string/module_version"
+        android:key="kernel_version"
+        android:title="@string/kernel_version"
         android:summary="@string/summary_placeholder"
         settings:enableCopying="true"
-        settings:controller="com.android.settings.deviceinfo.firmwareversion.MainlineModuleVersionPreferenceController"/>
+        settings:controller="com.android.settings.deviceinfo.firmwareversion.KernelVersionPreferenceController"/>
 
     <!-- Baseband -->
     <Preference
@@ -77,12 +83,30 @@
         settings:enableCopying="true"
         settings:controller="com.android.settings.deviceinfo.firmwareversion.BasebandVersionPreferenceController"/>
 
-    <!-- Kernel -->
+    <!-- SELinux -->
     <Preference
-        android:key="kernel_version"
-        android:title="@string/kernel_version"
+        android:key="selinux_status"
+        android:title="@string/selinux_status"
+        android:summary="@string/summary_placeholder"
+        android:selectable="false"
+        settings:enableCopying="false"
+        settings:controller="com.android.settings.deviceinfo.firmwareversion.SelinuxStatusPreferenceController"/>
+
+    <!-- Build -->
+    <Preference
+        android:key="os_build_number"
+        android:title="@string/build_number"
+        android:summary="@string/summary_placeholder"
+        android:selectable="false"
+        settings:enableCopying="true"
+        settings:controller="com.android.settings.deviceinfo.firmwareversion.SimpleBuildNumberPreferenceController"/>
+
+    <!-- Build date -->
+    <Preference
+        android:key="os_build_date"
+        android:title="@string/build_date"
         android:summary="@string/summary_placeholder"
         settings:enableCopying="true"
-        settings:controller="com.android.settings.deviceinfo.firmwareversion.KernelVersionPreferenceController"/>
+        settings:controller="com.android.settings.deviceinfo.firmwareversion.RomBuildDatePreferenceController"/>
 
 </PreferenceScreen>

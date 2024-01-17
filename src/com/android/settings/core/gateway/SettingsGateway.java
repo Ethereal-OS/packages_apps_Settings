@@ -102,6 +102,7 @@ import com.android.settings.fuelgauge.AdvancedPowerUsageDetail;
 import com.android.settings.fuelgauge.batterysaver.BatterySaverScheduleSettings;
 import com.android.settings.fuelgauge.batterysaver.BatterySaverSettings;
 import com.android.settings.fuelgauge.batteryusage.PowerUsageSummary;
+import com.android.settings.fuelgauge.sleepmode.SleepMode;
 import com.android.settings.gestures.AssistGestureSettings;
 import com.android.settings.gestures.ButtonNavigationSettingsFragment;
 import com.android.settings.gestures.DoubleTapPowerSettings;
@@ -179,11 +180,10 @@ import com.android.settings.wifi.p2p.WifiP2pSettings;
 import com.android.settings.wifi.savedaccesspoints2.SavedAccessPointsWifiSettings2;
 import com.android.settings.wifi.tether.WifiTetherSettings;
 
-import com.android.settings.livedisplay.LiveDisplaySettings;
-
+import com.ethereal.hub.etherealhub;
 import ink.kscope.settings.wifi.tether.WifiTetherClientManager;
-
-import com.google.android.settings.security.SecurityHubDashboard;
+import com.ethereal.hub.fragments.SmartPixels;
+import com.android.settings.livedisplay.LiveDisplaySettings;
 
 public class SettingsGateway {
 
@@ -352,9 +352,11 @@ public class SettingsGateway {
             AppLocaleDetails.class.getName(),
             TurnScreenOnSettings.class.getName(),
             TurnScreenOnDetails.class.getName(),
-            LiveDisplaySettings.class.getName(),
+            etherealhub.class.getName(),
             WifiTetherClientManager.class.getName(),
-            SecurityHubDashboard.class.getName()
+            SleepMode.class.getName(),
+            SmartPixels.class.getName(),
+            LiveDisplaySettings.class.getName()
     };
 
     public static final String[] SETTINGS_FOR_RESTRICTED = {
@@ -397,5 +399,8 @@ public class SettingsGateway {
             Settings.MyDeviceInfoActivity.class.getName(),
             Settings.ModuleLicensesActivity.class.getName(),
             UserBackupSettingsActivity.class.getName(),
+            Settings.etherealhubActivity.class.getName(),
+            Settings.SleepModeActivity.class.getName(),
+            Settings.SmartPixelsActivity.class.getName(),
     };
 }

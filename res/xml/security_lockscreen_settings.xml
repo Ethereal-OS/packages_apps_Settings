@@ -28,7 +28,7 @@
             android:summary="@string/summary_placeholder"
             settings:keywords="@string/keywords_lock_screen_notif"/>
 
-        <com.android.settings.custom.preference.SecureSettingListPreference
+    <com.ethereal.hub.preferences.SecureSettingListPreference
             android:key="face_unlock_method"
             android:title="@string/face_unlock_method_title"
             android:summary="%s"
@@ -55,11 +55,6 @@
             android:key="owner_info_settings"
             android:title="@string/owner_info_settings_title"
             android:summary="@string/owner_info_settings_summary" />
-
-        <com.android.settings.custom.preference.SecureSettingSwitchPreference
-            android:key="lockscreen_media_metadata"
-            android:title="@string/lockscreen_media_art_title"
-            android:defaultValue="false" />
 
         <SwitchPreference
             android:key="lockscreen_privacy_wallet_switch"
@@ -111,11 +106,11 @@
             settings:controller="com.android.settings.display.AmbientDisplayAlwaysOnPreferenceController"
             settings:userRestriction="no_ambient_display" />
 
-        <Preference
-            android:key="always_on_display_schedule"
-            android:title="@string/always_on_display_schedule_title"
-            android:fragment="com.android.settings.display.AODSchedule"
-            settings:controller="com.android.settings.display.AODSchedulePreferenceController" />
+        <SwitchPreference
+            android:key="doze_on_charge"
+            android:title="@string/doze_on_charge_title"
+            android:summary="@string/doze_on_charge_summary"
+            settings:controller="com.android.settings.display.DozeOnChargePreferenceController" />
 
         <Preference
             android:key="ambient_display_tap"
@@ -138,26 +133,11 @@
             settings:searchable="false"
             settings:controller="com.android.settings.gestures.PickupGesturePreferenceController" />
 
-        <Preference
-            android:key="gesture_screen_off_udfps_input_summary"
-            android:title="@string/ambient_display_screen_off_udfps_title"
-            android:fragment="com.android.settings.gestures.ScreenOffUdfpsSettings"
-            settings:searchable="false"
-            settings:controller="com.android.settings.gestures.ScreenOffUdfpsPreferenceController" />
-
         <SwitchPreference
             android:key="ambient_display_notification"
             android:title="@string/doze_title"
             android:summary="@string/doze_summary"
             settings:controller="com.android.settings.display.AmbientDisplayNotificationsPreferenceController" />
-
-        <com.android.settings.custom.preference.RemotePreference
-            android:key="doze_device_settings"
-            android:title="@string/ambient_display_screen_title"
-            settings:requiresAction="org.lineageos.settings.device.DOZE_SETTINGS"
-            settings:replacesKey="ambient_display_always_on|ambient_display_notification">
-            <intent android:action="org.lineageos.settings.device.DOZE_SETTINGS" />
-        </com.android.settings.custom.preference.RemotePreference>
 
     </PreferenceCategory>
 

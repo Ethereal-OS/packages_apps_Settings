@@ -42,7 +42,6 @@ import com.android.settingslib.RestrictedLockUtils;
 import com.android.settingslib.RestrictedLockUtilsInternal;
 import com.android.settingslib.RestrictedPreference;
 
-import java.util.List;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.atomic.AtomicBoolean;
@@ -65,6 +64,9 @@ public class UserDetailsSettings extends SettingsPreferenceFragment
     private static final String KEY_APP_AND_CONTENT_ACCESS = "app_and_content_access";
     private static final String KEY_APP_COPYING = "app_copying";
 
+    private static final String KEY_APP_INSTALLS = "app_installs";
+    private static final String KEY_RUN_IN_BACKGROUND = "allow_run_in_background";
+
     /** Integer extra containing the userId to manage */
     static final String EXTRA_USER_ID = "user_id";
 
@@ -76,7 +78,7 @@ public class UserDetailsSettings extends SettingsPreferenceFragment
     private static final int DIALOG_CONFIRM_RESET_GUEST_AND_SWITCH_USER = 6;
 
     /** Whether to enable the app_copying fragment. */
-    private static final boolean SHOW_APP_COPYING_PREF = false;
+    private static final boolean SHOW_APP_COPYING_PREF = true;
 
     private UserManager mUserManager;
     private UserCapabilities mUserCaps;
@@ -93,11 +95,13 @@ public class UserDetailsSettings extends SettingsPreferenceFragment
     Preference mAppCopyingPref;
     @VisibleForTesting
     Preference mRemoveUserPref;
+    Preference mAppsInstallsPref;
+    private SwitchPreference mRunInBackgroundPref;
 
     @VisibleForTesting
     /** The user being studied (not the user doing the studying). */
     UserInfo mUserInfo;
-    private Bundle mDefaultGuestRestrictions;
+    private UserRestrictions userRestrictions;
 
     @Override
     public int getMetricsCategory() {
@@ -126,6 +130,9 @@ public class UserDetailsSettings extends SettingsPreferenceFragment
         if (mGuestUserAutoCreated) {
             mRemoveUserPref.setEnabled((mUserInfo.flags & UserInfo.FLAG_INITIALIZED) != 0);
         }
+        mAppsInstallsPref.setSummary(UserAppsInstallSettings.getDescription(
+                requireContext(), userRestrictions));
+        mAppCopyingPref.setEnabled(!userRestrictions.isSet(UserManager.DISALLOW_INSTALL_APPS));
     }
 
     @Override
@@ -159,18 +166,27 @@ public class UserDetailsSettings extends SettingsPreferenceFragment
         } else if (preference == mAppCopyingPref) {
             openAppCopyingScreen();
             return true;
+        } else if (preference == mAppsInstallsPref) {
+            UserAppsInstallSettings.launch(preference, mUserInfo.id);
+            return true;
         }
         return false;
     }
 
     @Override
     public boolean onPreferenceChange(Preference preference, Object newValue) {
-        if (Boolean.TRUE.equals(newValue)) {
-            showDialog(mUserInfo.isGuest() ? DIALOG_CONFIRM_ENABLE_CALLING
-                    : DIALOG_CONFIRM_ENABLE_CALLING_AND_SMS);
-            return false;
+        if (preference == mPhonePref) {
+            if (Boolean.TRUE.equals(newValue)) {
+                showDialog(mUserInfo.isGuest() ? DIALOG_CONFIRM_ENABLE_CALLING
+                        : DIALOG_CONFIRM_ENABLE_CALLING_AND_SMS);
+                return false;
+            }
+            enableCallsAndSms(false);
         }
-        enableCallsAndSms(false);
+        if (preference == mRunInBackgroundPref) {
+            userRestrictions.set(UserManager.DISALLOW_RUN_IN_BACKGROUND, !((boolean) newValue));
+            return true;
+        }
         return true;
     }
 
@@ -267,12 +283,15 @@ public class UserDetailsSettings extends SettingsPreferenceFragment
         boolean isNewUser =
                 arguments.getBoolean(AppRestrictionsFragment.EXTRA_NEW_USER, false);
         mUserInfo = mUserManager.getUserInfo(userId);
+        userRestrictions = new UserRestrictions(mUserManager, mUserInfo);
 
         mSwitchUserPref = findPreference(KEY_SWITCH_USER);
         mPhonePref = findPreference(KEY_ENABLE_TELEPHONY);
         mRemoveUserPref = findPreference(KEY_REMOVE_USER);
         mAppAndContentAccessPref = findPreference(KEY_APP_AND_CONTENT_ACCESS);
         mAppCopyingPref = findPreference(KEY_APP_COPYING);
+        mAppsInstallsPref = findPreference(KEY_APP_INSTALLS);
+        mRunInBackgroundPref = findPreference(KEY_RUN_IN_BACKGROUND);
 
         mSwitchUserPref.setTitle(
                 context.getString(com.android.settingslib.R.string.user_switch_to_user,
@@ -291,6 +310,8 @@ public class UserDetailsSettings extends SettingsPreferenceFragment
             removePreference(KEY_REMOVE_USER);
             removePreference(KEY_APP_AND_CONTENT_ACCESS);
             removePreference(KEY_APP_COPYING);
+            removePreference(KEY_APP_INSTALLS);
+            removePreference(KEY_RUN_IN_BACKGROUND);
         } else {
             if (!Utils.isVoiceCapable(context)) { // no telephony
                 removePreference(KEY_ENABLE_TELEPHONY);
@@ -307,14 +328,12 @@ public class UserDetailsSettings extends SettingsPreferenceFragment
                 removePreference(KEY_APP_AND_CONTENT_ACCESS);
             }
 
+            mPhonePref.setChecked(!userRestrictions.isSet(UserManager.DISALLOW_OUTGOING_CALLS));
             if (mUserInfo.isGuest()) {
                 // These are not for an existing user, just general Guest settings.
                 // Default title is for calling and SMS. Change to calling-only here
                 // TODO(b/191483069): These settings can't be changed unless guest user exists
                 mPhonePref.setTitle(R.string.user_enable_calling);
-                mDefaultGuestRestrictions = mUserManager.getDefaultGuestRestrictions();
-                mPhonePref.setChecked(
-                        !mDefaultGuestRestrictions.getBoolean(UserManager.DISALLOW_OUTGOING_CALLS));
                 mRemoveUserPref.setTitle(mGuestUserAutoCreated
                         ? com.android.settingslib.R.string.guest_reset_guest
                         : com.android.settingslib.R.string.guest_exit_guest);
@@ -324,11 +343,11 @@ public class UserDetailsSettings extends SettingsPreferenceFragment
                 if (!SHOW_APP_COPYING_PREF) {
                     removePreference(KEY_APP_COPYING);
                 }
+                removePreference(KEY_RUN_IN_BACKGROUND);
             } else {
-                mPhonePref.setChecked(!mUserManager.hasUserRestriction(
-                        UserManager.DISALLOW_OUTGOING_CALLS, new UserHandle(userId)));
                 mRemoveUserPref.setTitle(R.string.user_remove_user);
-                removePreference(KEY_APP_COPYING);
+                mRunInBackgroundPref.setChecked(!userRestrictions.isSet(
+                        UserManager.DISALLOW_RUN_IN_BACKGROUND));
             }
             if (RestrictedLockUtilsInternal.hasBaseUserRestriction(context,
                     UserManager.DISALLOW_REMOVE_USER, UserHandle.myUserId())) {
@@ -336,9 +355,11 @@ public class UserDetailsSettings extends SettingsPreferenceFragment
             }
 
             mRemoveUserPref.setOnPreferenceClickListener(this);
+            mAppsInstallsPref.setOnPreferenceClickListener(this);
             mPhonePref.setOnPreferenceChangeListener(this);
             mAppAndContentAccessPref.setOnPreferenceClickListener(this);
             mAppCopyingPref.setOnPreferenceClickListener(this);
+            mRunInBackgroundPref.setOnPreferenceChangeListener(this);
         }
     }
 
@@ -397,31 +418,9 @@ public class UserDetailsSettings extends SettingsPreferenceFragment
 
     private void enableCallsAndSms(boolean enabled) {
         mPhonePref.setChecked(enabled);
-        if (mUserInfo.isGuest()) {
-            mDefaultGuestRestrictions.putBoolean(UserManager.DISALLOW_OUTGOING_CALLS, !enabled);
-            // SMS is always disabled for guest
-            mDefaultGuestRestrictions.putBoolean(UserManager.DISALLOW_SMS, true);
-            mUserManager.setDefaultGuestRestrictions(mDefaultGuestRestrictions);
-
-            // Update the guest's restrictions, if there is a guest
-            // TODO: Maybe setDefaultGuestRestrictions() can internally just set the restrictions
-            // on any existing guest rather than do it here with multiple Binder calls.
-            List<UserInfo> users = mUserManager.getAliveUsers();
-            for (UserInfo user : users) {
-                if (user.isGuest()) {
-                    UserHandle userHandle = UserHandle.of(user.id);
-                    for (String key : mDefaultGuestRestrictions.keySet()) {
-                        mUserManager.setUserRestriction(
-                                key, mDefaultGuestRestrictions.getBoolean(key), userHandle);
-                    }
-                }
-            }
-        } else {
-            UserHandle userHandle = UserHandle.of(mUserInfo.id);
-            mUserManager.setUserRestriction(UserManager.DISALLOW_OUTGOING_CALLS, !enabled,
-                    userHandle);
-            mUserManager.setUserRestriction(UserManager.DISALLOW_SMS, !enabled, userHandle);
-        }
+        userRestrictions.set(UserManager.DISALLOW_OUTGOING_CALLS, !enabled);
+        // SMS is always disabled for guest
+        userRestrictions.set(UserManager.DISALLOW_SMS, mUserInfo.isGuest() || !enabled);
     }
 
     private void removeUser() {
