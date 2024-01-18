@@ -54,11 +54,11 @@
 
     <!-- Ethereal Maintainer -->
     <Preference
-        android:key="ethereal_maintainer"
-        android:title="@string/ethereal_maintainer"
+        android:key="Ethereal_maintainer"
+        android:title="@string/Ethereal_maintainer"
         android:summary="@string/summary_placeholder"
         settings:enableCopying="true"
-        settings:controller="com.android.settings.deviceinfo.ethereal.EtherealMaintainerPreferenceController"/>
+        settings:controller="com.android.settings.deviceinfo.firmwareversion.EtherealMaintainerPreferenceController"/>
 
     <!-- Security patch -->
     <Preference
