@@ -34,7 +34,7 @@
 
     <!-- EtherealOS maintainer -->
     <string name="maintainer">Maintainer</string>
-    <string name="ethereal_maintainer">Ethereal Maintainer</string>
+    <string name="ethereal_maintainer">Unofficial Maintainer</string>
     
     <!-- EtherealOS device -->
     <string name="about_device_name">Device</string>
