@@ -14,10 +14,10 @@
  * limitations under the License.
  */
 
-package com.android.settings.deviceinfo.firmwareversion;
+package com.android.settings.deviceinfo.ethereal;
 
 import android.content.Context;
-import android.os.SystemProperties;
+import android.content.res.Resources;
 import android.text.TextUtils;
 
 import androidx.preference.Preference;
@@ -39,8 +39,7 @@ public class EtherealMaintainerPreferenceController extends BasePreferenceContro
     }
 
     public CharSequence getSummary() {
-        String rom = SystemProperties.get(ROM_PROPERTY,
-                this.mContext.getString(R.string.device_info_default));
-        return rom;
+        String maintainer = mContext.getResources().getString(R.string.ethereal_maintainer);
+        return maintainer;
     }
 }
