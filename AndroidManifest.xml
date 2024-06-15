@@ -4676,6 +4676,20 @@
             <meta-data android:name="com.android.settings.FRAGMENT_CLASS"
                 android:value="com.android.settings.fuelgauge.sleepmode.SleepMode" />
         </activity>
+        
+        <!-- Changelog -->
+	<activity android:name="com.ethereal.hub.fragments.about.ChangelogActivity"
+                android:label="@string/changelog_ethereal_title"
+                android:theme="@style/Theme.SubSettingsBase"
+                android:enabled="true"
+                android:exported="true"
+                android:taskAffinity="com.android.settings"
+                android:parentActivityName="Settings">
+            <intent-filter android:priority="70">
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>        
 
         <activity android:name=".Settings$SmartPixelsActivity"
             android:label="@string/smart_pixels_title"
