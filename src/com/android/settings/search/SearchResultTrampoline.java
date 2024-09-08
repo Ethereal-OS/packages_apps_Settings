@@ -98,7 +98,7 @@ public class SearchResultTrampoline extends Activity {
 
         if (!ActivityEmbeddingUtils.isEmbeddingActivityEnabled(this)) {
             startActivity(intent);
-        }} else if (isSettingsIntelligence(callerPackage)) {
+        } else if (isSettingsIntelligence(callerPackage)) {
             if (FeatureFlagUtils.isEnabled(this, FeatureFlags.SETTINGS_SEARCH_ALWAYS_EXPAND)) {
                 startActivity(SettingsActivity.getTrampolineIntent(intent, highlightMenuKey)
                         .setClass(this, DeepLinkHomepageActivityInternal.class)
@@ -107,8 +107,7 @@ public class SearchResultTrampoline extends Activity {
             } else {
                 // Register SplitPairRule for SubSettings, set clearTop false to prevent unexpected
                 // back navigation behavior.
-                ActivityEmbeddingRulesController.registerSubSettingsPairRule(this,
-                        false /* clearTop */);
+                ActivityEmbeddingRulesController.registerSubSettingsPairRule(this, false /* clearTop */);
 
                 intent.setFlags(intent.getFlags() & ~Intent.FLAG_ACTIVITY_NEW_TASK);
                 startActivity(intent);
@@ -117,8 +116,7 @@ public class SearchResultTrampoline extends Activity {
                 final SettingsHomepageActivity homeActivity =
                         ((SettingsApplication) getApplicationContext()).getHomeActivity();
                 if (homeActivity != null) {
-                    homeActivity.getMainFragment().setHighlightMenuKey(highlightMenuKey,
-                            /* scrollNeeded= */ true);
+                    homeActivity.getMainFragment().setHighlightMenuKey(highlightMenuKey, /* scrollNeeded= */ true);
                 }
             }
         } else {
@@ -138,3 +136,4 @@ public class SearchResultTrampoline extends Activity {
                         .getSettingsIntelligencePkgName(this));
     }
 }
+
