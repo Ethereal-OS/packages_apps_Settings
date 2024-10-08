@@ -885,6 +885,11 @@ public class AdvancedPowerUsageDetailTest {
     }
 
     @Test
+    public void shouldSkipForInitialSUW_returnTrue() {
+        assertThat(mFragment.shouldSkipForInitialSUW()).isTrue();
+    }
+
+    @Test
     public void notifyBackupManager_triStateIsNotEnabled_notInvokeDataChanged() {
         mFragment.mOptimizationMode = BatteryOptimizeUtils.MODE_RESTRICTED;
         when(mBatteryOptimizeUtils.getAppOptimizationMode())
