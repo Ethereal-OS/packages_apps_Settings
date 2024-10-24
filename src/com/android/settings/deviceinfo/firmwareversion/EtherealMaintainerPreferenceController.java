@@ -25,12 +25,12 @@ import androidx.preference.Preference;
 import com.android.settings.R;
 import com.android.settings.core.BasePreferenceController;
 
-public class euclidMaintainerPreferenceController extends BasePreferenceController {
+public class EtherealMaintainerPreferenceController extends BasePreferenceController {
 
-    private static final String TAG = "euclidMaintainerPreferenceController";
-    private static final String ROM_PROPERTY = "ro.euclid.maintainer";
+    private static final String TAG = "EtherealMaintainerPreferenceController";
+    private static final String ROM_PROPERTY = "ro.ethereal.maintainer";
 
-    public euclidMaintainerPreferenceController(Context context, String key) {
+    public EtherealMaintainerPreferenceController(Context context, String key) {
         super(context, key);
     }
 
