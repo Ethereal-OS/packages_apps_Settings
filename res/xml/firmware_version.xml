@@ -21,11 +21,19 @@
     android:title="@string/about_settings"
     settings:keywords="@string/keywords_android_version">
 
-    <!-- euclidOS logo -->
+    <!-- EtherealOS logo -->
     <com.android.settingslib.widget.LayoutPreference
-        android:layout="@layout/euclid_about"
-        android:key="euclid_logo"
+        android:layout="@layout/ethereal_about"
+        android:key="ethereal_logo"
         android:selectable="false" />
+
+    <!-- Ethereal version -->
+    <Preference
+        android:key="ethereal_release_version"
+        android:title="@string/ethereal_release_version"
+        android:summary="@string/summary_placeholder"
+        settings:enableCopying="true"
+        settings:controller="com.android.settings.deviceinfo.firmwareversion.EtherealVersionDetailPreferenceController"/>
 
     <!-- Android version -->
     <Preference
@@ -36,13 +44,13 @@
         settings:searchable="false"
         settings:controller="com.android.settings.deviceinfo.firmwareversion.FirmwareVersionDetailPreferenceController"/>
 
-    <!-- euclid Maintainer  -->
+    <!-- Ethereal Maintainer  -->
     <Preference
-        android:key="euclid_maintainer"
-        android:title="@string/euclid_maintainer"
+        android:key="ethereal_maintainer"
+        android:title="@string/ethereal_maintainer"
         android:summary="@string/summary_placeholder"
         settings:enableCopying="true"
-        settings:controller="com.android.settings.deviceinfo.firmwareversion.euclidMaintainerPreferenceController"/>
+        settings:controller="com.android.settings.deviceinfo.firmwareversion.EtherealMaintainerPreferenceController"/>
 
     <!-- Security patch -->
     <Preference

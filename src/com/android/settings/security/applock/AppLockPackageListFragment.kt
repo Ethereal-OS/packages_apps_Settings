@@ -30,7 +30,7 @@ import androidx.preference.Preference
 import androidx.preference.forEach
 
 import com.android.internal.logging.nano.MetricsProto
-import com.android.internal.util.euclid.EuclidUtils
+import com.android.internal.util.ethereal.EtherealUtils
 
 import com.android.settings.R
 import com.android.settings.core.SubSettingLauncher
@@ -56,7 +56,7 @@ class AppLockPackageListFragment : DashboardFragment() {
         super.onAttach(context)
         appLockManager = context.getSystemService(AppLockManager::class.java)!!
         pm = context.packageManager
-        launchablePackages = EuclidUtils.launchablePackages(context)
+        launchablePackages = EtherealUtils.launchablePackages(context)
         whiteListedPackages = resources.getStringArray(
             com.android.internal.R.array.config_appLockAllowedSystemApps)
     }

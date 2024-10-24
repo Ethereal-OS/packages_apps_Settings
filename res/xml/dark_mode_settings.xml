@@ -66,7 +66,7 @@
         settings:searchable="false"
         settings:controller="com.android.settings.display.darkmode.DarkModeCustomBedtimePreferenceController" />
     
-    <com.euclid.support.preferences.SecureSettingSwitchPreference
+    <com.ethereal.support.preferences.SecureSettingSwitchPreference
         android:key="system_black_theme"
         android:dependency="dark_ui_activated"
         android:title="@string/system_black_theme_title"

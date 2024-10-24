@@ -6,7 +6,7 @@
     android:layout_marginStart="16dp"
     android:layout_marginEnd="16dp"
     android:layout_marginBottom="20dp"
-    android:background="@drawable/euclid_preference_bottom_background"
+    android:background="@drawable/ethereal_preference_bottom_background"
     android:paddingEnd="15dp"
     android:paddingStart="25dp">
 
