@@ -70,13 +70,13 @@
         settings:highlightableMenuKey="@string/menu_key_notifications"/>
 
     <com.android.settings.widget.HomepagePreference
-        android:key="top_level_powerhub"
-        android:title="@string/powerhub_title"
+        android:key="top_level_etherealhub"
+        android:title="@string/etherealhub_title"
         android:summary="@string/powerhub_summary"
-        settings:highlightableMenuKey="@string/menu_key_powerhub"
-        android:icon="@drawable/ic_powerhub"
+        settings:highlightableMenuKey="@string/menu_key_etherealhub"
+        android:icon="@drawable/ic_etherealhub"
         android:order="-125"
-        android:fragment="com.power.hub.powerhub"/>
+        android:fragment="com.ethereal.hub.etherealhub"/>
 
     <com.android.settings.widget.HomepagePreference
         android:fragment="com.android.settings.fuelgauge.batteryusage.PowerUsageSummary"

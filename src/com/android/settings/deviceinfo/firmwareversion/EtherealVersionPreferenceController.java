@@ -36,13 +36,13 @@ import com.android.settings.slices.Sliceable;
 import com.android.settingslib.RestrictedLockUtils;
 import com.android.settingslib.RestrictedLockUtilsInternal;
 
-public class VoltageVersionPreferenceController extends BasePreferenceController {
+public class EtherealVersionPreferenceController extends BasePreferenceController {
 
-    private static final String TAG = "voltageVersionDialogCtrl";
+    private static final String TAG = "etherealVersionDialogCtrl";
     private static final int DELAY_TIMER_MILLIS = 500;
     private static final int ACTIVITY_TRIGGER_COUNT = 3;
 
-    private static final String KEY_VOLTAGE_VERSION_PROP = "ro.voltage.version";
+    private static final String KEY_ETHEREAL_VERSION_PROP = "ro.ethereal.version";
 
     private final UserManager mUserManager;
     private final long[] mHits = new long[ACTIVITY_TRIGGER_COUNT];
@@ -50,7 +50,7 @@ public class VoltageVersionPreferenceController extends BasePreferenceController
     private RestrictedLockUtils.EnforcedAdmin mFunDisallowedAdmin;
     private boolean mFunDisallowedBySystem;
 
-    public VoltageVersionPreferenceController(Context context, String key) {
+    public EtherealVersionPreferenceController(Context context, String key) {
         super(context, key);
         mUserManager = (UserManager) mContext.getSystemService(Context.USER_SERVICE);
         initializeAdminPermissions();
@@ -73,7 +73,7 @@ public class VoltageVersionPreferenceController extends BasePreferenceController
 
     @Override
     public CharSequence getSummary() {
-        return SystemProperties.get(KEY_VOLTAGE_VERSION_PROP,
+        return SystemProperties.get(KEY_ETHEREAL_VERSION_PROP,
                 mContext.getString(R.string.unknown));
     }
 

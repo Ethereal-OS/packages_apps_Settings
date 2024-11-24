@@ -8,10 +8,10 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:gravity="center_vertical"
     android:orientation="horizontal"
-    android:paddingTop="@dimen/voltage_preference_category_padding_top"
+    android:paddingTop="@dimen/ethereal_preference_category_padding_top"
     android:layout_width="fill_parent"
     android:layout_height="wrap_content"
-    android:minHeight="@dimen/voltage_preference_category_height"
+    android:minHeight="@dimen/ethereal_preference_category_height"
     android:paddingStart="?android:listPreferredItemPaddingStart"
     android:paddingEnd="?android:listPreferredItemPaddingEnd">
 
@@ -27,6 +27,6 @@
         android:background="?android:attr/colorAccent"
         android:layout_width="fill_parent"
         android:layout_height="1.0px"
-        android:layout_marginStart="@dimen/voltage_preference_category_line_margin_start" />
+        android:layout_marginStart="@dimen/ethereal_preference_category_line_margin_start" />
 
 </LinearLayout>

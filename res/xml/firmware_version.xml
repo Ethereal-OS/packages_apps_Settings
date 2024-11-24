@@ -21,8 +21,8 @@
     settings:keywords="@string/keywords_android_version">
 
     <com.android.settingslib.widget.LayoutPreference
-        android:layout="@layout/voltage_logo_layout"
-        android:key="voltage_logo"
+        android:layout="@layout/ethereal_logo_layout"
+        android:key="ethereal_logo"
         android:selectable="false"/>
 
     <!-- Android version -->
@@ -34,15 +34,15 @@
         settings:searchable="false"
         settings:controller="com.android.settings.deviceinfo.firmwareversion.FirmwareVersionDetailPreferenceController"/>
 
-    <!-- VoltageOS version -->
+    <!-- EtherealOS version -->
     <Preference
-        android:key="voltage_version"
-        android:title="@string/voltage_version"
+        android:key="ethereal_version"
+        android:title="@string/ethereal_version"
         android:summary="@string/summary_placeholder"
         settings:enableCopying="true"
-        settings:controller="com.android.settings.deviceinfo.firmwareversion.VoltageVersionPreferenceController"/>
+        settings:controller="com.android.settings.deviceinfo.firmwareversion.EtherealVersionPreferenceController"/>
 
-    <!-- VoltageOS Device -->
+    <!-- EtherealOS Device -->
     <Preference
         android:key="about_device_name"
         android:title="@string/about_device_name"
@@ -50,13 +50,13 @@
         settings:enableCopying="true"
         settings:controller="com.android.settings.deviceinfo.firmwareversion.AboutDeviceNamePreferenceController"/>
 
-    <!-- VoltageOS maintainer -->
+    <!-- EtherealOS maintainer -->
     <Preference
         android:key="maintainer"
         android:title="@string/maintainer"
         android:summary="@string/summary_placeholder"
         settings:enableCopying="true"
-        settings:controller="com.android.settings.deviceinfo.voltage.VoltageMaintainerPreferenceController"/>
+        settings:controller="com.android.settings.deviceinfo.firmwareversion.EtherealMaintainerPreferenceController"/>
 
     <!-- Security patch -->
     <Preference

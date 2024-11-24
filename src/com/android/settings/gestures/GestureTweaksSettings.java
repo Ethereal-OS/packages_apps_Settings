@@ -36,7 +36,7 @@ import com.android.settings.search.BaseSearchIndexProvider;
 import com.android.settings.SettingsPreferenceFragment;
 import com.android.settingslib.search.SearchIndexable;
 
-import com.power.hub.preferences.SystemSettingSwitchPreference;
+import com.ethereal.hub.preferences.SystemSettingSwitchPreference;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -259,7 +259,7 @@ public class GestureTweaksSettings extends SettingsPreferenceFragment
 
     @Override
     public int getMetricsCategory() {
-        return MetricsProto.MetricsEvent.VOLTAGE;
+        return MetricsProto.MetricsEvent.ETHEREAL;
     }
 
     public static final SearchIndexProvider SEARCH_INDEX_DATA_PROVIDER =

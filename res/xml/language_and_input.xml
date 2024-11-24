@@ -109,7 +109,7 @@
             android:title="@string/pointer_speed"
             android:dialogTitle="@string/pointer_speed" />
 
-        <com.power.hub.preferences.SecureSettingSwitchPreference
+        <com.ethereal.hub.preferences.SecureSettingSwitchPreference
             android:key="feature_touch_hovering"
             android:title="@string/touchscreen_hovering_title"
             android:summary="@string/touchscreen_hovering_summary"

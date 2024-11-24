@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.android.settings.deviceinfo.voltage;
+package com.android.settings.deviceinfo.firmwareversion;
 
 import android.content.Context;
 import android.content.res.Resources;
@@ -38,7 +38,7 @@ public class VoltageMaintainerPreferenceController extends BasePreferenceControl
     }
 
     public CharSequence getSummary() {
-        String maintainer = mContext.getResources().getString(R.string.voltage_maintainer);
+        String maintainer = mContext.getResources().getString(R.string.ethereal_maintainer);
         return maintainer;
     }
 }

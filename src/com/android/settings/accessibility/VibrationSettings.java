@@ -33,8 +33,8 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import androidx.preference.Preference;
 
-import com.android.internal.util.voltage.VoltageUtils;
-import com.power.hub.preferences.SystemSettingSwitchPreference;
+import com.android.internal.util.ethereal.EtherealUtils;
+import com.ethereal.hub.preferences.SystemSettingSwitchPreference;
 import com.android.settings.R;
 import com.android.settings.dashboard.DashboardFragment;
 import com.android.settings.flags.Flags;
@@ -84,7 +84,7 @@ public class VibrationSettings extends DashboardFragment
     @Override
     public boolean onPreferenceChange(Preference preference, Object newValue) {
         if (preference == mScrollFlingHapticFeedback) {
-            VoltageUtils.restartApp(getLauncherPackage(), getActivity());
+            EtherealUtils.restartApp(getLauncherPackage(), getActivity());
             return true;
         }
         return false;

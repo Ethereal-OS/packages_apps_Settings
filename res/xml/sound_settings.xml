@@ -96,7 +96,7 @@
         settings:controller="com.android.settings.notification.AlarmVolumePreferenceController"/>
 
     <!-- Increasing ring -->
-    <com.power.hub.preferences.SystemSettingSwitchPreference
+    <com.ethereal.hub.preferences.SystemSettingSwitchPreference
         android:key="increasing_ring"
         android:title="@string/increasing_ring_volume_option_title"
         android:defaultValue="false"
@@ -211,7 +211,7 @@
         android:ringtoneType="alarm"
         android:order="-60"/>
 
-    <com.power.hub.preferences.SystemSettingSwitchPreference
+    <com.ethereal.hub.preferences.SystemSettingSwitchPreference
         android:key="show_app_volume"
         android:title="@string/app_volume_title"
         android:summary="@string/app_volume_summary"

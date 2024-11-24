@@ -52,7 +52,7 @@ import com.android.settings.security.SecuritySettings;
 import com.android.settings.system.SystemDashboardFragment;
 import com.android.settingslib.drawer.CategoryKey;
 
-import com.power.hub.powerhub;
+import com.ethereal.hub.etherealhub;
 
 import java.util.Map;
 
@@ -138,7 +138,7 @@ public class DashboardFragmentRegistry {
                 CategoryKey.CATEGORY_SPECIAL_APP_ACCESS);
         PARENT_TO_CATEGORY_KEY_MAP.put(MoreSecurityPrivacyFragment.class.getName(),
                 CategoryKey.CATEGORY_MORE_SECURITY_PRIVACY_SETTINGS);
-        PARENT_TO_CATEGORY_KEY_MAP.put(powerhub.class.getName(),
+        PARENT_TO_CATEGORY_KEY_MAP.put(etherealhub.class.getName(),
                 CategoryKey.CATEGORY_SYSTEM_DEVELOPMENT);
         PARENT_TO_CATEGORY_KEY_MAP.put(OtherFragment.class.getName(),
                 CategoryKey.CATEGORY_OTHER);

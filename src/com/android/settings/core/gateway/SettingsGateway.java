@@ -203,8 +203,8 @@ import com.android.settings.wifi.p2p.WifiP2pSettings;
 import com.android.settings.wifi.savedaccesspoints2.SavedAccessPointsWifiSettings2;
 import com.android.settings.wifi.tether.WifiTetherSettings;
 
-import com.power.hub.powerhub;
-import com.power.hub.fragments.SmartPixels;
+import com.ethereal.hub.etherealhub;
+import com.ethereal.hub.fragments.SmartPixels;
 
 import con.android.settings.wifi.tether.WifiTetherClientManager;
 
@@ -397,7 +397,7 @@ public class SettingsGateway {
             ScreenTimeoutSettings.class.getName(),
             ResetNetwork.class.getName(),
             VibrationIntensitySettingsFragment.class.getName(),
-            powerhub.class.getName(),
+            etherealhub.class.getName(),
             RunningServices.class.getName(),
             SmartPixels.class.getName(),
             LiveDisplaySettings.class.getName(),
@@ -448,7 +448,7 @@ public class SettingsGateway {
             UserBackupSettingsActivity.class.getName(),
             Settings.MemtagPageActivity.class.getName(),
             Settings.NavigationModeSettingsActivity.class.getName(),
-            Settings.powerhubActivity.class.getName(),
+            Settings.etherealhubActivity.class.getName(),
             Settings.DevRunningServicesActivity.class.getName(),
             Settings.SmartPixelsActivity.class.getName(),
     };

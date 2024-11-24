@@ -25,7 +25,7 @@
     <ImageView
         android:layout_width="200dp"
         android:layout_height="200dp" 
-        android:src="@drawable/voltage_logo"
+        android:src="@drawable/ethereal_logo"
         android:scaleType="centerInside"
         android:layout_marginTop="4dp"
 	android:layout_marginBottom="4dp"

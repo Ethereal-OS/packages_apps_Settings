@@ -30,7 +30,7 @@ import androidx.preference.Preference
 import androidx.preference.forEach
 
 import com.android.internal.logging.nano.MetricsProto
-import com.android.internal.util.voltage.VoltageUtils
+import com.android.internal.util.ethereal.EtherealUtils
 
 import com.android.settings.R
 import com.android.settings.core.SubSettingLauncher
@@ -56,7 +56,7 @@ class AppLockPackageListFragment : DashboardFragment() {
         super.onAttach(context)
         appLockManager = context.getSystemService(AppLockManager::class.java)!!
         pm = context.packageManager
-        launchablePackages = VoltageUtils.launchablePackages(context)
+        launchablePackages = EtherealUtils.launchablePackages(context)
         whiteListedPackages = resources.getStringArray(
             com.android.internal.R.array.config_appLockAllowedSystemApps)
     }
@@ -141,7 +141,7 @@ class AppLockPackageListFragment : DashboardFragment() {
         }
     }
 
-    override fun getMetricsCategory(): Int = MetricsProto.MetricsEvent.VOLTAGE
+    override fun getMetricsCategory(): Int = MetricsProto.MetricsEvent.ETHEREAL
 
     override protected fun getPreferenceScreenResId() = R.xml.app_lock_package_list_settings
 

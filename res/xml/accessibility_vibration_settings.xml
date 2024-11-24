@@ -92,28 +92,28 @@
         app:controller="com.android.settings.sound.CustomHapticPreferenceController">
 
         <!-- QS Bightness slider haptic feedback -->
-        <com.power.hub.preferences.SystemSettingSwitchPreference
+        <com.ethereal.hub.preferences.SystemSettingSwitchPreference
             android:key="qs_brightness_slider_haptic_feedback"
             android:title="@string/qs_brightness_slider_haptic_feedback_title"
             android:dependency="vibration_preference_touch"
             android:defaultValue="false" />
 
         <!-- QS Tiles haptic -->
-        <com.power.hub.preferences.SystemSettingSwitchPreference
+        <com.ethereal.hub.preferences.SystemSettingSwitchPreference
             android:key="qs_tiles_haptic_feedback"
             android:title="@string/qs_tiles_haptic_feedback_title"
             android:dependency="vibration_preference_touch"
             android:defaultValue="false" />
 
         <!-- Volume slider haptic -->
-        <com.power.hub.preferences.SystemSettingSwitchPreference
+        <com.ethereal.hub.preferences.SystemSettingSwitchPreference
             android:key="volume_slider_haptic_feedback"
             android:title="@string/volume_slider_haptic_feedback_title"
             android:dependency="vibration_preference_touch"
             android:defaultValue="false" />
 
         <!-- Scroll fling haptic feedback -->
-        <com.power.hub.preferences.SystemSettingSwitchPreference
+        <com.ethereal.hub.preferences.SystemSettingSwitchPreference
             android:key="scroll_fling_haptic_feedback"
             android:title="@string/scroll_fling_haptic_feedback_title"
             android:dependency="vibration_preference_touch"

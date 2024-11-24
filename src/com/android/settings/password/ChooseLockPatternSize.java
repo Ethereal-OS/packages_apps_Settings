@@ -142,7 +142,7 @@ public class ChooseLockPatternSize extends SettingsActivity {
 
         @Override
         public int getMetricsCategory() {
-            return MetricsEvent.VOLTAGE;
+            return MetricsEvent.ETHEREAL;
         }
     }
 }

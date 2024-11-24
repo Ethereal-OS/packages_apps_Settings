@@ -33,8 +33,8 @@ import com.android.settings.R;
 import com.android.settings.SettingsPreferenceFragment;
 
 import com.android.internal.custom.health.HealthInterface;
-import com.power.hub.preferences.SystemSettingDropDownPreference;
-import com.power.hub.preferences.SystemSettingMainSwitchPreference;
+import com.ethereal.hub.preferences.SystemSettingDropDownPreference;
+import com.ethereal.hub.preferences.SystemSettingMainSwitchPreference;
 import android.provider.Settings;
 
 import com.android.internal.logging.nano.MetricsProto.MetricsEvent;
@@ -111,7 +111,7 @@ public class ChargingControlSettings extends SettingsPreferenceFragment implemen
 
     @Override
     public int getMetricsCategory() {
-        return MetricsEvent.VOLTAGE;
+        return MetricsEvent.ETHEREAL;
     }
 
     private void refreshValues() {

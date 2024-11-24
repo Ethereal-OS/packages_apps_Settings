@@ -5214,10 +5214,10 @@
             android:permission="android.permission.NETWORK_SETTINGS">
         </activity>
 
-	<!-- Powerhub -->
-        <activity android:name=".Settings$PowerhubActivity"
-            android:label="@string/powerhub_title"
-            android:icon="@drawable/ic_homepage_powerhub"
+	<!-- EtherealHub -->
+        <activity android:name=".Settings$EtherealhubActivity"
+            android:label="@string/Etherealhub_title"
+            android:icon="@drawable/ic_homepage_etherealhub"
             android:parentActivityName="com.android.settings"
             android:exported="true">
             <intent-filter android:priority="69">
@@ -5225,9 +5225,9 @@
                 <category android:name="com.android.settings.SHORTCUT" />
             </intent-filter>
             <meta-data android:name="com.android.settings.FRAGMENT_CLASS"
-                android:value="com.power.hub.powerhub" />
+                android:value="com.ethereal.hub.etherealhub" />
             <meta-data android:name="com.android.settings.HIGHLIGHT_MENU_KEY"
-                       android:value="@string/menu_key_powerhub"/>
+                       android:value="@string/menu_key_etherealhub"/>
         </activity>
         <receiver android:name=".users.UserTimeoutReceiver"
             android:exported="false">
@@ -5281,7 +5281,7 @@
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
             <meta-data android:name="com.android.settings.FRAGMENT_CLASS"
-                android:value="com.power.hub.fragments.SmartPixels" />
+                android:value="com.ethereal.hub.fragments.SmartPixels" />
         </activity>
 
         <!-- App lock -->

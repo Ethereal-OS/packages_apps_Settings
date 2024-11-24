@@ -19,7 +19,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:title="@string/navbar_gesture_tweaks_pref_title" >
 
-    <com.power.hub.preferences.SystemSettingSwitchPreference
+    <com.ethereal.hub.preferences.SystemSettingSwitchPreference
         android:key="back_swipe_extended"
         android:title="@string/back_swipe_extended_title"
         android:summary="@string/back_swipe_extended_summary"
