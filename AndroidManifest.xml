@@ -5216,7 +5216,7 @@
 
 	<!-- EtherealHub -->
         <activity android:name=".Settings$EtherealhubActivity"
-            android:label="@string/Etherealhub_title"
+            android:label="@string/etherealhub_title"
             android:icon="@drawable/ic_homepage_etherealhub"
             android:parentActivityName="com.android.settings"
             android:exported="true">
