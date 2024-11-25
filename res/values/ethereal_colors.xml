@@ -4,7 +4,7 @@
      SPDX-License-Identifier: Apache-2.0
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-    <color name="homepage_powerhub_background">#FFC9CF</color>
+    <color name="homepage_etherealhub_background">#FFC9CF</color>
 
     <!-- Ethereal Category Headers -->
     <dimen name="ethereal_preference_category_padding_top">0.0dip</dimen>

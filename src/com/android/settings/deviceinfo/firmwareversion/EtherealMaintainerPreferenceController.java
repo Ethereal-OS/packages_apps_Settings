@@ -25,11 +25,11 @@ import androidx.preference.Preference;
 import com.android.settings.R;
 import com.android.settings.core.BasePreferenceController;
 
-public class VoltageMaintainerPreferenceController extends BasePreferenceController {
+public class EtherealMaintainerPreferenceController extends BasePreferenceController {
 
-    private static final String TAG = "VoltageMaintainerPreferenceController";
+    private static final String TAG = "EtherealMaintainerPreferenceController";
 
-    public VoltageMaintainerPreferenceController(Context context, String key) {
+    public EtherealMaintainerPreferenceController(Context context, String key) {
         super(context, key);
     }
 
