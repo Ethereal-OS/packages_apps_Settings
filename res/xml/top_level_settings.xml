@@ -72,7 +72,7 @@
     <com.android.settings.widget.HomepagePreference
         android:key="top_level_etherealhub"
         android:title="@string/etherealhub_title"
-        android:summary="@string/powerhub_summary"
+        android:summary="@string/etherealhub_summary"
         settings:highlightableMenuKey="@string/menu_key_etherealhub"
         android:icon="@drawable/ic_etherealhub"
         android:order="-125"

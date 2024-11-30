@@ -5,8 +5,8 @@
 -->
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <!-- EtherealOS maintainer -->
-    <string name="maintainer">Maintainer</string>
-    <string name="ethereal_maintainer">Unofficial Maintainer</string>
+    <string name="maintainer">Device Maintainer</string>
+    <string name="ethereal_maintainer">Build Bot 🤖</string>
     
     <!-- EtherealOS device -->
     <string name="about_device_name">Device</string>
@@ -18,10 +18,14 @@
     <string name="selinux_status_enforcing">Enforcing</string>
 
     <!-- Ethereal OS version -->
-    <string name="ethereal_version">EtherealOS version</string>
+    <string name="ethereal_version">Ethereal Release Version</string>
     <string name="ethereal_version_default">Unknown</string>
     <string name="build_date">Build date</string>
-
+    
+    <!-- About Phone Section -->
+    <string name="ethereal_device_info">Ethereal Info"</string>
+    <string name="normal_device_info">Generic Device Info"</string>
+    
     <!-- Summary for list to control apps that ignore battery saving restrictions -->
     <string name="high_power_apps_summary">Battery optimization availability</string>
 
@@ -38,9 +42,9 @@
     <string name="fingerprint_enroll_touch_dialog_message_rear">Touch the sensor on the back of your phone.</string>
     <string name="fingerprint_enroll_touch_dialog_message_side">Touch the sensor on the side of your phone.</string>
 
-    <!--Powerhub-->
-    <string name="powerhub_title">Power Hub</string>
-    <string name="powerhub_summary">The Power you need</string>
+    <!--Ethereal Hub-->
+    <string name="etherealhub_title">Elegance Mods</string>
+    <string name="etherealhub_summary">Simple but Powerful</string>
 
     <!-- Per-app volume control -->
     <string name="app_volume">App volume</string>

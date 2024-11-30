@@ -20,15 +20,13 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:gravity="center"
-    android:orientation="horizontal" >
+    android:selectable="false">
 
     <ImageView
-        android:layout_width="200dp"
-        android:layout_height="200dp" 
         android:src="@drawable/ethereal_logo"
-        android:scaleType="centerInside"
-        android:layout_marginTop="4dp"
-	android:layout_marginBottom="4dp"
-        android:adjustViewBounds="true" />
+        android:adjustViewBounds="true"
+        android:layout_height="match_parent"
+        android:layout_width="match_parent"
+        android:scaleType="centerInside"/> 
 </LinearLayout>
 
