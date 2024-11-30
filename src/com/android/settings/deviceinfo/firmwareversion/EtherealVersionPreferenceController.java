@@ -38,17 +38,26 @@ import com.android.settingslib.RestrictedLockUtilsInternal;
 
 public class EtherealVersionPreferenceController extends BasePreferenceController {
 
-    private static final String TAG = "etherealVersionDialogCtrl";
+    private static final String TAG = "EtherealVersionDialogCtrl";
     private static final int DELAY_TIMER_MILLIS = 500;
     private static final int ACTIVITY_TRIGGER_COUNT = 3;
 
-    private static final String KEY_ETHEREAL_VERSION_PROP = "ro.ethereal.version";
+    private static final String KEY_ETHEREAL_CODENAME_PROP = "ro.ethereal.codename";
+    private static final String KEY_ETHEREAL_CODENAME_VERSION_PROP = "ro.ethereal.platform_release_or_codename";
+    private static final String KEY_ETHEREAL_DEVICE_PROP = "ro.ethereal.device";
+    private static final String KEY_ETHEREAL_RELEASE_TYPE_PROP = "ro.ethereal.build.status";
+    private static final String KEY_ETHEREAL_RELEASE_VERSION_PROP = "ro.ethereal.version";
+
+    private static final String PLATLOGO_PACKAGE_NAME = "com.android.egg";
+    private static final String PLATLOGO_ACTIVITY_CLASS =
+            PLATLOGO_PACKAGE_NAME + ".EasterEgg";
 
     private final UserManager mUserManager;
     private final long[] mHits = new long[ACTIVITY_TRIGGER_COUNT];
 
     private RestrictedLockUtils.EnforcedAdmin mFunDisallowedAdmin;
     private boolean mFunDisallowedBySystem;
+    private boolean fullRomVersion = false;
 
     public EtherealVersionPreferenceController(Context context, String key) {
         super(context, key);
@@ -73,14 +82,21 @@ public class EtherealVersionPreferenceController extends BasePreferenceControlle
 
     @Override
     public CharSequence getSummary() {
-        return SystemProperties.get(KEY_ETHEREAL_VERSION_PROP,
-                mContext.getString(R.string.unknown));
+        return shortRomVersion();
     }
 
     @Override
     public boolean handlePreferenceTreeClick(Preference preference) {
         if (!TextUtils.equals(preference.getKey(), getPreferenceKey())) {
             return false;
+        }
+        if (fullRomVersion) {
+            preference.setSummary(shortRomVersion());
+            fullRomVersion = false;
+        } else {
+            preference.setSummary(SystemProperties.get(KEY_ETHEREAL_RELEASE_VERSION_PROP,
+                mContext.getString(R.string.unknown)));
+            fullRomVersion = true;
         }
         if (Utils.isMonkeyRunning()) {
             return false;
@@ -107,6 +123,19 @@ public class EtherealVersionPreferenceController extends BasePreferenceControlle
             }
         }
         return true;
+    }
+
+    private String shortRomVersion() {
+        String romCodename = SystemProperties.get(KEY_ETHEREAL_CODENAME_PROP,
+                this.mContext.getString(R.string.device_info_default));
+        String releaseVersion = SystemProperties.get(KEY_ETHEREAL_CODENAME_VERSION_PROP,
+                this.mContext.getString(R.string.device_info_default));
+        String deviceCodename = SystemProperties.get(KEY_ETHEREAL_DEVICE_PROP,
+                this.mContext.getString(R.string.device_info_default));
+        String romReleasetype = SystemProperties.get(KEY_ETHEREAL_RELEASE_TYPE_PROP,
+                this.mContext.getString(R.string.device_info_default));
+        String shortVersion = releaseVersion + " | " + romCodename + " | " + deviceCodename + " | " + romReleasetype;
+        return shortVersion;
     }
 
     /**
