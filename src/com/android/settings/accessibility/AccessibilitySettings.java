@@ -444,12 +444,8 @@ public class AccessibilitySettings extends DashboardFragment implements
                 a11yManager.getInstalledAccessibilityShortcutListAsUser(context,
                         UserHandle.myUserId());
 
-        // Remove duplicate item here, new a ArrayList to copy unmodifiable list result
-        // (getInstalledAccessibilityServiceList).
         final List<AccessibilityServiceInfo> installedServiceList = new ArrayList<>(
                 a11yManager.getInstalledAccessibilityServiceList());
-        installedServiceList.removeIf(
-                target -> containsTargetNameInList(installedShortcutList, target));
 
         final List<RestrictedPreference> activityList =
                 preferenceHelper.createAccessibilityActivityPreferenceList(installedShortcutList);
@@ -462,24 +458,6 @@ public class AccessibilitySettings extends DashboardFragment implements
         preferenceList.addAll(serviceList);
 
         return preferenceList;
-    }
-
-    private boolean containsTargetNameInList(List<AccessibilityShortcutInfo> shortcutInfos,
-            AccessibilityServiceInfo targetServiceInfo) {
-        final ServiceInfo serviceInfo = targetServiceInfo.getResolveInfo().serviceInfo;
-        final String servicePackageName = serviceInfo.packageName;
-        final CharSequence serviceLabel = serviceInfo.loadLabel(getPackageManager());
-
-        for (int i = 0, count = shortcutInfos.size(); i < count; ++i) {
-            final ActivityInfo activityInfo = shortcutInfos.get(i).getActivityInfo();
-            final String activityPackageName = activityInfo.packageName;
-            final CharSequence activityLabel = activityInfo.loadLabel(getPackageManager());
-            if (servicePackageName.equals(activityPackageName)
-                    && serviceLabel.equals(activityLabel)) {
-                return true;
-            }
-        }
-        return false;
     }
 
     private void initializePreBundledServicesMapFromArray(String categoryKey, int key) {
