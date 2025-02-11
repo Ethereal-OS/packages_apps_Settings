@@ -30,8 +30,11 @@ import static org.mockito.Mockito.when;
 import android.accounts.Account;
 import android.accounts.AccountManager;
 import android.accounts.AuthenticatorDescription;
+import android.content.ClipData;
 import android.content.Context;
+import android.content.Intent;
 import android.content.pm.PackageManager;
+import android.net.Uri;
 import android.os.UserHandle;
 
 import androidx.collection.ArraySet;
@@ -140,6 +143,15 @@ public class AccountTypePreferenceLoaderTest {
         verify(mPrefLoader).updatePreferenceIntents(prefGroup2, acctType, mAccount);
         verify(mPrefLoader).updatePreferenceIntents(prefGroup4, acctType, mAccount);
         verify(mPrefLoader).updatePreferenceIntents(prefGroup41, acctType, mAccount);
+    }
+    
+    @Test
+    public void isSafeIntent_hasContextScheme_returnFalse() {
+        Intent intent = new Intent();
+        intent.setClipData(ClipData.newRawUri(null,
+                Uri.parse("content://com.android.settings.files/my_cache/NOTICE.html")));
+
+        assertThat(mPrefLoader.isSafeIntent(mPackageManager, intent, mAccount.type)).isFalse();
     }
 
     @Test
