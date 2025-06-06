@@ -433,7 +433,7 @@ public class AppInfoDashboardFragment extends DashboardFragment
         }
     }
 
-    private static void showLockScreen(Context context, Runnable successRunnable) {
+    public static void showLockScreen(Context context, Runnable successRunnable) {
         final KeyguardManager keyguardManager = context.getSystemService(
                 KeyguardManager.class);
 

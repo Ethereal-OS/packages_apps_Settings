@@ -52,6 +52,7 @@ import com.android.settings.R;
 import com.android.settings.SettingsActivity;
 import com.android.settings.Utils;
 import com.android.settings.applications.ApplicationFeatureProvider;
+import com.android.settings.applications.appinfo.AppInfoDashboardFragment;
 import com.android.settings.applications.specialaccess.deviceadmin.DeviceAdminAdd;
 import com.android.settings.core.BasePreferenceController;
 import com.android.settings.core.InstrumentedPreferenceFragment;
@@ -218,61 +219,71 @@ public class AppButtonsPreferenceController extends BasePreferenceController imp
             mChangeEnabledStateOfUserApp = changeEnabledStateOfUserApp;
         }
 
-        @Override
-        public void onClick(View v) {
-            if (mAccessedFromAutoRevoke) {
+            @Override
+            public void onClick(View v) {
+                if (mAccessedFromAutoRevoke) {
 
-                Log.i(TAG, "sessionId: " + mSessionId + " uninstalling " + mPackageName
-                        + " with uid " + getUid() + ", reached from auto revoke");
-                SettingsStatsLog.write(AUTO_REVOKED_APP_INTERACTION, mSessionId, getUid(),
-                        mPackageName, AUTO_REVOKED_APP_INTERACTION__ACTION__REMOVE_IN_SETTINGS);
-            }
-            final String packageName = mAppEntry.info.packageName;
-            // Uninstall
-            if (mDpm.packageHasActiveAdmins(mPackageInfo.packageName)) {
-                stopListeningToPackageRemove();
-                Intent uninstallDaIntent = new Intent(mActivity, DeviceAdminAdd.class);
-                uninstallDaIntent.putExtra(DeviceAdminAdd.EXTRA_DEVICE_ADMIN_PACKAGE_NAME,
-                        packageName);
-                mMetricsFeatureProvider.action(mActivity,
-                        SettingsEnums.ACTION_SETTINGS_UNINSTALL_DEVICE_ADMIN,
-                        getPackageNameForMetric());
-                mFragment.startActivityForResult(uninstallDaIntent, mRequestRemoveDeviceAdmin);
-                return;
-            }
-            RestrictedLockUtils.EnforcedAdmin admin =
-                    RestrictedLockUtilsInternal.checkIfUninstallBlocked(mActivity,
-                            packageName, mUserId);
-            boolean uninstallBlockedBySystem = mAppsControlDisallowedBySystem ||
-                    RestrictedLockUtilsInternal.hasBaseUserRestriction(mActivity, packageName,
-                            mUserId);
-            if (admin != null && !uninstallBlockedBySystem) {
-                RestrictedLockUtils.sendShowAdminSupportDetailsIntent(mActivity, admin);
-            } else if ((mAppEntry.info.flags & ApplicationInfo.FLAG_SYSTEM) != 0 || mChangeEnabledStateOfUserApp) {
-                if (mAppEntry.info.enabled && !isDisabledUntilUsed()) {
-                    if (mChangeEnabledStateOfUserApp) {
-                        handleDialogClick(ButtonActionDialogFragment.DialogType.DISABLE);
-                        return;
-                    }
-
-                    // If the system app has an update and this is the only user on the device,
-                    // then offer to downgrade the app, otherwise only offer to disable the
-                    // app for this user.
-                    if (mUpdatedSysApp && isSingleUser()) {
-                        showDialogInner(ButtonActionDialogFragment.DialogType.SPECIAL_DISABLE);
-                    } else {
-                        showDialogInner(ButtonActionDialogFragment.DialogType.DISABLE);
-                    }
-                } else {
-                    mMetricsFeatureProvider.action(
-                            mActivity,
-                            mAppEntry.info.enabled
-                                    ? SettingsEnums.ACTION_SETTINGS_DISABLE_APP
-                                    : SettingsEnums.ACTION_SETTINGS_ENABLE_APP,
-                                    getPackageNameForMetric());
-                    AsyncTask.execute(new DisableChangerRunnable(mPm, mAppEntry.info.packageName,
-                            PackageManager.COMPONENT_ENABLED_STATE_DEFAULT));
+                    Log.i(TAG, "sessionId: " + mSessionId + " uninstalling " + mPackageName
+                            + " with uid " + getUid() + ", reached from auto revoke");
+                    SettingsStatsLog.write(AUTO_REVOKED_APP_INTERACTION, mSessionId, getUid(),
+                            mPackageName, AUTO_REVOKED_APP_INTERACTION__ACTION__REMOVE_IN_SETTINGS);
                 }
+                final String packageName = mAppEntry.info.packageName;
+                // Uninstall
+                if (mDpm.packageHasActiveAdmins(mPackageInfo.packageName)) {
+                    stopListeningToPackageRemove();
+                    Intent uninstallDaIntent = new Intent(mActivity, DeviceAdminAdd.class);
+                    uninstallDaIntent.putExtra(DeviceAdminAdd.EXTRA_DEVICE_ADMIN_PACKAGE_NAME,
+                            packageName);
+                    mMetricsFeatureProvider.action(mActivity,
+                            SettingsEnums.ACTION_SETTINGS_UNINSTALL_DEVICE_ADMIN,
+                            getPackageNameForMetric());
+                    mFragment.startActivityForResult(uninstallDaIntent, mRequestRemoveDeviceAdmin);
+                    return;
+                }
+                RestrictedLockUtils.EnforcedAdmin admin =
+                        RestrictedLockUtilsInternal.checkIfUninstallBlocked(mActivity,
+                                packageName, mUserId);
+                boolean uninstallBlockedBySystem = mAppsControlDisallowedBySystem ||
+                        RestrictedLockUtilsInternal.hasBaseUserRestriction(mActivity, packageName,
+                                mUserId);
+                if (admin != null && !uninstallBlockedBySystem) {
+                    RestrictedLockUtils.sendShowAdminSupportDetailsIntent(mActivity, admin);
+                } else if ((mAppEntry.info.flags & ApplicationInfo.FLAG_SYSTEM) != 0 || mChangeEnabledStateOfUserApp) {
+                    if (mAppEntry.info.enabled && !isDisabledUntilUsed()) {
+                        if (mChangeEnabledStateOfUserApp) {
+                            handleDialogClick(ButtonActionDialogFragment.DialogType.DISABLE);
+                            return;
+                        }
+
+                        // If the system app has an update and this is the only user on the device,
+                        // then offer to downgrade the app, otherwise only offer to disable the
+                        // app for this user.
+                        if (mUpdatedSysApp && isSingleUser()) {
+                            showDialogInner(ButtonActionDialogFragment.DialogType.SPECIAL_DISABLE);
+                        } else if ((mAppEntry.info.flags & ApplicationInfo.FLAG_SYSTEM) != 0) {
+                            if (mAppEntry.info.enabled && !isDisabledUntilUsed()) {
+                                showDialogInner(ButtonActionDialogFragment.DialogType.DISABLE);
+                            }
+                        } else if (mAppEntry.info.enabled) {
+                            requireAuthAndExecute(() -> {
+                                mMetricsFeatureProvider.action(
+                                        mActivity,
+                                        SettingsEnums.ACTION_SETTINGS_DISABLE_APP,
+                                        getPackageNameForMetric());
+                                AsyncTask.execute(new DisableChangerRunnable(mPm,
+                                        mAppEntry.info.packageName,
+                                        PackageManager.COMPONENT_ENABLED_STATE_DEFAULT));
+                            }); 
+                        }	    
+                    } else {
+                        mMetricsFeatureProvider.action(
+                                mActivity,
+                                SettingsEnums.ACTION_SETTINGS_ENABLE_APP,
+                                getPackageNameForMetric());
+                        AsyncTask.execute(new DisableChangerRunnable(mPm, mAppEntry.info.packageName,
+                                PackageManager.COMPONENT_ENABLED_STATE_DEFAULT));
+                    }
             } else if ((mAppEntry.info.flags & ApplicationInfo.FLAG_INSTALLED) == 0) {
                 uninstallPkg(packageName, true, false);
             } else {
@@ -316,14 +327,30 @@ public class AppButtonsPreferenceController extends BasePreferenceController imp
             refreshAndFinishIfPossible(false);
         }
     }
+    
+    /**
+     * Runs the given action with restricted lock authentication if it is a protected package.
+     *
+     * @param action The action to run.
+     */
+    private void requireAuthAndExecute(Runnable action) {
+        if (Utils.isProtectedPackage(mContext, mAppEntry.info.packageName)) {
+            AppInfoDashboardFragment.showLockScreen(mContext, () -> action.run());
+        } else {
+            action.run();
+        }
+    }
 
     public void handleDialogClick(int id) {
         switch (id) {
             case ButtonActionDialogFragment.DialogType.DISABLE:
-                mMetricsFeatureProvider.action(mActivity,
-                        SettingsEnums.ACTION_SETTINGS_DISABLE_APP);
-                AsyncTask.execute(new DisableChangerRunnable(mPm, mAppEntry.info.packageName,
-                        PackageManager.COMPONENT_ENABLED_STATE_DISABLED_USER));
+                requireAuthAndExecute(() -> {
+                    mMetricsFeatureProvider.action(mActivity,
+                            SettingsEnums.ACTION_SETTINGS_DISABLE_APP,
+                            getPackageNameForMetric());
+                    AsyncTask.execute(new DisableChangerRunnable(mPm, mAppEntry.info.packageName,
+                            PackageManager.COMPONENT_ENABLED_STATE_DISABLED_USER));
+                });
                 break;
             case ButtonActionDialogFragment.DialogType.SPECIAL_DISABLE:
                 mMetricsFeatureProvider.action(mActivity,
@@ -331,7 +358,9 @@ public class AppButtonsPreferenceController extends BasePreferenceController imp
                 uninstallPkg(mAppEntry.info.packageName, false, true);
                 break;
             case ButtonActionDialogFragment.DialogType.FORCE_STOP:
-                forceStopPackage(mAppEntry.info.packageName);
+                requireAuthAndExecute(() -> {
+                    forceStopPackage(mAppEntry.info.packageName);
+                });
                 break;
         }
     }
@@ -583,17 +612,17 @@ public class AppButtonsPreferenceController extends BasePreferenceController imp
 
     @VisibleForTesting
     void uninstallPkg(String packageName, boolean allUsers, boolean andDisable) {
-        stopListeningToPackageRemove();
-        // Create new intent to launch Uninstaller activity
-        Uri packageUri = Uri.parse("package:" + packageName);
-        Intent uninstallIntent = new Intent(Intent.ACTION_UNINSTALL_PACKAGE, packageUri);
-        uninstallIntent.putExtra(Intent.EXTRA_UNINSTALL_ALL_USERS, allUsers);
-        uninstallIntent.putExtra(Intent.EXTRA_UNINSTALL_SHOW_MORE_OPTIONS_BUTTON, false);
+        requireAuthAndExecute(() -> {
+            stopListeningToPackageRemove();
+            // Create new intent to launch Uninstaller activity
+            Uri packageUri = Uri.parse("package:" + packageName);
+            Intent uninstallIntent = new Intent(Intent.ACTION_UNINSTALL_PACKAGE, packageUri);
+            uninstallIntent.putExtra(Intent.EXTRA_UNINSTALL_ALL_USERS, allUsers);
 
-        mMetricsFeatureProvider.action(
-                mActivity, SettingsEnums.ACTION_SETTINGS_UNINSTALL_APP);
-        mFragment.startActivityForResult(uninstallIntent, mRequestUninstall);
-        mDisableAfterUninstall = andDisable;
+            mMetricsFeatureProvider.action(mActivity, SettingsEnums.ACTION_SETTINGS_UNINSTALL_APP);
+            mFragment.startActivityForResult(uninstallIntent, mRequestUninstall);
+            mDisableAfterUninstall = andDisable;
+        });        
     }
 
     @VisibleForTesting
