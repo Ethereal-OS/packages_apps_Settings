@@ -94,7 +94,7 @@ public class WifiScanModeActivity extends FragmentActivity {
             Log.e(TAG, "This user is not allowed to configure Wi-Fi Scan Mode!");
             finish();
             return;
-        }
+        }      
 
         if (mDialog == null) {
             mDialog = AlertDialogFragment.newInstance(mApp);
