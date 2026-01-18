@@ -91,6 +91,12 @@ public class WifiScanModeActivity extends FragmentActivity {
             finish();
             return;
         }
+        
+        if (!isWifiScanModeConfigAllowed(getApplicationContext())) {
+            Log.e(TAG, "This user is not allowed to configure Wi-Fi Scan Mode!");
+            finish();
+            return;
+        }
 
         if (mDialog == null) {
             mDialog = AlertDialogFragment.newInstance(mApp);
@@ -181,6 +187,12 @@ public class WifiScanModeActivity extends FragmentActivity {
         public void onCancel(DialogInterface dialog) {
             ((WifiScanModeActivity) getActivity()).doNegativeClick();
         }
+    }
+
+    private static boolean isWifiScanModeConfigAllowed(Context context) {
+        final UserManager userManager = context.getSystemService(UserManager.class);
+        if (userManager == null) return true;
+        return !userManager.hasUserRestriction(UserManager.DISALLOW_CONFIG_LOCATION);
     }
 
     private static boolean isGuestUser(Context context) {
